@@ -1,69 +1,39 @@
 import React from 'react';
+import bgImage from '../assets/2b1266ad54e3fa1928e96cd96fc0713a6083f676.png';
 
 export default function PanoramaSection() {
   return (
-    <div className="w-full bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 rounded-lg overflow-hidden p-12 relative border border-purple-800">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-600 rounded-full blur-3xl"></div>
+    <div className="content-stretch flex flex-col gap-[49px] items-center justify-end pb-[55px] pt-[87px] px-[109px] relative size-full min-h-[500px]">
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
+        <img alt="" className="absolute max-w-none object-cover size-full" src={bgImage} />
+        <div className="absolute bg-[rgba(69,44,131,0.6)] inset-0" />
       </div>
-
-      {/* Tech grid pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 1280 519" preserveAspectRatio="none">
-          <defs>
-            <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="white" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
-      <div className="relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left column - Main stat */}
-          <div className="text-white">
-            <div className="mb-8">
-              <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-sm text-yellow-300 font-semibold uppercase tracking-widest mb-2">Crecimiento en IA</p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-7xl md:text-8xl font-bold text-white">
-                  3
-                </p>
-                <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-5xl font-bold text-yellow-300">×</span>
-              </div>
-              <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-lg text-gray-200 leading-relaxed">
-                Más crecimiento en ingresos por empleado en organizaciones que lideran el uso de IA
-              </p>
-            </div>
-          </div>
-
-          {/* Right column - Secondary stat */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-2xl">
-            <div className="mb-6">
-              <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-sm text-yellow-300 font-semibold uppercase tracking-widest mb-4">Adopción Universal</p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-6xl font-bold text-white">
-                  100
-                </p>
-                <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-4xl font-bold text-yellow-300">%</span>
-              </div>
-              <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-base text-gray-100 leading-relaxed">
-                De las industrias está ampliando su uso de IA. En los roles más expuestos, las habilidades demandadas cambian un <span className="font-bold text-yellow-300">66% más rápido</span>
-              </p>
-            </div>
+      <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold leading-[normal] relative shrink-0 text-[32px] text-white whitespace-nowrap z-10">
+        La IA está transformando el mercado laboral
+      </p>
+      <div className="content-stretch flex h-[172px] items-center justify-between relative shrink-0 w-[714px] z-10">
+        <div className="flex flex-row items-center self-stretch">
+          <div className="bg-[rgba(0,0,0,0.59)] content-stretch flex flex-col gap-[10px] h-full items-center leading-[normal] px-[20px] py-[12px] relative shrink-0 text-center w-[329px]">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold relative shrink-0 text-[#e4eb60] text-[46px] whitespace-nowrap">
+              3x
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
+              Más crecimiento en ingresos por empleado en organizaciones que lideran el uso de IA
+            </p>
           </div>
         </div>
-
-        {/* Footer attribution */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-sm text-gray-400 text-center leading-relaxed">
-            Un análisis de cerca de mil millones de ofertas de empleo en seis continentes — <br />
-            <span className="text-white font-semibold">The Fearless Future, PwC (2025)</span>, revela que el impacto de la IA es transversal y está ocurriendo ahora
-          </p>
+        <div className="flex flex-row items-center self-stretch">
+          <div className="bg-[rgba(0,0,0,0.59)] content-stretch flex flex-col gap-[10px] h-full items-center leading-[normal] px-[20px] py-[12px] relative shrink-0 text-center w-[329px] ">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold relative shrink-0 text-[#e4eb60] text-[46px] w-[150px]">
+              100%
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
+              De las industrias está ampliando su uso de IA. En los roles más expuestos, las habilidades demandadas cambian un 66% más rápido
+            </p>
+          </div>
         </div>
       </div>
+      <p className="font-['Plus_Jakarta_Sans',sans-serif] font-normal leading-[normal] relative shrink-0 text-[21px] text-center text-white w-[930px] whitespace-pre-wrap z-10">{`Un análisis de cerca de mil millones de ofertas de empleo en seis continentes — The Fearless Future, PwC (2025),  revela que el impacto de la IA es transversal y está ocurriendo ahora`}</p>
     </div>
   );
 }
