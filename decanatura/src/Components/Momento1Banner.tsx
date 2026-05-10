@@ -3,7 +3,7 @@ import bannerImage from '../assets/7ddfc786a7bcdcf5c85e53cfd9054089dc9a0cd3.png'
 export default function Momento1Banner() {
   return (
     <div 
-      className="w-full h-150 relative overflow-hidden mb-16"
+      className="w-full h-100 relative  mb-16"
       style={{
         backgroundImage: `url(${bannerImage})`,
         backgroundSize: 'cover',
