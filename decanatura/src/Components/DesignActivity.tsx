@@ -1,4 +1,5 @@
 import React from 'react';
+import { CheckCircle, CloseCircle, PuzzleIcon } from './Icons';
 
 export default function DesignActivity() {
   return (
@@ -10,7 +11,9 @@ export default function DesignActivity() {
       <div className="flex flex-wrap gap-[20px] items-center justify-center">
         {/* Good Use */}
         <div className="flex gap-[4px] items-center" style={{ width: '413.333px' }}>
-          <div className="flex-shrink-0" style={{ fontSize: '24px' }}>✓</div>
+          <div className="flex-shrink-0">
+            <CheckCircle size={49} />
+          </div>
           <div className="flex flex-col gap-[5px] items-start p-[10px]">
             <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="font-bold text-[18px] text-black">Buen uso</h4>
             <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-[14px] text-black leading-normal">
@@ -21,7 +24,9 @@ export default function DesignActivity() {
 
         {/* Misuse */}
         <div className="flex gap-[4px] items-center" style={{ width: '413.333px' }}>
-          <div className="flex-shrink-0" style={{ fontSize: '24px' }}>✕</div>
+          <div className="flex-shrink-0">
+            <CloseCircle size={49} />
+          </div>
           <div className="flex flex-col gap-[5px] items-start p-[10px] h-[102px]">
             <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="font-bold text-[18px] text-black">Uso incorrecto</h4>
             <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-[14px] text-black leading-normal">
@@ -32,7 +37,9 @@ export default function DesignActivity() {
 
         {/* Key Insight */}
         <div className="flex flex-1 gap-[20px] items-center" style={{ minWidth: '100%', paddingLeft: '27px', paddingRight: '27px', paddingTop: '20px', paddingBottom: '20px' }}>
-          <div className="flex-shrink-0" style={{ fontSize: '20px' }}>🧩</div>
+          <div className="flex-shrink-0">
+            <PuzzleIcon size={48} />
+          </div>
           <div className="flex flex-col items-start">
             <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-[16px] text-[#88898c] leading-[1.5]">
               <span className="font-normal">La conversación debe desplazarse hacia donde tenemos mayor agencia: </span>
