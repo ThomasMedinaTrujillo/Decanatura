@@ -11,16 +11,38 @@ import PanoramaSection from '../Components/PanoramaSection';
 import ReflectionQuestions from '../Components/ReflectionQuestions';
 import CompetencyFramework from '../Components/CompetencyFramework';
 import Button from '../Components/Button';
+import Sidebar from '../Components/Sidebar';
 
 export default function Momento1() {
+  const sidebarItems = [
+    { label: 'Un recurso con varios puntos de partida', href: '#' },
+    { label: 'Panorama y tendencias actuales', href: '#' },
+    { label: 'Todo problema (no) tiene solución', href: '#' },
+    { label: '¿Permitimos el uso de IA o no?', href: '#' },
+    { label: 'Una mirada a tu práctica', href: '#', isIndented: true },
+    { label: 'Marcos de competencias y de integración de la IA en educación', href: '#', isIndented: true },
+    { label: '¿Cómo diseñar actividades evaluativas que sean válidas?', href: '#' },
+    { label: 'Qué es el AIAS, y que no es', href: '#' },
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
       <Navbar />
       
       {/* Moment 1 Banner */}
       <Momento1Banner />
       
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4  lg:px-8 flex gap-8 py-8">
+        
+        {/* Sidebar */}
+        <Sidebar 
+          title="Exploración" 
+          stepNumber={1} 
+          items={sidebarItems} 
+        />
+
+        {/* Main Content */}
+        <div className="flex-1 w-full ">
 
         {/* Section 1: Un recurso con varios puntos de partida */}
         <section className="mb-16">
@@ -73,7 +95,7 @@ export default function Momento1() {
         </section>
 
         {/* Emotional Card */}
-        <section className="mb-16">
+        <section className="mb-16 ">
           <ResourcePanel />
         </section>
 
@@ -101,16 +123,18 @@ export default function Momento1() {
             La pregunta que más se hace no es la más útil. Si estamos dispuestos a reconocer la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores, la pregunta no puede seguir siendo si permitir o prohibirla (Perkins et al., 2025).
           </p>
           <DesignActivity />
+                    <ResourcePanel />
+
         </section>
 
         {/* Section 6: How to design valid assessments */}
         <section className="mb-16">
           <SectionHeading 
-            title="¿Cómo diseñar actividades evaluativas que sean válidas?"
+            title="¿Cómo diseñar actividades evaluativas que sean válidass?"
             subtitle=""
           />
           <div className="mb-8">
-            <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-xl font-semibold text-gray-900 mb-2">Una mirada a tu práctica</h3>
+            <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serifs' }} className="text-xl font-semibold text-gray-900 mb-2">Una mirada a tu práctica</h3>
             <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-base text-gray-700 mb-8">
               Piensa en una evaluación que haces en tu curso. No con el objetivo de juzgar, sino para observar con nuevas preguntas.
             </p>
@@ -191,6 +215,7 @@ export default function Momento1() {
             Continuar al siguiente momento
           </Button>
         </section>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
     <div className="mb-8 ">
-      <h2 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-2xl  bg-[#865CF0] px-[10px] md:text-3xl font-bold text-white mb-0">
+      <h2 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-1xl  bg-[#865CF0] px-[10px] md:text-3xl font-bold text-white mb-0">
         {title}
       </h2>
       {subtitle && (

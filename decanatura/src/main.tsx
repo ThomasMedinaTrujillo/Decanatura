@@ -5,6 +5,7 @@ import Home from './Home.tsx'
 import Momento1 from './pages/Momento1.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Navbar from './Components/Navbar.tsx'
+import Momento2 from './Pages/Momento2.tsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -15,7 +16,11 @@ const router = createBrowserRouter([{
   }, {
     path: 'exploracion',
     element: <Momento1></Momento1>
-  }]
+  },{
+    path:'profundizacion',
+    element: <Momento2></Momento2>
+  }
+]
 }])
 
 createRoot(document.getElementById('root')!).render(

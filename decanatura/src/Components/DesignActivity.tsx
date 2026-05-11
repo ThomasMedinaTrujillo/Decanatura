@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, CloseCircle, PuzzleIcon } from './Icons';
+import ResourcePanel from './ResourcePanel';
 
 export default function DesignActivity() {
   return (
@@ -37,7 +38,7 @@ export default function DesignActivity() {
 
         {/* Key Insight */}
         <div className="flex flex-1 gap-[20px] items-center" style={{ minWidth: '100%', paddingLeft: '27px', paddingRight: '27px', paddingTop: '20px', paddingBottom: '20px' }}>
-          <div className="flex-shrink-0">
+          {/* <div className="flex-shrink-0">
             <PuzzleIcon size={48} />
           </div>
           <div className="flex flex-col items-start">
@@ -45,7 +46,8 @@ export default function DesignActivity() {
               <span className="font-normal">La conversación debe desplazarse hacia donde tenemos mayor agencia: </span>
               <span className="font-bold text-[#865cf0]">el diseño y propósito de nuestras actividades evaluativas.</span>
             </p>
-          </div>
+          </div> */}
+          <ResourcePanel icon={<PuzzleIcon size={48} />}></ResourcePanel>
         </div>
       </div>
     </div>

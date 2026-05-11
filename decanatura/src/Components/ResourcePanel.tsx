@@ -14,7 +14,7 @@ export default function ResourcePanel({
   className = ""
 }: ResourcePanelProps) {
   return (
-    <div className={`flex gap-[30px] items-center relative w-full w-max-[900px] mx-auto bg-white rounded-lg ${className}`}>
+    <div className={`flex gap-[30px] items-center justify-center relative mx-auto bg-white rounded-lg ${className}`}>
       <div className="bg-[#865cf0] flex items-center justify-center p-4 relative rounded-full shrink-0 w-[80px] h-[80px] shadow-sm">
         {icon || (
           <svg 
