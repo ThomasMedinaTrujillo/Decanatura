@@ -85,13 +85,13 @@ export default function CompetencyFramework() {
       ))}
       
       <div style={{ gridColumn: '3', padding: '10px', fontSize: '16px', color: 'black' }}>
-        <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 400, marginBottom: '0.5em' }}>
+        <p style={{ fontWeight: 400, marginBottom: '0.5em' }}>
           Estos marcos proporcionan una base conceptual y ética para comprender el nuevo rol docente y las competencias asociadas en la era de la inteligencia artificial.
         </p>
         <p>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 400 }}>Volviendo a la pregunta central de este apartado: </span>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 700 }}>¿cómo diseñar actividades evaluativas que sean válidas?</span>
-          <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 400 }}> Este recurso desarrolla en profundidad la escala AIAS, por su orientación práctica y énfasis en el rediseño estructural de las evaluaciones.</span>
+          <span style={{ fontWeight: 400 }}>Volviendo a la pregunta central de este apartado: </span>
+          <span style={{ fontWeight: 700 }}>¿cómo diseñar actividades evaluativas que sean válidas?</span>
+          <span style={{ fontWeight: 400 }}> Este recurso desarrolla en profundidad la escala AIAS, por su orientación práctica y énfasis en el rediseño estructural de las evaluaciones.</span>
         </p>
       </div>
     </div>

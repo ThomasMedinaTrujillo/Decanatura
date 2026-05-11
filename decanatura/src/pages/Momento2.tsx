@@ -1,9 +1,15 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import SectionHeading from '../Components/SectionHeading';
 import Sidebar from '../Components/Sidebar';
-import Button from '../Components/Button';
+import IntroQuestions from '../Components/IntroQuestions';
+import PermitAISection from '../Components/PermitAISection';
+import AIASLevelsIntro from '../Components/AIASLevelsIntro';
+import AIASLevelCards from '../Components/AIASLevelCards';
 import AIASLevel from '../Components/AIASLevel';
+import CTASection from '../Components/CTASection';
+import Momento1Banner from '../Components/Momento1Banner';
+
+import LimitationSection from '../Components/LimitationsSection';
 
 export default function Momento2() {
   const sidebarItems = [
@@ -16,21 +22,39 @@ export default function Momento2() {
     { label: 'Nivel 5: Exploración', href: '#' },
   ];
 
+  const levelCards = [
+    {
+      id: 'nivel-1',
+      title: 'Nivel 1: No IAG',
+      shortDescription: 'La actividad evaluativa es desarrollada sin la ayuda de la IA.'
+    },
+    {
+      id: 'nivel-2',
+      title: 'Nivel 2: Planificación',
+      shortDescription: 'La IA se usa exclusivamente para apoyar la fase inicial de una tarea.'
+    },
+    {
+      id: 'nivel-3',
+      title: 'Nivel 3: Colaboración',
+      shortDescription: 'La IA colabora aportando ideas y el estudiante evalúa sus contribuciones.'
+    },
+    {
+      id: 'nivel-4',
+      title: 'Nivel 4: Uso estratégico',
+      shortDescription: 'El estudiante puede usar la IA a lo largo de todo el proceso.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white relative">
       <Navbar />
       
       {/* Banner / Intro (can reuse Momento1Banner or make a new one) */}
-      <div className="bg-[#865CF0] text-white py-12 px-4 lg:px-8 mb-8">
-        <h1 className="text-3xl font-bold mb-4 font-['Plus_Jakarta_Sans']">Momento 2: Profundización</h1>
-        <p className="text-lg max-w-3xl font-['Plus_Jakarta_Sans']">
-          Este momento busca explicar en detalle lo que implica evaluar con o sin IAG, tomando como marco la escala AIAS. No es necesario recorrerlo en orden ni completo. Identifica qué pregunta te trajo hasta aquí y empieza por esa.
-        </p>
-      </div>
+      <Momento1Banner momento='Momento 2' title='Profundización'></Momento1Banner>
 
       <div className="w-full px-4 lg:px-8 flex gap-8 py-8">
         {/* Sidebar */}
-        <div className="hidden lg:block w-1/4">
+        <div className="hidden lg:block ">
             <Sidebar 
             title="Profundización" 
             stepNumber={2} 
@@ -39,38 +63,23 @@ export default function Momento2() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 w-full font-['Plus_Jakarta_Sans']">
+        <div className="flex-1 w-full ">
+          <IntroQuestions />
 
-          {/* Intro questions */}
-          <section className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 border rounded shadow-sm text-center font-bold text-gray-700">"No sé si debo permitir IAG en mi evaluación"</div>
-            <div className="p-4 border rounded shadow-sm text-center font-bold text-gray-700">"¿Qué implica cada nivel del AIAS?"</div>
-            <div className="p-4 border rounded shadow-sm text-center font-bold text-gray-700">"Quiero ver cómo lo hacen en mi disciplina"</div>
-          </section>
+          <PermitAISection />
 
-          {/* Permitir IA o no */}
-          <section className="mb-16">
-             <SectionHeading title="Permitir la IA o no en la evaluación" />
-             <p className="text-base text-gray-700 mb-4 bg-gray-50 p-6 rounded-lg">
-               Formule las siguientes preguntas para una evaluación de su curso: ¿Hay competencias en esta evaluación que el estudiante debe demostrar de forma completamente autónoma, sin apoyo externo de ningún tipo, porque son fundamento para lo que viene después, en el programa o en su vida profesional? ¿El uso de IAG invalidaría la evidencia del aprendizaje que quiero evaluar?
-             </p>
-          </section>
+          <AIASLevelsIntro />
 
-          <section className="mb-16">
-             <SectionHeading title="Qué implica cada nivel del AIAS" />
-             <p className="text-base text-gray-700 mb-8">
-               En este apartado encontrarás el sentido pedagógico, criterios claros de qué y cómo evaluar, y ejemplos concretos de cada nivel del AIAS. Puedes recorrerlo en orden o ir directamente al nivel que más se ajusta a lo que buscas.
-             </p>
+          <AIASLevelCards cards={levelCards} />
 
-             {/* Niveles del AIAS */}
-             <AIASLevel 
+          <AIASLevel 
                 title="Nivel 1: No IAG"
                 description="En este nivel, la actividad evaluativa es desarrollada en su totalidad sin la ayuda de la IA."
                 pedagogicalSense="Ubicar, y luego diseñar, una actividad en este nivel, tiene un objetivo pedagógico claro: evaluar habilidades esenciales e irreductibles, que el estudiante debe dominar y demostrar sin apoyo de la IAG."
                 whenMakeSense={[
                   "La evaluación mide una habilidad que es prerrequisito explícito o implícito para cursos posteriores.",
                   "La IAG puede simular por completo el resultado de aprendizaje, pero se requiere evidencia de que el estudiante puede hacerlo por sí mismo.",
-                  "La actividad evalúa una competencia crítica que será clave cuando el estudiante deba tomar decisiones críticas bajo su propia responsabilidad."
+                  "La actividad evalúa una competencia crítica que será clave cuando el estudiante deba tomar decisiones críticas bajo su propia responsabilidad. Estas decisiones tienen implicaciones legales, éticas o de seguridad."
                 ]}
                 whenNotMakeSense={[
                   "No se puede verificar que el estudiante usó IAG.",
@@ -80,31 +89,31 @@ export default function Momento2() {
                 howToEvaluateStrategies={[
                   { title: "Exámenes presenciales y supervisados", description: "Puede incluir restricciones de dispositivos electrónicos." },
                   { title: "Evaluaciones con software seguro", description: "Plataformas que limitan el acceso a internet u otros recursos externos durante la actividad." },
-                  { title: "Evaluaciones orales", description: "Respuesta inmediata sin preparación previa, donde se evalúa el pensamiento in situ. Como debates, resolución de problemas en tiempo real, resolución comentada en voz alta." },
-                  { title: "Reflexiones situadas", description: "Respuestas en las que el estudiante analiza y da sentido a una experiencia concreta vivida, conectando lo que hizo, pensó o decidió con el aprendizaje." },
+                  { title: "Evaluaciones orales", description: "Respuesta inmediata sin preparación previa, donde se evalúa el pensamiento en situ. Como debates, resolución de problemas en tiempo real, resolución comentada en voz alta, sustentación sin notas y con preguntas espontáneas del docente y compañeros." },
+                  { title: "Reflexiones situadas", description: "Respuestas en las que el estudiante analiza y da sentido a una experiencia concreta vivida (por ejemplo, en clase o en una actividad), conectando lo que hizo, pensó o decidió con el aprendizaje." },
                   { title: "Evaluaciones prácticas supervisadas", description: "Como prácticas de laboratorio, simulaciones clínicas, intervenciones supervisadas en práctica docente." }
                 ]}
                 implications={[
-                  { title: "Reflexión sobre los resultados", description: "El docente debe reflexionar sobre qué aspectos del aprendizaje son esenciales e indelegables, y por tanto justifican el uso de un Nivel 1." },
-                  { title: "Garantizar un entorno controlado", description: "El docente debe diseñar la actividad garantizando que la restricción de uso de la IAG es real y no sólo discursiva." },
+                  { title: "Reflexión sobre los resultados de aprendizaje", description: "El docente debe reflexionar sobre qué aspectos del aprendizaje son esenciales e indelegables, y por tanto justifican el uso de un Nivel 1, donde la autonomía y la ejecución directa son centrales." },
+                  { title: "Garantizar un entorno controlado", description: "El docente debe diseñar la actividad garantizando que la restricción de uso de la IAG es real y no sólo discursiva. Declarar que una actividad es nivel 1, pero permitir que sea trabajo en casa o actividad en clase sin supervisión es depender de la buena intención del estudiante o de herramientas de detección cuya fiabilidad está ampliamente cuestionada en la literatura (Perkins et al. 2025)." },
                   { title: "Comunicación a estudiantes", description: "Asimismo, el docente debe comunicar claramente al estudiante la razón por la que la actividad evaluativa es sin IAG, e involucrarlo en la discusión." }
                 ]}
                 examples={[
-                  "En un curso de licenciatura, los estudiantes discuten en grupos diferentes estrategias didácticas para un caso específico y luego escriben una reflexión situada sobre su experiencia: qué propusieron, qué aprendieron de las ideas de otros y cómo ajustarán su enfoque basándose en la interacción vivida.",
-                  "En un curso de Microeconomía, los estudiantes participan en un debate en clase donde cada grupo formula preguntas analíticas y situadas a partir de lo que exponen otros grupos, y los interrogados deben responder en el momento. Luego escriben una reflexión sobre su participación."
+                  "En un curso de licenciatura, los estudiantes discuten en grupos diferentes estrategias didácticas para un caso específico y luego escriben una reflexión situada sobre su experiencia: qué propusieron, qué aprendieron de las ideas de otros y cómo ajustarán su enfoque basándose en la interacción vivida y en los conceptos vistos en clase.",
+                  "En un curso de Microeconomía, los estudiantes participan en un debate en clase donde cada grupo formula preguntas analíticas y situadas a partir de lo que exponen otros grupos, y los grupos interrogados deben responder en el momento, sin preparación previa. Luego escriben una reflexión sobre su participación, cómo sus ideas cambiaron al escuchar a otros y qué aprendieron de la dinámica. Esta interacción en tiempo real asegura que la evidencia del aprendizaje sea auténtica y no pueda generarse con IA."
                 ]}
              />
 
              <AIASLevel 
                 title="Nivel 2: IAG para planificación e ideación"
-                description="En este nivel, el estudiante puede utilizar la IAG exclusivamente para apoyar la fase inicial de una tarea o proyecto, tales como la exploración de ideas, esquematización, e investigación inicial. El producto final no debe tener contenido generado directamente por la IA."
+                description="En este nivel, el estudiante puede utilizar la IAG exclusivamente para apoyar la fase inicial de una tarea o proyecto, tales como la exploración de ideas, esquematización, e investigación inicial. El producto final no debe tener contenido generado directamente por la IA. Siendo así, lo que realmente debe evaluarse es la capacidad del estudiante de descartar, refinar, criticar o desarrollar de forma independiente eso que la IAG le esté proponiendo."
                 pedagogicalSense="Utilizar la IAG como apoyo inicial puede enriquecer el aprendizaje, especialmente en tareas donde no importa tanto el origen de las ideas, sino cómo el estudiante las analiza y desarrolla por su cuenta."
                 whenMakeSense={[
                   "La exploración de nuevas ideas y perspectivas usando IAG amplía la mirada del estudiante y puede potenciar el proceso de aprendizaje."
                 ]}
                 whenNotMakeSense={[
                   "Se evalúan habilidades fundamentales o básicas que deben demostrarse sin herramientas externas.",
-                  "La ideación, la argumentación desde cero, o la exploración de soluciones, es una competencia esencial que el curso busca desarrollar de forma autónoma (ej: composición musical introductoria, pensamiento lógico)."
+                  "La ideación, la argumentación desde cero, o la exploración de soluciones, es una competencia esencial que el curso busca desarrollar de forma autónoma. Este puede ser el caso en cursos introductorios de composición musical, pensamiento matemático y lógico, diagnóstico clínico, innovación, o escritura creativa."
                 ]}
                 whatToEvaluate={[
                   "Capacidad de formular prompts con intención y criterio claro.",
@@ -113,17 +122,16 @@ export default function Momento2() {
                 ]}
                 howToEvaluateDescription="La evaluación se centra en el producto final, y opcionalmente la evidencia de interacción con IA."
                 howToEvaluateStrategies={[
-                  { title: "Presentación integrada en el producto final", description: "que evidencie el proceso de interacción con IAG. Por ejemplo, se muestra una lista de ideas generadas y el por qué se escogió una." },
-                  { title: "Comentario reflexivo", description: "sobre cómo la IA apoyó en la ideación y planificación de la tarea." },
-                  { title: "Rúbrica o lista de chequeo", description: "para evaluar el producto final. El docente puede usar su rúbrica sin cambios o hacerle un ajuste que considere este criterio." }
+                  { title: "Presentación integrada en el producto final", description: "que evidencie el proceso de interacción con IAG. Por ejemplo, se muestra una lista de ideas generadas y el por qué se escogió una en particular." },
+                  { title: "Comentario reflexivo", description: "sobre cómo la IA apoyó en la ideación y planificación de la tarea." }
                 ]}
                 implications={[
-                  { title: "Reflexión sobre los resultados", description: "Preguntarse si el uso de la IAG potenciaría o dificultaría alcanzar el resultado de aprendizaje específico." },
-                  { title: "Ajustar la consigna", description: "Especificar qué usos están permitidos y en qué momentos se puede usar la IAG." },
-                  { title: "Decidir si se ajustan evidencias", description: "Decidir si es pertinente pedir evidencias del proceso de interacción con IAG." }
+                  { title: "Reflexión sobre los resultados de aprendizaje", description: "El docente debe preguntarse si el uso de la IAG como apoyo en la planificación y exploración de ideas podría potenciar o dificultar que el estudiante alcancé el resultado de aprendizaje específico." },
+                  { title: "Ajustar la consigna", description: "El docente debe especificar qué usos de IAG están permitidos (deben ser específicos según la tarea) y en qué momentos se puede usar la IAG (en la fase inicial, en el borrador, en el producto final, etc)." },
+                  { title: "Decidir si se ajustan las evidencias", description: "El docente decide si es pertinente ajustar las evidencias para que sea visible el proceso de interacción con IAG (ejemplos en Cómo evaluar)." }
                 ]}
                 examples={[
-                  "En un curso de Diseño de Medios Interactivos, los estudiantes desarrollan una pieza multimedia. En la fase inicial, usan IAG para explorar ideas de concepto. Lo evaluado no es esa exploración, sino el desarrollo construido: el storyboard, decisiones de visuales y pieza final."
+                  "En un curso de Diseño de Medios Interactivos, los estudiantes desarrollan una pieza multimedia a lo largo del semestre. En la fase inicial, pueden usar IAG para explorar ideas de concepto, posibles estructuras narrativas y propuestas de público objetivo. Lo que se evalúa no es esa exploración sino el desarrollo que el estudiante construye a partir de ella: el storyboard, las decisiones de diseño visual y la pieza final."
                 ]}
              />
 
@@ -222,14 +230,9 @@ export default function Momento2() {
                 ]}
              />
 
-          </section>
+             <LimitationSection />
 
-          {/* CTA Button */}
-          <section className="mb-16 text-center">
-            <Button variant="primary" size="lg">
-              Continuar al siguiente momento
-            </Button>
-          </section>
+          <CTASection />
 
         </div>
       </div>

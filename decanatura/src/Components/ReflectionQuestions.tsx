@@ -6,7 +6,7 @@ interface QuestionBoxProps {
 
 const QuestionBox = ({ question }: QuestionBoxProps) => (
   <div className="border-l-[3px]" style={{ borderLeftColor: '#865cf0', paddingLeft: '15px', paddingTop: '10px', paddingBottom: '10px', paddingRight: '15px', height: '102px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-[17px] font-normal text-black leading-normal">
+    <p className="text-[17px] font-normal text-black leading-normal">
       {question}
     </p>
   </div>

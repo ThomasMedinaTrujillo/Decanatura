@@ -17,7 +17,7 @@ export default function Button({
   target,
   className = '',
 }: ButtonProps) {
-  const baseStyles = 'font-["Plus_Jakarta_Sans:Regular",sans-serif] font-normal leading-[normal] relative shrink-0 text-center text-white whitespace-nowrap';
+  const baseStyles = 'font-normal leading-[normal] relative shrink-0 text-center text-white whitespace-nowrap';
 
   const variantStyles = {
     primary: 'bg-black px-[15px] py-[10px]',

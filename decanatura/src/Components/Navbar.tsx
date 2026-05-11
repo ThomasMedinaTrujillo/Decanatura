@@ -59,7 +59,7 @@ function NavItem({ label, isActive = false , onclick}: { label: string; isActive
       onClick={onclick}
     >
       <p
-        className={`font-['Plus_Jakarta_Sans:Regular',sans-serif] font-${isActive ? 'bold' : 'normal'} leading-[normal] relative shrink-0 text-[16px] text-center text-white w-[42px]`}
+        className={`font-${isActive ? 'bold' : 'normal'} leading-[normal] relative shrink-0 text-[16px] text-center text-white w-[42px]`}
       >
         {label}
       </p>

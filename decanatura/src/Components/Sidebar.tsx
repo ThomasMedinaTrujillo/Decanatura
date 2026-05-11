@@ -36,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, stepNumber, items }) => {
       <div className="flex justify-between items-start w-full border-b border-[#cecfd4] pb-4 mb-4">
         {/* Header section */}
         <div className="flex flex-col items-start">
-          <ol className="text-secondary text-2xl font-bold list-decimal list-inside" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} start={stepNumber}>
+          <ol className="text-secondary text-2xl font-bold list-decimal list-inside" start={stepNumber}>
             <li>{title}</li>
           </ol>
         </div>
@@ -54,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, stepNumber, items }) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <p className="text-gray-500 font-bold text-lg" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+        <p className="text-gray-500 font-bold text-lg">
           En esta página
         </p>
 
@@ -64,8 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, stepNumber, items }) => {
               <div className="bg-gray-400 w-1 h-4 rounded-full mt-1 flex-shrink-0" />
               <a 
                 href={item.href} 
-                className={`text-gray-500 hover:text-secondary ${item.isIndented ? 'text-sm font-normal' : 'text-sm font-bold'}`} 
-                style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}
+                className={`text-gray-500 hover:text-secondary ${item.isIndented ? 'text-sm font-normal' : 'text-sm font-bold'}`}
               >
                 {item.label}
               </a>

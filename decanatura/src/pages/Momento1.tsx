@@ -30,7 +30,7 @@ export default function Momento1() {
       <Navbar />
       
       {/* Moment 1 Banner */}
-      <Momento1Banner />
+      <Momento1Banner momento='Momento 1' title='Exploración'/>
       
       <div className="w-full px-4  lg:px-8 flex gap-8 py-8">
         
@@ -46,7 +46,8 @@ export default function Momento1() {
 
         {/* Section 1: Un recurso con varios puntos de partida */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Un recurso con varios puntos de partida"
             subtitle=""
           />
@@ -58,7 +59,8 @@ export default function Momento1() {
 
         {/* Section 2: Panorama y tendencias actuales */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Panorama y tendencias actuales"
             subtitle=""
           />
@@ -67,7 +69,8 @@ export default function Momento1() {
 
         {/* Section 3: Survey Results */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Lo que revela la encuesta regional más grande sobre IA en educación superior"
             subtitle=""
           />
@@ -89,7 +92,7 @@ export default function Momento1() {
               description="de docentes reconoce limitaciones propias en comprensión y juicio crítico sobre IA"
             />
           </div>
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-gray-600">
             Con cerca de 30.000 respuestas en 29 instituciones de América Latina, el Digital Education Council (2026).
           </p>
         </section>
@@ -101,7 +104,8 @@ export default function Momento1() {
 
         {/* Section 4: Wicked Problems */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Todo problema (no) tiene solución"
             subtitle=""
           />
@@ -115,11 +119,12 @@ export default function Momento1() {
 
         {/* Section 5: Allow AI or not */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="¿Permitimos el uso de IA o no?"
             subtitle=""
           />
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="mb-8 text-base">
+          <p className="mb-8 text-base">
             La pregunta que más se hace no es la más útil. Si estamos dispuestos a reconocer la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores, la pregunta no puede seguir siendo si permitir o prohibirla (Perkins et al., 2025).
           </p>
           <DesignActivity />
@@ -129,25 +134,27 @@ export default function Momento1() {
 
         {/* Section 6: How to design valid assessments */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="¿Cómo diseñar actividades evaluativas que sean válidass?"
             subtitle=""
           />
           <div className="mb-8">
-            <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serifs' }} className="text-xl font-semibold text-gray-900 mb-2">Una mirada a tu práctica</h3>
-            <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-base text-gray-700 mb-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Una mirada a tu práctica</h3>
+            <p className="text-base text-gray-700 mb-8">
               Piensa en una evaluación que haces en tu curso. No con el objetivo de juzgar, sino para observar con nuevas preguntas.
             </p>
           </div>
           <ReflectionQuestions />
-          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }} className="text-sm text-gray-600 mt-8">
+          <p className="text-sm text-gray-600 mt-8">
             No es necesario tener respuestas completas por ahora, volveremos a estas en los siguientes momentos del recurso, profundización y transformación.
           </p>
         </section>
 
         {/* Section 7: Competency Frameworks */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Marcos de competencias y de integración de la IA en educación"
             subtitle="Cinco marcos que lideran la literatura actual"
           />
@@ -156,7 +163,8 @@ export default function Momento1() {
 
         {/* Section 8: AIAS Definition */}
         <section className="mb-16">
-          <SectionHeading 
+          <SectionHeading
+        bgcolor='#865CF0' 
             title="Qué es el AIAS, y que no es"
             subtitle=""
           />
@@ -172,10 +180,10 @@ export default function Momento1() {
             <div style={{ flex: 1, border: '1px solid #cecfd4', padding: '10px' }}>
               <div style={{ padding: '10px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 700, lineHeight: 'normal', color: '#865cf0', fontSize: '20px' }}>
+                  <p style={{ fontWeight: 700, lineHeight: 'normal', color: '#865cf0', fontSize: '20px' }}>
                     El AIAS es
                   </p>
-                  <ul style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 400, lineHeight: 0, listStyleType: 'disc', fontSize: '14px', color: 'black' }}>
+                  <ul style={{ fontWeight: 400, lineHeight: 0, listStyleType: 'disc', fontSize: '14px', color: 'black' }}>
                     <li style={{ marginBottom: 0, marginLeft: '21px' }}>
                       <span style={{ lineHeight: 'normal' }}>Un marco flexible para el diseño evaluativo.</span>
                     </li>
@@ -192,10 +200,10 @@ export default function Momento1() {
             <div style={{ flex: 1, border: '1px solid #cecfd4', padding: '10px' }}>
               <div style={{ padding: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 'fit-content' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', justifyContent: 'center' }}>
-                  <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 700, lineHeight: 'normal', color: '#865cf0', fontSize: '20px' }}>
+                  <p style={{ fontWeight: 700, lineHeight: 'normal', color: '#865cf0', fontSize: '20px' }}>
                     El AIAS no es
                   </p>
-                  <ul style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 400, lineHeight: 0, listStyleType: 'disc', fontSize: '14px', color: 'black' }}>
+                  <ul style={{ fontWeight: 400, lineHeight: 0, listStyleType: 'disc', fontSize: '14px', color: 'black' }}>
                     <li style={{ marginBottom: 0, marginLeft: '21px' }}>
                       <span style={{ lineHeight: 'normal' }}>Una solución universal aplicable sin adaptación.</span>
                     </li>

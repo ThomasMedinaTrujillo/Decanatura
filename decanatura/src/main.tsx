@@ -5,7 +5,7 @@ import Home from './Home.tsx'
 import Momento1 from './pages/Momento1.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Navbar from './Components/Navbar.tsx'
-import Momento2 from './Pages/Momento2.tsx'
+import Momento2 from './pages/Momento2.tsx'
 
 const router = createBrowserRouter([{
   path: '/',

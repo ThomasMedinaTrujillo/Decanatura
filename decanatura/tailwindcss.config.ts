@@ -1,5 +1,9 @@
 export default {
-  content: ["./src/**/*.{html,js}"],
-  theme: { extend: {} },
+  content: ["./src/**/*.{html,js,ts,tsx}"],
+  theme: { 
+    fontFamily: {
+      sans: ['Plus Jakarta Sans', 'sans-serif'],
+    },
+  },
   plugins: [],
 }

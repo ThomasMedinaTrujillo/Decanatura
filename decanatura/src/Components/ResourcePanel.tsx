@@ -28,7 +28,7 @@ export default function ResourcePanel({
         )}
       </div>
       <div className="flex flex-col items-start relative shrink-0">
-        <p className="font-['Plus_Jakarta_Sans',sans-serif] leading-relaxed relative shrink-0 text-[#88898c] sm:text-[16px] text-sm md:text-lg w-[684px]">
+        <p className="leading-relaxed relative shrink-0 text-[#88898c] sm:text-[16px] text-sm md:text-lg w-[684px]">
           <span className="font-normal">{normalText}</span>
           {highlightedText && (
              <span className="font-bold text-[#865cf0]"> {highlightedText}</span>

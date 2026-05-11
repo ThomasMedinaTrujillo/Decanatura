@@ -4,22 +4,22 @@ export default function ResourceInfo() {
   return (
     <div className="flex flex-col md:flex-row gap-[95px] items-start px-[80px] py-[80px] max-w-7xl" data-node-id="7:625" data-name="Container">
       <div className="flex flex-col gap-[13px] items-start w-full md:w-[589px]" data-node-id="7:626" data-name="Text">
-        <p className="capitalize font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[#5454e9] text-[20px] w-full" data-node-id="7:627">
+        <p className="capitalize font-bold leading-[normal] relative shrink-0 text-[#5454e9] text-[20px] w-full" data-node-id="7:627">
           Sobre este recurso
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[42px] text-black w-full" data-node-id="7:628">
+        <p className="font-bold leading-[normal] relative shrink-0 text-[42px] text-black w-full" data-node-id="7:628">
           Un marco, no una solución
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[18px] text-black w-full" data-node-id="7:629">
+        <p className="font-normal leading-[1.5] relative shrink-0 text-[18px] text-black w-full" data-node-id="7:629">
           Este recurso es una iniciativa de la Decanatura de Innovación y Fortalecimiento del PEI de la Universidad Icesi, desarrollado en coherencia con los Lineamientos para el uso responsable de herramientas de Inteligencia Artificial Generativa y el Manifiesto sobre Inteligencia Artificial y Educación de la Universidad Icesi (2024).
         </p>
       </div>
 
       <div className="bg-[#e4eb60] flex flex-col gap-[24px] items-start justify-center px-[30px] py-[15px] w-full md:w-[618px]" data-node-id="7:630" data-name="Card text">
-        <p className="capitalize font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[normal] relative shrink-0 text-[#865cf0] text-[22px] w-full" data-node-id="7:631">
+        <p className="capitalize font-bold leading-[normal] relative shrink-0 text-[#865cf0] text-[22px] w-full" data-node-id="7:631">
           Contexto institucional
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[14px] text-black w-full" data-node-id="7:632">
+        <p className="font-normal leading-[1.5] relative shrink-0 text-[14px] text-black w-full" data-node-id="7:632">
           La IA generativa no llegó con instrucciones de uso para la evaluación. Este recurso tampoco las trae. Lo que sí ofrece son orientaciones pedagógicas, estrategias y ejemplos concretos para que cada docente tome decisiones más fundamentadas desde su contexto, su disciplina y sus estudiantes.
         </p>
 
@@ -65,10 +65,10 @@ function ResourceLink({ title, subtitle, href, target }: ResourceLinkProps) {
         </div>
       </div>
       <div className="content-stretch flex flex-col gap-[5px] items-start justify-center leading-[1.5] relative shrink-0 text-left text-white w-[302px]">
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold relative shrink-0 text-[14px] w-[414px]">
+        <p className="font-bold relative shrink-0 text-[14px] w-[414px]">
           {title}
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[12px] w-[414px]">
+        <p className="font-normal relative shrink-0 text-[12px] w-[414px]">
           {subtitle}
         </p>
       </div>

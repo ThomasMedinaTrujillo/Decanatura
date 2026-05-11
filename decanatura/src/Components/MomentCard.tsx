@@ -32,7 +32,7 @@ export default function MomentCard({
 
       {/* Header with moment number */}
       <div className="flex flex-col gap-[5px] w-full">
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.5] text-[20px] w-fit" style={{ color: titleColor }}>
+        <p className="font-bold leading-[1.5] text-[20px] w-fit" style={{ color: titleColor }}>
           Momento {momentNumber}
         </p>
 
@@ -43,10 +43,10 @@ export default function MomentCard({
 
       {/* Content */}
       <div className="flex flex-col gap-[13px] w-full flex-grow">
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.5] text-[24px] text-black">
+        <p className="font-bold leading-[1.5] text-[24px] text-black">
           {title}
         </p>
-        <div className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal text-[#88898c] text-[16px]">
+        <div className="font-normal text-[#88898c] text-[16px]">
           <p className="leading-[1.5] mb-2">{description}</p>
           <ul className="list-disc list-inside space-y-1">
             {items.map((item, index) => (
@@ -65,7 +65,7 @@ export default function MomentCard({
 
       {/* CTA Button */}
       <button className="bg-black px-[15px] py-[10px] w-fit self-start">
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal text-[20px] text-center text-white whitespace-nowrap">
+        <p className="font-normal text-[20px] text-center text-white whitespace-nowrap">
           Conoce más
         </p>
       </button>

@@ -16,26 +16,26 @@ export default function Hero() {
 
       {/* Tag */}
       <div className="bg-black px-[80px] pr-[19px] py-[5px] mb-8" data-node-id="7:620">
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal text-[20px] text-center text-white whitespace-nowrap">
+        <p className="font-normal text-[20px] text-center text-white whitespace-nowrap">
           <span>{`Un recurso hecho para `}</span>
-          <span className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold">{`docentes`}</span>
+          <span className="font-bold">{`docentes`}</span>
         </p>
       </div>
 
       {/* Title */}
       <div className="pl-[80px] mb-6" data-node-id="7:616">
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[96px] text-white leading-[1.1]">
+        <p className="font-bold text-[96px] text-white leading-[1.1]">
           Evaluar en tiempos
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[96px] text-[#e4eb60] leading-[1.1]">
+        <p className="font-bold text-[96px] text-[#e4eb60] leading-[1.1]">
           de IAG
         </p>
       </div>
 
       {/* Subtitle */}
-      <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal text-[20px] text-[rgba(255,255,255,0.8)] w-[712px] leading-[1.5] pl-[80px] mb-8">
+      <p className="font-normal text-[20px] text-[rgba(255,255,255,0.8)] w-[712px] leading-[1.5] pl-[80px] mb-8">
         <span>{`Un marco de trabajo para tomar decisiones fundamentadas sobre el rol de la `}</span>
-        <span className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold">inteligencia artificial generativa (IAG)</span>
+        <span className="font-bold">inteligencia artificial generativa (IAG)</span>
         <span>{` en el diseño evaluativo.`}</span>
       </p>
 

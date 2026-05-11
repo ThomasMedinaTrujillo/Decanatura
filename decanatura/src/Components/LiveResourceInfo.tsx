@@ -10,10 +10,10 @@ export default function LiveResourceInfo() {
           </div>
         </div>
         <div className="flex flex-col gap-[2px] items-start leading-[1.5] flex-grow" data-node-id="7:646" data-name="text">
-          <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold text-[#4cb979] text-[20px]" data-node-id="7:647">
+          <p className="font-bold text-[#4cb979] text-[20px]" data-node-id="7:647">
             Este recurso es vivo
           </p>
-          <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal text-[#88898c] text-[16px]" data-node-id="7:648">
+          <p className="font-normal text-[#88898c] text-[16px]" data-node-id="7:648">
             La IA generativa seguirá cambiando, y con ella las preguntas que los docentes necesitan hacerse. Está diseñado para ser consultado cuando lo necesites, no solo leído una vez de principio a fin. Usa el índice lateral dentro de cada momento para navegar directamente a lo que buscas.
           </p>
         </div>
