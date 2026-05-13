@@ -1,5 +1,5 @@
 import './App.css'
-import Momento1 from '../src/Pages/Momento1'
+import Momento1 from './pages/Momento1.tsx'
 
 
 function App() {
