@@ -2,6 +2,18 @@ import { useState } from "react"
 
 export const Prompt = ({ text, prompt }: {text: string, prompt: string}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [copied, setCopied] = useState<boolean>(false);
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(prompt);
+            setCopied(true);
+            window.setTimeout(() => setCopied(false), 2000);
+        } catch (error) {
+            console.error('Failed to copy prompt', error);
+        }
+    };
+
     return (
         <div className="border border-[#d7d8dc] bg-white">
         <button
@@ -21,6 +33,15 @@ export const Prompt = ({ text, prompt }: {text: string, prompt: string}) => {
 
         {isOpen && (
             <div className="border-t border-[#d7d8dc] px-5 py-4">
+                <div className="mb-4 flex justify-end">
+                    <button
+                        type="button"
+                        onClick={handleCopy}
+                        className="bg-black px-4 py-2 text-sm font-semibold text-white cursor-pointer"
+                    >
+                        {copied ? 'Copiado' : 'Copiar prompt'}
+                    </button>
+                </div>
                 <pre className="whitespace-pre-wrap font-['Plus_Jakarta_Sans:Regular',sans-serif] text-[14px] leading-6 text-black">
                     {prompt}
                 </pre>
