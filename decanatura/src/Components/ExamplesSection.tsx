@@ -1,5 +1,5 @@
 import React from 'react';
-import puzzleIcon from '../assets/puzzleicon.svg';
+import { PuzzleIcon } from './Icons';
 
 interface ExamplesSectionProps {
   title: string;
@@ -17,7 +17,7 @@ export default function ExamplesSection({ title, examples }: ExamplesSectionProp
             <div className="flex gap-[20px] items-center px-[27px] py-[20px] w-full">
               <div className="border-2 border-[#5454e9] border-solid flex items-center p-[12.2px] rounded-[67px] shrink-0">
                 <div className="relative shrink-0 w-[24px] h-[24px]">
-                  <img src={puzzleIcon} alt="puzzle" className="absolute block inset-0 max-w-none w-full h-full" />
+                  <PuzzleIcon size={24} className="text-[#5454e9]" />
                 </div>
               </div>
               <div className="flex flex-[1_0_0] flex-col items-start min-w-px">

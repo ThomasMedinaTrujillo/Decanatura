@@ -1,15 +1,21 @@
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useNavigate, useLocation } from "react-router";
 import { MenuThree } from "./Icons";
 import { useState } from "react";
 
 const imgIcesiLogo = new URL('../assets/ad38d66a97762cd0ce5489eebd8376d08ea3c8be.png', import.meta.url).href;
 
-
-
 export default function Navbar() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Helper to determine active route
+  const getActive = (route: string) => {
+    if (route === "/" && location.pathname === "/") return true;
+    if (route !== "/" && location.pathname.toLowerCase().includes(route.toLowerCase().replace("/", ""))) return true;
+    return false;
+  };
 
   return (
         <>  
@@ -19,10 +25,13 @@ export default function Navbar() {
       </div>
       <div className="flex flex-row items-center self-stretch">
         <div className="hidden md:flex content-stretch h-full items-center px-[20px] relative shrink-0" data-node-id="I7:650;1:148" data-name="Nav items">
-          <NavItem label="Inicio" isActive onclick={()=> navigate("/")} />
-          <NavItem label="Exploración"onclick={()=> navigate("/Exploracion")} />
-          <NavItem label="Profundización" onclick={()=> navigate("/Profundizacion")}/>
-          <NavItem label="Transformación" onclick={()=> navigate("/Transformacion")}/>
+          <NavItem label="Inicio" isActive={getActive("/")} activeColor="black" onclick={()=> navigate("/")} />
+          <NavItem label="Exploración" isActive={getActive("/Exploracion")}
+            activeColor="#E4EB60" onclick={()=> navigate("/Exploracion")} />
+          <NavItem label="Profundización" isActive={getActive("/Profundizacion")}
+            activeColor="#E4EB60" onclick={()=> navigate("/Profundizacion")}/>
+          <NavItem label="Transformación" isActive={getActive("/Transformacion")}
+            activeColor="#E4EB60" onclick={()=> navigate("/Transformacion")}/>
         </div>
       </div>
       <button 
@@ -37,10 +46,13 @@ export default function Navbar() {
     {/* Mobile Menu */}
     {mobileMenuOpen && (
       <div className="fixed top-[102.8px] left-0 right-0 bg-[#5454e9] flex flex-col md:hidden z-20 shadow-lg">
-        <NavItem label="Inicio" isActive onclick={()=> { navigate("/"); setMobileMenuOpen(false); }} />
-        <NavItem label="Exploración" onclick={()=> { navigate("/Exploracion"); setMobileMenuOpen(false); }} />
-        <NavItem label="Profundización" onclick={()=> { navigate("/Profundizacion"); setMobileMenuOpen(false); }} />
-        <NavItem label="Transformación" onclick={()=> { navigate("/Transformacion"); setMobileMenuOpen(false); }} />
+        <NavItem label="Inicio" isActive={getActive("/")} activeColor="black" onclick={()=> { navigate("/"); setMobileMenuOpen(false); }} />
+        <NavItem label="Exploración" isActive={getActive("/Exploracion")}
+          activeColor="#E4EB60" onclick={()=> { navigate("/Exploracion"); setMobileMenuOpen(false); }} />
+        <NavItem label="Profundización" isActive={getActive("/Profundizacion")}
+          activeColor="#E4EB60" onclick={()=> { navigate("/Profundizacion"); setMobileMenuOpen(false); }} />
+        <NavItem label="Transformación" isActive={getActive("/Transformacion")}
+          activeColor="#E4EB60" onclick={()=> { navigate("/Transformacion"); setMobileMenuOpen(false); }} />
       </div>
     )}
     
@@ -49,17 +61,17 @@ export default function Navbar() {
   );
 }
 
-function NavItem({ label, isActive = false , onclick}: { label: string; isActive?: boolean; onclick?: () => void }) {
+function NavItem({ label, isActive = false, onclick, activeColor = undefined }: { label: string; isActive?: boolean; onclick?: () => void; activeColor?: string }) {
   return (
     <div
-      className={`content-stretch flex h-full items-center justify-center min-w-[180px] relative shrink-0 ${
-        isActive ? 'bg-black' : ''
-      } h-[102.8px] ${isActive ? 'py-[10px]' : ''}`}
+      className={`content-stretch flex h-full items-center justify-center min-w-[180px] relative shrink-0 h-[102.8px] ${isActive ? (activeColor === "black" ? "bg-black" : "") : ""}`}
+      style={isActive && activeColor !== "black" ? { background: activeColor } : {}}
       data-node-id={`nav-item-${label}`}
       onClick={onclick}
     >
       <p
-        className={`font-${isActive ? 'bold' : 'normal'} leading-[normal] relative shrink-0 text-[16px] text-center text-white w-[42px]`}
+        className={`font-${isActive ? 'bold' : 'normal'} leading-[normal] relative shrink-0 text-[16px] text-center text-white px-2 w-full truncate`}
+        style={{ maxWidth: '140px' }}
       >
         {label}
       </p>

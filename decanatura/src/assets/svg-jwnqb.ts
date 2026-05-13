@@ -1,0 +1,14 @@
+export const imgUnion = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine7 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgIcon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine4 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine5 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine8 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine9 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine10 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine11 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgLine12 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgIcon1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgEllipse1 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgVector = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+export const imgMenuThree = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";

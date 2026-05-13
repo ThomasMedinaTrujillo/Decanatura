@@ -2,10 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './Home.tsx'
-import Momento1 from './pages/Momento1.tsx'
+import Momento1 from './Pages/Momento1.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Navbar from './Components/Navbar.tsx'
-import Momento2 from './pages/Momento2.tsx'
+import Momento2 from './Pages/Momento2.tsx'
+import Momento3 from './Pages/Momento3.tsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -19,6 +20,9 @@ const router = createBrowserRouter([{
   },{
     path:'profundizacion',
     element: <Momento2></Momento2>
+  },{
+    path: "transformacion",
+    element: <Momento3></Momento3>
   }
 ]
 }])

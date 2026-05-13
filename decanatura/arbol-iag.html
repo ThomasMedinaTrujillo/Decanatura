@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #EDEDF9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 48px 24px 64px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wrap { width: 100%; max-width: 860px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* HEADER */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hd {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #5454E9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 20px 20px 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 44px 52px 40px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hd-eyebrow {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 11px; font-weight: 700; letter-spacing: .13em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: #E4EB60; margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hd h1 { font-size: 30px; font-weight: 800; line-height: 1.2; max-width: 600px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hd p<span class="Apple-converted-space">  </span>{ margin-top: 12px; font-size: 15px; line-height: 1.65; opacity: .82; max-width: 580px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dots<span class="Apple-converted-space">  </span>{ display: flex; gap: 8px; margin-top: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot <span class="Apple-converted-space">  </span>{ width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.25); transition: background .35s; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot.active { background: #E4EB60; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.dot.done <span class="Apple-converted-space">  </span>{ background: #fff; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* BODY */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bd {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0 0 20px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 44px 52px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1.5px solid #d9d9f5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-top: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 280px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* HISTORY */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hist {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #F4F4FE;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-left: 4px solid #5454E9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>animation: fadeIn .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hist-q { font-size: 13.5px; color: #555; flex: 1; line-height: 1.45; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.badge<span class="Apple-converted-space">  </span>{ font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.badge-si <span class="Apple-converted-space">  </span>{ background: #5454E9; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.badge-no <span class="Apple-converted-space">  </span>{ background: #9494B8; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.badge-parc { background: #E4EB60; color: #1a1a2e; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* NOTE */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.note {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #FAFAE2; border: 1.5px solid #E4EB60;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px; padding: 15px 20px; margin-bottom: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px; color: #444; line-height: 1.65;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>animation: slideUp .4s ease;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* QUESTION */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-card { animation: slideUp .4s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-num<span class="Apple-converted-space">  </span>{ font-size: 11.5px; font-weight: 700; color: #5454E9; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-text { font-size: 21px; font-weight: 700; color: #0f0f2d; line-height: 1.4; margin-bottom: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btns <span class="Apple-converted-space">  </span>{ display: flex; gap: 12px; flex-wrap: wrap; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 34px; border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 15px; font-weight: 700; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #5454E9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: transform .18s, background .18s, box-shadow .18s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(84,84,233,.18); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-si <span class="Apple-converted-space">  </span>{ background: #5454E9; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-si:hover { background: #3a3abf; border-color: #3a3abf; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-no <span class="Apple-converted-space">  </span>{ background: #fff; color: #5454E9; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-no:hover { background: #F0F0FF; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-parc { background: #E4EB60; color: #0f0f2d; border-color: #E4EB60; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-parc:hover { background: #d5dc4a; border-color: #d5dc4a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* RESULT */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-card { animation: slideUp .45s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-pill {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: inline-block; font-size: 11.5px; font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: .1em; text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 6px 16px; border-radius: 20px; margin-bottom: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-yellow { background: #E4EB60; color: #0f0f2d; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-blue <span class="Apple-converted-space">  </span>{ background: #5454E9; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill-action { background: #0f0f2d; color: #fff; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-title { font-size: 24px; font-weight: 800; color: #0f0f2d; line-height: 1.3; margin-bottom: 14px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-body<span class="Apple-converted-space">  </span>{ font-size: 15.5px; color: #444; line-height: 1.75; margin-bottom: 26px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* LEVELS PANEL */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.levels-intro {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; font-weight: 700; color: #5454E9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; letter-spacing: .09em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-card {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 16px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1.5px solid #e0e0f5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #0f0f2d;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: border-color .2s, background .2s, transform .18s, box-shadow .18s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-color: #5454E9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #F4F4FE;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transform: translateX(4px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 16px rgba(84,84,233,.10);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-num {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #5454E9; color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 36px; height: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-num.n1 { background: #9494B8; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-text { font-size: 14.5px; font-weight: 500; line-height: 1.4; flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-arrow { color: #5454E9; font-size: 18px; flex-shrink: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* SINGLE LINK */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-links { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-link {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: inline-flex; align-items: center; gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 26px; border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700; font-size: 14.5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: transform .18s, box-shadow .18s, background .18s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.res-link:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.link-pri { background: #5454E9; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.link-pri:hover { background: #3a3abf; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>hr.sep { border: none; border-top: 1.5px solid #eee; margin-bottom: 22px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.restart {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: none; border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; color: #999; cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: color .2s; padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.restart:hover { color: #5454E9; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* REFERENCES */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-section {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-top: 1.5px solid #eee;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-label {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 10.5px; font-weight: 700; letter-spacing: .1em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: #aaa; margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-text {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12.5px; color: #777; line-height: 1.65;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-text a { color: #5454E9; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-text a:hover { text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ref-adapt { margin-top: 5px; font-size: 12px; color: #aaa; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>@keyframes fadeIn<span class="Apple-converted-space">  </span>{ from { opacity:0; } to { opacity:1; } }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@keyframes slideUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hd"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hd-eyebrow"&gt;Árbol de decisión&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Guía rápida IAG en la evaluación&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Este recorrido breve puede ayudarte a:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul style="margin-top:10px; padding-left:20px; opacity:.82; font-size:15px; line-height:1.75;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;reflexionar sobre cuándo permitir o restringir el uso de IAG;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;e identificar el nivel del AIAS que más se aproxima a tu intención pedagógica.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dots" id="dots"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="dot active" id="d1"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="dot" id="d2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="bd" id="bd"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const S = { step: 1, answers: [] };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const Q1 = '¿Hay competencias en esta evaluación que el estudiante debe demostrar de forma completamente autónoma —sin apoyo externo de ningún tipo— porque son fundamento para lo que viene después, en el programa o en su vida profesional?';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const Q2 = '¿Puede garantizar un entorno controlado o supervisado donde efectivamente no se utilice IA?';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const LEVELS = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ n:1, cls:'n1', txt:'Quiero evaluar habilidades esenciales sin IAG.', href:'#nivel-1' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ n:2, cls:'', <span class="Apple-converted-space">  </span>txt:'Quiero que la IAG sea solo una herramienta de apoyo, para la planeación e ideación previas a la tarea a evaluar.', href:'#nivel-2' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ n:3, cls:'', <span class="Apple-converted-space">  </span>txt:'Quiero que la IAG participe en la elaboración de la tarea, y haya un foco en el juicio crítico de lo que genera la IA.', href:'#nivel-3' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ n:4, cls:'', <span class="Apple-converted-space">  </span>txt:'Quiero que el uso crítico y estratégico de la IAG sea parte explícita de lo que se evalúa.', href:'#nivel-4' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ n:5, cls:'', <span class="Apple-converted-space">  </span>txt:'Quiero que la innovación, creación y exploración de nuevas posibilidades con la IAG sea parte central de la tarea.', href:'#nivel-5' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function levelCards(include) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return include.map(n =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const l = LEVELS[n-1];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return `&lt;a class="level-card" href="${l.href}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="level-num ${l.cls}"&gt;N${l.n}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="level-text"&gt;${l.txt}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="level-arrow"&gt;→&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}).join('');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function references() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return `&lt;div class="ref-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ref-label"&gt;Referencia&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ref-text"&gt;Perkins, M., Roe, J., &amp;amp; Furze, L. (2025). Reimagining the Artificial Intelligence Assessment Scale (AIAS): A refined framework for educational assessment. &lt;em&gt;Journal of University Teaching and Learning Practice, 22&lt;/em&gt;(7). &lt;a href="https://doi.org/10.53761/rrm4y757" target="_blank"&gt;https://doi.org/10.53761/rrm4y757&lt;/a&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ref-adapt"&gt;Adaptado por Laura Sofía Gutiérrez.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function render() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const bd = document.getElementById('bd');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>S.answers.forEach((ans, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const qText = i === 0 ? Q1 : Q2;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const bcls = ans==='SÍ' ? 'badge badge-si' : ans==='NO' ? 'badge badge-no' : 'badge badge-parc';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const h = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>h.className = 'hist';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>h.innerHTML = `&lt;div class="hist-q"&gt;&lt;strong&gt;Pregunta ${i+1}:&lt;/strong&gt; ${qText}&lt;/div&gt;&lt;span class="${bcls}"&gt;${ans}&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bd.appendChild(h);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (i===0 &amp;&amp; ans==='PARCIALMENTE') {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const note = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>note.className = 'note';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>note.innerHTML = '💡 &lt;strong&gt;Nota:&lt;/strong&gt; Considera &lt;strong&gt;dividir la evaluación&lt;/strong&gt;: una parte sin IAG (Nivel 1) para las competencias que requieren autonomía total, y otra donde sí la permites (Niveles 2–5) para el resto. Con eso en mente, avanza a la siguiente pregunta.';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>bd.appendChild(note);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if<span class="Apple-converted-space">      </span>(S.step===1)<span class="Apple-converted-space">          </span>renderQ1(bd);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (S.step===2)<span class="Apple-converted-space">          </span>renderQ2(bd);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (S.step==='r-25') <span class="Apple-converted-space">    </span>renderR25(bd);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (S.step==='r-n1') <span class="Apple-converted-space">    </span>renderRN1(bd);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (S.step==='r-rediseno') renderRRediseno(bd);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>updateDots();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function renderQ1(bd) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.className = 'q-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-num"&gt;Pregunta 1 de 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-text"&gt;${Q1}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-si" <span class="Apple-converted-space">  </span>onclick="a1('SÍ')"&gt;Sí&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-no" <span class="Apple-converted-space">  </span>onclick="a1('NO')"&gt;No&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-parc" onclick="a1('PARCIALMENTE')"&gt;Parcialmente&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${references()}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.appendChild(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function renderQ2(bd) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.className = 'q-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-num"&gt;Pregunta 2 de 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-text"&gt;${Q2}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-si" onclick="a2('SÍ')"&gt;Sí&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-no" onclick="a2('NO')"&gt;No&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${references()}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.appendChild(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function renderR25(bd) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.className = 'res-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-pill pill-yellow"&gt;Resultado&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-title"&gt;Los Niveles 2 al 5 son el territorio pertinente para su evaluación&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-body"&gt;Dado que no hay competencias que exijan demostración completamente autónoma, puede diseñar evaluaciones donde la IAG tenga un rol activo y pedagógicamente justificado. ¿Cuánta participación quiere darle? Elija la afirmación que mejor describe su intención:&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="levels-intro"&gt;Ir directamente al nivel que busco&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="level-cards"&gt;${levelCards([2,3,4,5])}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="sep"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="restart" onclick="restart()"&gt;↺ Volver a empezar&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${references()}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.appendChild(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function renderRN1(bd) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.className = 'res-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-pill pill-blue"&gt;Nivel 1 · Sin IAG&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-title"&gt;Su evaluación se ubica en el Nivel 1: Sin uso de IAG&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-body"&gt;Hay competencias que requieren demostración autónoma &lt;em&gt;y&lt;/em&gt; puede garantizar las condiciones para verificarlo. Puede declarar su evaluación libre de IAG con respaldo pedagógico sólido.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="res-link link-pri" href="#nivel-1"&gt;Ver Nivel 1 en detalle →&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="sep"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="restart" onclick="restart()"&gt;↺ Volver a empezar&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${references()}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.appendChild(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function renderRRediseno(bd) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.className = 'res-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>d.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-pill pill-action"&gt;Acción requerida&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-title"&gt;Su evaluación necesita ser rediseñada&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="res-body"&gt;Declarar "sin IAG" sin poder verificarlo no protege el aprendizaje. Tiene dos caminos: rediseñar las condiciones de aplicación para garantizar el entorno controlado, o replantear la evaluación para que la IAG tenga un rol deliberado y con propósito. ¿Qué dirección se ajusta más a lo que busca?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="levels-intro"&gt;Explorar los niveles del AIAS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="level-cards"&gt;${levelCards([1,2,3,4,5])}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;hr class="sep"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="restart" onclick="restart()"&gt;↺ Volver a empezar&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${references()}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bd.appendChild(d);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function a1(ans) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S.answers = [ans];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S.step = ans==='NO' ? 'r-25' : 2;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function a2(ans) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S.answers.push(ans);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S.step = ans==='SÍ' ? 'r-n1' : 'r-rediseno';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function restart() { S.step=1; S.answers=[]; render(); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function updateDots() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const d1=document.getElementById('d1'), d2=document.getElementById('d2');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if<span class="Apple-converted-space">      </span>(S.step===1) { d1.className='dot active'; d2.className='dot'; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (S.step===2) { d1.className='dot done'; <span class="Apple-converted-space">  </span>d2.className='dot active'; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else <span class="Apple-converted-space">                </span>{ d1.className='dot done'; <span class="Apple-converted-space">  </span>d2.className='dot done'; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>render();</p>
+<p class="p1">&lt;/script&gt;</p>
+</body>
+</html>

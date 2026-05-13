@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface HowToEvaluateStrategy {
   title: string;
@@ -16,9 +15,7 @@ export default function HowToEvaluateSection({
   howToEvaluateDescription,
   howToEvaluateStrategies,
 }: HowToEvaluateSectionProps) {
-  if (!howToEvaluateStrategies || howToEvaluateStrategies.length === 0) {
-    return null;
-  }
+  
 
   return (
     <div className="mb-12">
@@ -28,7 +25,7 @@ export default function HowToEvaluateSection({
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
-        {howToEvaluateStrategies.map((strategy, index) => (
+        {howToEvaluateStrategies && howToEvaluateStrategies.map((strategy, index) => (
           <div key={index} className="border border-[#cecfd4] border-solid flex flex-col gap-[10px] p-[10px]">
             <h4 className="font-bold text-[#5454e9] text-[20px] w-full m-0">{strategy.title}</h4>
             <p className="font-normal text-[18px] text-black w-full m-0 leading-[1.4]">{strategy.description}</p>

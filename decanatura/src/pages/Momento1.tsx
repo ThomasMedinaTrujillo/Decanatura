@@ -13,7 +13,24 @@ import CompetencyFramework from '../Components/CompetencyFramework';
 import Button from '../Components/Button';
 import Sidebar from '../Components/Sidebar';
 
+import {motion} from 'framer-motion'
+
 export default function Momento1() {
+  
+const fadeInUpVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6,  } }
+};
+  const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-50px" }}
+    variants={fadeInUpVariants}
+  >
+    {children}
+  </motion.div>
+);
   const sidebarItems = [
     { label: 'Un recurso con varios puntos de partida', href: '#' },
     { label: 'Panorama y tendencias actuales', href: '#' },
@@ -26,12 +43,13 @@ export default function Momento1() {
   ];
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen relative">
       <Navbar />
       
       {/* Moment 1 Banner */}
-      <Momento1Banner momento='Momento 1' title='Exploración'/>
+      <Momento1Banner momento="Momento 1" title="Exploración"/>
       
+
       <div className="w-full px-4  lg:px-8 flex gap-8 py-8">
         
         {/* Sidebar */}
@@ -43,8 +61,12 @@ export default function Momento1() {
 
         {/* Main Content */}
         <div className="flex-1 w-full ">
+      
 
         {/* Section 1: Un recurso con varios puntos de partida */}
+        
+        <AnimatedSection>
+
         <section className="mb-16">
           <SectionHeading
         bgcolor='#865CF0' 
@@ -56,6 +78,9 @@ export default function Momento1() {
             rightText="Todas estas posiciones son comprensibles. Y todas comparten algo: el escenario ya no es el mismo de hace unos años y es momento de pensar cómo afrontar el cambio. Este recurso es un espacio para pensar con detenimiento qué está realmente en juego, y qué herramientas existen para navegarlo con criterio."
           />
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 2: Panorama y tendencias actuales */}
         <section className="mb-16">
@@ -67,7 +92,11 @@ export default function Momento1() {
           <PanoramaSection />
         </section>
 
+          </AnimatedSection> 
         {/* Section 3: Survey Results */}
+        <AnimatedSection>
+
+
         <section className="mb-16">
           <SectionHeading
         bgcolor='#865CF0' 
@@ -96,11 +125,17 @@ export default function Momento1() {
             Con cerca de 30.000 respuestas en 29 instituciones de América Latina, el Digital Education Council (2026).
           </p>
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Emotional Card */}
         <section className="mb-16 ">
           <ResourcePanel />
         </section>
+          </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 4: Wicked Problems */}
         <section className="mb-16">
@@ -116,11 +151,14 @@ export default function Momento1() {
             quote="Universities that continue to chase the elusive 'right answer' to AI in assessment will exhaust their educators while failing their students. Those that embrace the wicked nature of this problem can build cultures that support thoughtful professional judgment rather than punish imperfect solutions. (Corbin et. al 2025)."
           />
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 5: Allow AI or not */}
         <section className="mb-16">
           <SectionHeading
-        bgcolor='#865CF0' 
+            bgcolor='#865CF0' 
             title="¿Permitimos el uso de IA o no?"
             subtitle=""
           />
@@ -128,9 +166,11 @@ export default function Momento1() {
             La pregunta que más se hace no es la más útil. Si estamos dispuestos a reconocer la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores, la pregunta no puede seguir siendo si permitir o prohibirla (Perkins et al., 2025).
           </p>
           <DesignActivity />
-                    <ResourcePanel />
 
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 6: How to design valid assessments */}
         <section className="mb-16">
@@ -150,6 +190,9 @@ export default function Momento1() {
             No es necesario tener respuestas completas por ahora, volveremos a estas en los siguientes momentos del recurso, profundización y transformación.
           </p>
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 7: Competency Frameworks */}
         <section className="mb-16">
@@ -160,19 +203,25 @@ export default function Momento1() {
           />
           <CompetencyFramework />
         </section>
+          </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 8: AIAS Definition */}
         <section className="mb-16">
           <SectionHeading
         bgcolor='#865CF0' 
-            title="Qué es el AIAS, y que no es"
-            subtitle=""
+        title="Qué es el AIAS, y que no es"
+        subtitle=""
           />
           <ContentSection 
             leftText="El AIAS, desarrollado por Perkins, Furze, Roe y MacVaugh (actualmente en su segunda versión, 2025), es un marco centrado en el diseño evaluativo que busca orientar la integración de la IAG en función de los resultados de aprendizaje — y no al revés."
             rightText="Está fundamentado en principios del constructivismo social: el aprendizaje ocurre a través de la interacción con otros, con el entorno y con las herramientas culturales disponibles (Vygotsky, 1978 citado por Perkins et al., 2025), siendo la IAG una herramienta potencial para apoyar ese aprendizaje."
           />
         </section>
+        </AnimatedSection> 
+        <AnimatedSection>
+
 
         {/* Section 9: AIAS IS / IS NOT */}
         <section className="mb-16">
@@ -216,6 +265,7 @@ export default function Momento1() {
             </div>
           </div>
         </section>
+        </AnimatedSection> 
 
         {/* CTA Button */}
         <section className="mb-16 text-center">
