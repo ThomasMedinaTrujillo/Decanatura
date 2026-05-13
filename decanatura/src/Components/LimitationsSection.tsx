@@ -1,5 +1,5 @@
 import React from 'react';
-import loudspeakerIcon from '../assets/loudspeakericon.svg';
+import loudspeakerIcon from '../assets/puzzleicon.svg';
 
 export default function LimitationsSection() {
   return (
