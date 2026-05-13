@@ -1,11 +1,12 @@
-import React from 'react';
 import Button from './Button';
 
-export default function CTASection() {
+
+
+export default function CTASection({text}: {text: string}) {
   return (
     <section className="mb-16 text-center">
       <Button variant="primary" size="lg">
-        Continuar al siguiente momento
+        {text}
       </Button>
     </section>
   );

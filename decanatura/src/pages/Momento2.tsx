@@ -6,20 +6,43 @@ import PermitAISection from '../Components/PermitAISection';
 import AIASLevelsIntro from '../Components/AIASLevelsIntro';
 import AIASLevelCards from '../Components/AIASLevelCards';
 import AIASLevel from '../Components/AIASLevel';
+import CustomExamplesLevel2 from '../Components/CustomExamplesLevel2';
+import CustomExamplesLevel3 from '../Components/CustomExamplesLevel3';
+import CustomExamplesLevel4 from '../Components/CustomExamplesLevel4';
+import CustomExamplesLevel5 from '../Components/CustomExamplesLevel5';
 import CTASection from '../Components/CTASection';
 import Momento1Banner from '../Components/Momento1Banner';
 
 import LimitationSection from '../Components/LimitationsSection';
 
+import { motion, type Variants } from 'framer-motion';
+import DecisionTree from '../Components/DecisionTree';
+
+const fadeInUpVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-50px" }}
+    variants={fadeInUpVariants}
+  >
+    {children}
+  </motion.div>
+);
+
 export default function Momento2() {
   const sidebarItems = [
     { label: 'Momento 2: Criterios', href: '#' },
     { label: 'Permitir la IA o no', href: '#' },
-    { label: 'Nivel 1: No IAG', href: '#' },
-    { label: 'Nivel 2: Planificación', href: '#' },
-    { label: 'Nivel 3: Colaboración', href: '#' },
-    { label: 'Nivel 4: Uso estratégico', href: '#' },
-    { label: 'Nivel 5: Exploración', href: '#' },
+    { label: 'Nivel 1: No IAG', href: '#nivel-1', isIndented: true},
+    { label: 'Nivel 2: Planificación', href: '#nivel-2',isIndented: true },
+    { label: 'Nivel 3: Colaboración', href: '#nivel-3' ,isIndented: true},
+    { label: 'Nivel 4: Uso estratégico', href: '#nivel-4' ,isIndented: true},
+    { label: 'Nivel 5: Exploración', href: '#nivel-5' ,isIndented: true},
   ];
 
   const levelCards = [
@@ -46,7 +69,7 @@ export default function Momento2() {
   ];
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen relative">
       <Navbar />
       
       {/* Banner / Intro (can reuse Momento1Banner or make a new one) */}
@@ -63,16 +86,29 @@ export default function Momento2() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 w-full ">
-          <IntroQuestions />
+        <div className="flex-1 w-full space-y-12">
+          <AnimatedSection>
+            <IntroQuestions />
+          </AnimatedSection>
 
-          <PermitAISection />
+          <AnimatedSection>
+            <PermitAISection />
+          </AnimatedSection>
 
-          <AIASLevelsIntro />
+        <DecisionTree></DecisionTree>
 
-          <AIASLevelCards cards={levelCards} />
 
-          <AIASLevel 
+          <AnimatedSection>
+            <AIASLevelsIntro />
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <AIASLevelCards cards={levelCards} />
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <AIASLevel 
+                  id='nivel-1'
                 title="Nivel 1: No IAG"
                 description="En este nivel, la actividad evaluativa es desarrollada en su totalidad sin la ayuda de la IA."
                 pedagogicalSense="Ubicar, y luego diseñar, una actividad en este nivel, tiene un objetivo pedagógico claro: evaluar habilidades esenciales e irreductibles, que el estudiante debe dominar y demostrar sin apoyo de la IAG."
@@ -85,6 +121,7 @@ export default function Momento2() {
                   "No se puede verificar que el estudiante usó IAG.",
                   "El aprendizaje no depende de trabajar sin herramientas, sino de interpretar, evaluar, diseñar o tomar decisiones en un contexto disciplinar."
                 ]}
+                whatToEvaluate='El dominio individual de conocimientos y habilidades fundamentales, demostrados sin apoyo externo y en condiciones controladas.'
                 howToEvaluateDescription="Algunas estrategias para evaluar en este nivel son:"
                 howToEvaluateStrategies={[
                   { title: "Exámenes presenciales y supervisados", description: "Puede incluir restricciones de dispositivos electrónicos." },
@@ -103,15 +140,19 @@ export default function Momento2() {
                   "En un curso de Microeconomía, los estudiantes participan en un debate en clase donde cada grupo formula preguntas analíticas y situadas a partir de lo que exponen otros grupos, y los grupos interrogados deben responder en el momento, sin preparación previa. Luego escriben una reflexión sobre su participación, cómo sus ideas cambiaron al escuchar a otros y qué aprendieron de la dinámica. Esta interacción en tiempo real asegura que la evidencia del aprendizaje sea auténtica y no pueda generarse con IA."
                 ]}
              />
+          </AnimatedSection>
+
+          <AnimatedSection>
 
              <AIASLevel 
-                title="Nivel 2: IAG para planificación e ideación"
-                description="En este nivel, el estudiante puede utilizar la IAG exclusivamente para apoyar la fase inicial de una tarea o proyecto, tales como la exploración de ideas, esquematización, e investigación inicial. El producto final no debe tener contenido generado directamente por la IA. Siendo así, lo que realmente debe evaluarse es la capacidad del estudiante de descartar, refinar, criticar o desarrollar de forma independiente eso que la IAG le esté proponiendo."
-                pedagogicalSense="Utilizar la IAG como apoyo inicial puede enriquecer el aprendizaje, especialmente en tareas donde no importa tanto el origen de las ideas, sino cómo el estudiante las analiza y desarrolla por su cuenta."
-                whenMakeSense={[
-                  "La exploración de nuevas ideas y perspectivas usando IAG amplía la mirada del estudiante y puede potenciar el proceso de aprendizaje."
-                ]}
-                whenNotMakeSense={[
+                  id='nivel-2'
+                  title="Nivel 2: IAG para planificación e ideación"
+                  description="En este nivel, el estudiante puede utilizar la IAG exclusivamente para apoyar la fase inicial de una tarea o proyecto, tales como la exploración de ideas, esquematización, e investigación inicial. El producto final no debe tener contenido generado directamente por la IA. Siendo así, lo que realmente debe evaluarse es la capacidad del estudiante de descartar, refinar, criticar o desarrollar de forma independiente eso que la IAG le esté proponiendo."
+                  pedagogicalSense="Utilizar la IAG como apoyo inicial puede enriquecer el aprendizaje, especialmente en tareas donde no importa tanto el origen de las ideas, sino cómo el estudiante las analiza y desarrolla por su cuenta."
+                  whenMakeSense={[
+                    "La exploración de nuevas ideas y perspectivas usando IAG amplía la mirada del estudiante y puede potenciar el proceso de aprendizaje."
+                  ]}
+                  whenNotMakeSense={[
                   "Se evalúan habilidades fundamentales o básicas que deben demostrarse sin herramientas externas.",
                   "La ideación, la argumentación desde cero, o la exploración de soluciones, es una competencia esencial que el curso busca desarrollar de forma autónoma. Este puede ser el caso en cursos introductorios de composición musical, pensamiento matemático y lógico, diagnóstico clínico, innovación, o escritura creativa."
                 ]}
@@ -123,19 +164,25 @@ export default function Momento2() {
                 howToEvaluateDescription="La evaluación se centra en el producto final, y opcionalmente la evidencia de interacción con IA."
                 howToEvaluateStrategies={[
                   { title: "Presentación integrada en el producto final", description: "que evidencie el proceso de interacción con IAG. Por ejemplo, se muestra una lista de ideas generadas y el por qué se escogió una en particular." },
-                  { title: "Comentario reflexivo", description: "sobre cómo la IA apoyó en la ideación y planificación de la tarea." }
+                  { title: "Comentario reflexivo", description: "sobre cómo la IA apoyó en la ideación y planificación de la tarea." },
+                  { title: 'Rúbrica o lista de chequeo', description: 'para evaluar el producto final. El docente puede usar su rúbrica sin cambios o hacerle un ajuste que considere como criterio el uso de la IAG para la planificación e ideación.' }
                 ]}
                 implications={[
                   { title: "Reflexión sobre los resultados de aprendizaje", description: "El docente debe preguntarse si el uso de la IAG como apoyo en la planificación y exploración de ideas podría potenciar o dificultar que el estudiante alcancé el resultado de aprendizaje específico." },
                   { title: "Ajustar la consigna", description: "El docente debe especificar qué usos de IAG están permitidos (deben ser específicos según la tarea) y en qué momentos se puede usar la IAG (en la fase inicial, en el borrador, en el producto final, etc)." },
                   { title: "Decidir si se ajustan las evidencias", description: "El docente decide si es pertinente ajustar las evidencias para que sea visible el proceso de interacción con IAG (ejemplos en Cómo evaluar)." }
                 ]}
-                examples={[
-                  "En un curso de Diseño de Medios Interactivos, los estudiantes desarrollan una pieza multimedia a lo largo del semestre. En la fase inicial, pueden usar IAG para explorar ideas de concepto, posibles estructuras narrativas y propuestas de público objetivo. Lo que se evalúa no es esa exploración sino el desarrollo que el estudiante construye a partir de ella: el storyboard, las decisiones de diseño visual y la pieza final."
-                ]}
+                
              />
+             <LimitationSection title='Limitaciones y Consideraciones' description='Una advertencia que los autores señalan y vale tener presente: separar con precisión la fase dependiente de IAG de la fase independiente puede no ser técnicamente viable en todos los casos. No siempre es posible, ni necesario, trazar una línea exacta entre dónde terminó la IAG y dónde empezó el estudiante.'/>
+             <CustomExamplesLevel2/>
+          </AnimatedSection>
+       
+
+          <AnimatedSection>
 
              <AIASLevel 
+                id='nivel-3'
                 title="Nivel 3: Colaboración con IAG"
                 description="La IAG colabora con el estudiante en el desarrollo de la actividad evaluativa aportando ideas, argumentos o feedback. El estudiante evalúa estas contribuciones y decide qué aceptar. Mantiene la responsabilidad intelectual del final."
                 pedagogicalSense="Enmarcar una actividad evaluativa en este nivel tiene como intención desplazar el foco al desarrollo del juicio crítico respecto al contenido generado por la IAG (el output)."
@@ -154,18 +201,27 @@ export default function Momento2() {
                   "La integración de outputs con el propio entendimiento y perspectiva, manteniendo así la voz propia.",
                   "El razonamiento disciplinar y El producto final."
                 ]}
-                howToEvaluateDescription="Aquí se evalúa cómo el estudiante trabaja críticamente con la IA, no solo el resultado final. Involucra evaluar la calidad de los outputs, la del proceso de interacción, y contrastar juicios."
-                implications={[
-                  { title: "Orientación y expectativas", description: "Los estudiantes deben ser apoyados en entender las limitaciones de la IAG, para empoderar su criterio e impedir dependencia." },
-                  { title: "Pautas de documentación", description: "El docente debe establecer directrices claras de cómo documentar el uso de IAG." },
-                  { title: "Evaluación del proceso", description: "Más allá del producto, se debe valorar cómo el estudiante interactúa con la IAG, analiza y mejora los outputs." }
-                ]}
-                examples={[
-                  "En un curso de Biología, estudiantes usan IAG para generar hipótesis experimentales. Luego las analizan críticamente sin IAG y modifican el diseño para que sea válido científicamente. Esta fase se realiza sin apoyo para asegurar que demuestren su razonamiento independiente."
-                ]}
-             />
+                
+                howToEvaluateDescription={"Aquí se evalúa cómo el estudiante trabaja críticamente con la IA, no solo el resultado final. Sin embargo, evaluar el juicio crítico sobre lo que genera la IAG requiere de acompañamiento y de estrategias específicas. Bearman et al. (2024) identifican tres habilidades clave para el desarrollo del juicio crítico en interacción con la IAG: evaluar la calidad de los outputs de IAG, evaluar la calidad del proceso de interacción con IAG (por ejemplo la formulación de prompts), y contrastar el propio juicio con el de la IAG para identificar discrepancias y justificar decisiones. Las siguientes estrategias abarcan esos tres focos, y pueden usarse como práctica formativa, como evidencia evaluable, o como ambas. Asimismo, se enlistan instrumentos o evidencias que concreten las estrategias."}
 
+                downloadResource
+                implications={[
+                  { title: "Orientación y expectativas para estudiantes", description: "Es esencial que el docente identifique las creencias con las que llegan sus estudiantes. Muchos asumen que la IAG siempre tiene la razón o que usarla siempre es problemático. Los estudiantes deben ser apoyados en entender las limitaciones de la IAG, y de empoderarse de su propio conocimiento y criterio, evitando que la colaboración con IAG termine en delegación o dependencia." },
+                  { title: "Pautas", description: "El docente también debe establecer directrices claras sobre cómo documentar el uso de IAG (por ejemplo, compartiendo conversaciones, extractos de interacción o explicaciones del proceso de uso)." },
+                  { title: "Evaluación del proceso", description: "MMás allá del producto final, se debe valorar cómo el estudiante interactúa con la IAG, analiza y mejora los outputs, y demuestra juicio propio en cada iteración." },
+                  {
+                    title: 'Orientación y retroalimentación', description: 'Proporcionar acompañamiento sobre cómo integrar y criticar la información de la IAG, fomentando habilidades de análisis, síntesis y evaluación.'
+                  }
+                ]}
+                
+             />
+             <CustomExamplesLevel3 />
+          </AnimatedSection>
+
+
+          <AnimatedSection>
              <AIASLevel 
+                id='nivel-4'
                 title="Nivel 4: Uso estratégico de IAG"
                 description="El estudiante puede utilizar la IAG a lo largo de todo el proceso de desarrollo del trabajo. La evaluación se centra en la capacidad del estudiante para utilizar la IAG de manera estratégica, crítica y fundamentada, demostrando comprensión disciplinar."
                 pedagogicalSense="Este nivel prepara al estudiante para dirigir, evaluar e integrar la IAG en función de un objetivo concreto."
@@ -189,16 +245,18 @@ export default function Momento2() {
                   { title: "Instrumentos", description: "Rúbricas que valoren la calidad del resultado final y la pertinencia del uso de IAG." }
                 ]}
                 implications={[
-                  { title: "Revisión de resultados", description: "Asegurar que valoren competencias superiores (análisis, evaluación, diseño, aplicación) y no solo producción." },
-                  { title: "Claridad disciplinar y diseño", description: "Clarificar qué es uso estratégico. Explicitar que se permite en todo el proceso y que se espera uso fundamentado." },
-                  { title: "Equidad", description: "Considerar el acceso desigual a herramientas, promoviendo el uso de herramientas institucionales gratuitas." }
-                ]}
-                examples={[
-                  "En Derecho Constitucional, estudiantes elaboran un legal brief sobre protección de derechos con ayuda de IAG en todo momento. La nota es sobre su capacidad de seleccionar, evaluar aserciones de la herramienta, argumentar y no sobre la redacción automatizada misma."
+                  { title: "Revisión de resultados de aprendizaje", description: "El docente debe asegurar que los resultados de aprendizaje valoren competencias de orden superior, como análisis, evaluación, diseño o aplicación, y no solo producción." },
+                  { title: "Claridad disciplinar", description: "El docente debe tener claridad sobre qué constituye un uso estratégico de la IAG en su disciplina, ya que este varía según el campo, el tipo de tarea y los resultados de aprendizaje esperados." },
+                  {
+                    title: "Diseño de la consigna", description: 'Es necesario explicitar: que el uso de IAG está permitido en todo el proceso, que se espera un uso estratégico, no automático y qué tipo de decisiones y justificaciones serán evaluadas'
+                  },
+                  { title: "Equidad", description: "El docente debe considerar el acceso desigual a herramientas y las diferencias en habilidades de uso de IAG. Cuando sea posible, se recomienda ofrecer herramientas institucionales o diseñar tareas que no dependan de herramientas avanzadas de pago" }
                 ]}
              />
+             <CustomExamplesLevel4 />
 
              <AIASLevel 
+                id='nivel-5'
                 title="Nivel 5: Exploración con IAG"
                 description="Este nivel promueve la co-creación de nuevos enfoques, artefactos y productos que pueden desafiar las formas tradicionales de trabajo en una disciplina."
                 pedagogicalSense="Este nivel posiciona al estudiante como agente activo en la exploración, no solo como usuario. La IAG se utiliza para experimentar, analizar, cuestionar resultados y proponer usos inéditos."
@@ -214,25 +272,33 @@ export default function Momento2() {
                   "Explorar distintos usos y proponer soluciones, artefactos o productos innovadores.",
                   "Justificar las decisiones tomadas incluyendo límites, riesgos e impacto de la IA."
                 ]}
-                howToEvaluateDescription="Debido a lo abierto de la exploración, la evaluación requiere formatos más libres."
+              
                 howToEvaluateStrategies={[
-                  { title: "Proyectos o artefactos", description: "Prototipos o propuestas aplicadas que nacen de la exploración iterativa con la IA." },
-                  { title: "Defensas y rúbricas flexibles", description: "Discutir decisiones y evaluar calidad de los hallazgos en vez de ceñirse a una instrucción rígida." }
+                  { title: "Estrategia de evaluación", description: `
+                    Proyectos o artefactos, como prototipos o propuestas aplicadas
+                    Componentes reflexivos, donde el estudiante analice su proceso y hallazgos
+                    Presentaciones o defensas, para discutir decisiones e implicaciones
+                    ` },
+                  { title: "Instrumentos de evaluación", description: `
+                    Rúbricas abiertas o flexibles, centradas en:
+                    calidad del análisis
+                    coherencia de la propuesta
+                    profundidad de la reflexión
+                    ` }
                 ]}
                 implications={[
                   { title: "Apertura en el diseño", description: "Requiere aceptar diversidad de resultados y procesos no lineales. El docente cede control." },
                   { title: "Criterios claros pero flexibles", description: "Es necesario definir criterios de calidad (análisis, rigor, coherencia), evitando limitar la exploración." },
                   { title: "Revisión de resultados", description: "Asegurar que los resultados realmente incorporen exploración e innovación." }
                 ]}
-                examples={[
-                  "En Pedagogía, estudiantes diseñan y prototipan una nueva forma de evaluación mediada por IAG orientada a transformar la prueba de aprendizaje.",
-                  "En Desarrollo de Negocios Sostenibles, diseñan un modelo de negocio con IAG central pero analizando explícitamente su impacto ético y ambiental (Ej: consumo energético)."
-                ]}
              />
+             <LimitationSection title='Limitaciones y Consideraciones' description='Este nivel implica apertura e incertidumbre, lo que puede resultar desafiante. Requiere una base disciplinar suficiente para sostener el análisis crítico.
+El acompañamiento docente y la claridad en los criterios son clave para asegurar la calidad del aprendizaje.' />
 
-             <LimitationSection />
+             <CustomExamplesLevel5 />
+     </AnimatedSection>
 
-          <CTASection />
+          <CTASection text="Continua: transformación" />
 
         </div>
       </div>

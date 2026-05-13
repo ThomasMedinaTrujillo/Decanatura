@@ -1,13 +1,26 @@
-import React from 'react';
+import  { useState } from 'react';
+import { ChevronIconCircle } from './Icons';
 
 export default function CustomExamplesLevel3() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex flex-col gap-[36px] items-start relative mb-12 w-full">
-      <div className="bg-white border border-[#cecfd4] border-solid flex gap-[20px] items-center px-[20px] py-[10px] w-[300px]">
+    <div className="flex flex-col gap-[36px] items-start relative w-full">
+
+      <h3 className="font-bold text-[#5454e9] text-[26px] leading-[normal] m-0">Ejemplo Nivel 3</h3>
+      <p className="font-normal text-[16px] text-black w-full leading-[1.5]">En un curso de Biología, los estudiantes usan IAG para generar posibles preguntas de investigación, hipótesis y diseños preliminares de experimentos. Los estudiantes deben analizar críticamente el material generado por la IA sin ayuda de esta. Posteriormente, deben modificar y mejorar ese diseño hasta convertirlo en un protocolo experimental científicamente válido. Esta última fase se realiza sin apoyo de IAG para asegurar que el estudiante demuestre su razonamiento disciplinar independiente.</p>
+      <div 
+        className="bg-white border border-[#cecfd4] border-solid flex justify-between items-center px-[20px] py-[10px] w-[300px] cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <h3 className="font-bold text-[22px] text-black m-0">Ejemplo Nivel 3</h3>
+        <ChevronIconCircle className={`text-[#5454e9] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={24} />
       </div>
       
-      <div className="flex flex-col gap-[30px] items-start w-full">
+      <div 
+        className="flex flex-col gap-[30px] items-start w-full overflow-hidden transition-all duration-300"
+        style={{ display: isOpen ? 'flex' : 'none' }}
+      >
         <div className="flex flex-col gap-[10px] items-start w-full">
           <h4 className="font-bold text-[#5454e9] text-[18px] m-0 px-[10px]">instrucciones a estudiantes</h4>
         </div>

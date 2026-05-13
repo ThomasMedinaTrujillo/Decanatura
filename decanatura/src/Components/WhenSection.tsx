@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, CloseCircle } from './Icons';
 
 interface WhenSectionProps {

@@ -1,13 +1,27 @@
-import React from 'react';
+import  { useState } from 'react';
+import { ChevronIconCircle } from './Icons';
 
 export default function CustomExamplesLevel2() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex flex-col gap-[36px] items-start relative mb-12 w-full">
-      <div className="bg-white border border-[#cecfd4] border-solid flex gap-[20px] items-center px-[20px] py-[10px] w-[300px]">
+    <div className="flex flex-col gap-[36px] items-start relative w-full">
+
+      <h3 className="font-bold text-[#5454e9] text-[26px] leading-[normal] m-0">Ejemplo Nivel 2</h3>
+      <p className="font-normal text-[16px] text-black w-full leading-[1.5]">En un curso de Diseño de Medios Interactivos, los estudiantes desarrollan una pieza multimedia a lo largo del semestre. En la fase inicial, pueden usar IAG para explorar ideas de concepto, posibles estructuras narrativas y propuestas de público objetivo. Lo que se evalúa no es esa exploración sino el desarrollo que el estudiante construye a partir de ella: el storyboard, las decisiones de diseño visual y la pieza final.</p>
+
+      <div 
+        className="bg-white border border-[#cecfd4] border-solid flex justify-between items-center px-[20px] py-[10px] w-[300px] cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <h3 className="font-bold text-[22px] text-black m-0">Ejemplo Nivel 2</h3>
+        <ChevronIconCircle className={`text-[#5454e9] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={24} />
       </div>
       
-      <div className="flex flex-col lg:flex-row gap-[30px] items-start w-full">
+      <div 
+        className="flex flex-col lg:flex-row gap-[30px] items-start w-full overflow-hidden transition-all duration-300"
+        style={{ display: isOpen ? 'flex' : 'none' }}
+      >
         {/* Left column */}
         <div className="flex flex-col gap-[20px] w-full lg:w-1/3">
           <div className="border border-[#cecfd4] border-solid flex flex-col gap-[10px] items-start px-[20px] py-[15px] w-full">

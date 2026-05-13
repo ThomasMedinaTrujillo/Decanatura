@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface SectionHeadingProps {
   title: string;
@@ -9,7 +8,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({ title, subtitle,bgcolor }: SectionHeadingProps) {
   return (
     <div className="mb-8 ">
-      <h2 className={"text-1xl  px-[10px] md:text-3xl font-bold text-white mb-0 "} style={{ backgroundColor: bgcolor }}>
+      <h2 style={{ backgroundColor: bgcolor }}  className={"text-1xl  px-[10px] md:text-3xl font-bold text-white mb-0"} >
         {title}
       </h2>
       {subtitle && (
