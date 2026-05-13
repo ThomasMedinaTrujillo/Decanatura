@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface WhatToEvaluateSectionProps {
   whatToEvaluate: string | string[] | undefined;

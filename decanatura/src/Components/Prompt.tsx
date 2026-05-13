@@ -1,8 +1,7 @@
-import { div } from "framer-motion/client";
 import { useState } from "react"
 
 export const Prompt = ({ text, prompt }: {text: string, prompt: string}) => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpen] = useState<boolean>(false);
     return (
         <div className="p-[20px]">
         <button className=" bg-[#19191b] content-stretch cursor-pointer flex gap-[15px] items-center  p-[20px]" data-node-id="2059:1105" data-name="prompt 1">

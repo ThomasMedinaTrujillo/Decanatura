@@ -1,4 +1,3 @@
-import React from 'react';
 import bgImage from '../assets/2b1266ad54e3fa1928e96cd96fc0713a6083f676.png';
 
 export default function PanoramaSection() {

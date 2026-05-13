@@ -1,6 +1,4 @@
-import React from 'react';
 import { CheckCircle, CloseCircle, PuzzleIcon } from './Icons';
-import ResourcePanel from './ResourcePanel';
 
 export default function DesignActivity() {
   return (

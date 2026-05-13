@@ -1,4 +1,4 @@
-import { imgUnion, imgLine7, imgIcon, imgLine4, imgLine5, imgLine8, imgLine9, imgLine10, imgLine11, imgLine12, imgIcon1, imgEllipse1, imgVector, imgMenuThree } from "../assets/svg-jwnqb";
+import { imgUnion, imgLine7, imgLine4, imgLine5, imgLine8, imgLine9, imgLine10, imgLine11, imgLine12, imgIcon1, imgEllipse1, imgMenuThree } from "../assets/svg-jwnqb";
 import imgImage1 from "../assets/58d51eb52e880916a4d6987001699abad771ce01.png";
 import imgCapturaDePantalla20260414ALaS111742AM1 from "../assets/96f660d6615c50208ecad72b513730a26d83679f.png";
 import imgGroupGraphicDesignersInteractingGraph1 from "../assets/4c6331f479a220079242d0853c703aed3180033f.png";
