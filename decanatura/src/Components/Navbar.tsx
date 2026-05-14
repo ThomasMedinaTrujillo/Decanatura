@@ -1,78 +1,100 @@
-import { Outlet, useNavigate, useLocation } from "react-router";
-import { MenuThree } from "./Icons";
-import { useState } from "react";
+import { Outlet, useLocation, useNavigate } from 'react-router';
+import { useState } from 'react';
+
+import { MenuThree } from './Icons';
 
 const imgIcesiLogo = new URL('../assets/ad38d66a97762cd0ce5489eebd8376d08ea3c8be.png', import.meta.url).href;
 
-export default function Navbar() {
+const navItems = [
+  { label: 'Inicio', route: '/', activeColor: 'black' },
+  { label: 'Exploracion', route: '/Exploracion', activeColor: '#E4EB60' },
+  { label: 'Profundizacion', route: '/Profundizacion', activeColor: '#E4EB60' },
+  { label: 'Transformacion', route: '/Transformacion', activeColor: '#E4EB60' },
+  { label: 'Ficha tecnica', route: '/Ficha-tecnica', activeColor: '#E4EB60' },
+];
 
+export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Helper to determine active route
   const getActive = (route: string) => {
-    if (route === "/" && location.pathname === "/") return true;
-    if (route !== "/" && location.pathname.toLowerCase().includes(route.toLowerCase().replace("/", ""))) return true;
+    if (route === '/' && location.pathname === '/') return true;
+    if (route !== '/' && location.pathname.toLowerCase().includes(route.toLowerCase().replace('/', ''))) return true;
     return false;
   };
 
   return (
-        <>  
-    <div className="fixed bg-[#5454e9]  flex gap-[33px] items-center left-0 pl-[80px] pr-[180px] top-0 min-w-screen z-20" data-node-id="7:650" data-name="Nav Bar">
-      <div className="h-[102.8px] relative shrink-0 w-[200px]" data-node-id="I7:650;1:147" data-name="ICESI_logo_prin_descriptor_BYN_RGB_NEGATIVO_0924 1">
-        <img alt="ICESI Logo" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIcesiLogo} />
-      </div>
-      <div className="flex flex-row items-center self-stretch">
-        <div className="hidden md:flex content-stretch h-full items-center px-[20px] relative shrink-0" data-node-id="I7:650;1:148" data-name="Nav items">
-          <NavItem label="Inicio" isActive={getActive("/")} activeColor="black" onclick={()=> navigate("/")} />
-          <NavItem label="Exploración" isActive={getActive("/Exploracion")}
-            activeColor="#E4EB60" onclick={()=> navigate("/Exploracion")} />
-          <NavItem label="Profundización" isActive={getActive("/Profundizacion")}
-            activeColor="#E4EB60" onclick={()=> navigate("/Profundizacion")}/>
-          <NavItem label="Transformación" isActive={getActive("/Transformacion")}
-            activeColor="#E4EB60" onclick={()=> navigate("/Transformacion")}/>
+    <>
+      <div className="fixed left-0 top-0 z-20 flex min-w-screen items-center gap-[33px] bg-[#5454e9] pl-[80px] pr-[180px]">
+        <div className="relative h-[102.8px] w-[200px] shrink-0">
+          <img alt="ICESI Logo" className="pointer-events-none absolute inset-0 size-full object-cover" src={imgIcesiLogo} />
         </div>
+
+        <div className="flex flex-row items-center self-stretch">
+          <div className="relative hidden h-full shrink-0 items-center px-[20px] md:flex">
+            {navItems.map((item) => (
+              <NavItem
+                key={item.route}
+                label={item.label}
+                isActive={getActive(item.route)}
+                activeColor={item.activeColor}
+                onclick={() => navigate(item.route)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <button
+          className="flex items-center justify-center rounded p-2 text-white transition hover:bg-blue-600 md:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <MenuThree size={28} className="text-white" />
+        </button>
       </div>
-      <button 
-        className="md:hidden flex items-center justify-center p-2 text-white hover:bg-blue-600 rounded transition"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        <MenuThree size={28} className="text-white" />
-      </button>
-    </div>
-    
-    {/* Mobile Menu */}
-    {mobileMenuOpen && (
-      <div className="fixed top-[102.8px] left-0 right-0 bg-[#5454e9] flex flex-col md:hidden z-20 shadow-lg">
-        <NavItem label="Inicio" isActive={getActive("/")} activeColor="black" onclick={()=> { navigate("/"); setMobileMenuOpen(false); }} />
-        <NavItem label="Exploración" isActive={getActive("/Exploracion")}
-          activeColor="#E4EB60" onclick={()=> { navigate("/Exploracion"); setMobileMenuOpen(false); }} />
-        <NavItem label="Profundización" isActive={getActive("/Profundizacion")}
-          activeColor="#E4EB60" onclick={()=> { navigate("/Profundizacion"); setMobileMenuOpen(false); }} />
-        <NavItem label="Transformación" isActive={getActive("/Transformacion")}
-          activeColor="#E4EB60" onclick={()=> { navigate("/Transformacion"); setMobileMenuOpen(false); }} />
-      </div>
-    )}
-    
+
+      {mobileMenuOpen && (
+        <div className="fixed left-0 right-0 top-[102.8px] z-20 flex flex-col bg-[#5454e9] shadow-lg md:hidden">
+          {navItems.map((item) => (
+            <NavItem
+              key={item.route}
+              label={item.label}
+              isActive={getActive(item.route)}
+              activeColor={item.activeColor}
+              onclick={() => {
+                navigate(item.route);
+                setMobileMenuOpen(false);
+              }}
+            />
+          ))}
+        </div>
+      )}
+
       <Outlet />
-      </>
+    </>
   );
 }
 
-function NavItem({ label, isActive = false, onclick, activeColor = undefined }: { label: string; isActive?: boolean; onclick?: () => void; activeColor?: string }) {
+function NavItem({
+  label,
+  isActive = false,
+  onclick,
+  activeColor,
+}: {
+  label: string;
+  isActive?: boolean;
+  onclick?: () => void;
+  activeColor?: string;
+}) {
   return (
     <div
-      className={`content-stretch flex h-full items-center justify-center min-w-[180px] relative shrink-0 h-[102.8px] ${isActive ? (activeColor === "black" ? "bg-black" : "") : ""}`}
-      style={isActive && activeColor !== "black" ? { background: activeColor } : {}}
+      className={`relative flex h-[102.8px] min-w-[150px] shrink-0 items-center justify-center ${isActive ? (activeColor === 'black' ? 'bg-black' : '') : ''}`}
+      style={isActive && activeColor !== 'black' ? { background: activeColor } : {}}
       data-node-id={`nav-item-${label}`}
       onClick={onclick}
     >
-      <p
-        className={`font-${isActive ? 'bold' : 'normal'} leading-[normal] relative shrink-0 text-[16px] text-center text-white px-2 w-full truncate`}
-        style={{ maxWidth: '140px' }}
-      >
+      <p className="w-full truncate px-2 text-center text-[16px] leading-[normal] text-white" style={{ maxWidth: '140px' }}>
         {label}
       </p>
     </div>

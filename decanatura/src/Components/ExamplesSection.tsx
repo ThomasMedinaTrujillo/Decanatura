@@ -8,25 +8,20 @@ interface ExamplesSectionProps {
 
 export default function ExamplesSection({ title, examples }: ExamplesSectionProps) {
   return (
-    <div className="flex flex-col gap-[20px] items-start w-full mb-12">
-      <h3 className="font-bold text-[#5454e9] text-[26px] leading-[normal] m-0">Ejemplos {title.split(':')[0]}</h3>
-      
-      <div className="flex flex-col gap-[20px] items-center w-full">
+    <div className="mb-12 overflow-hidden border border-[#dfe2e8] bg-white shadow-[0_16px_36px_-30px_rgba(17,24,39,0.45)]">
+      <div className="flex items-center justify-between bg-[#5454e9] px-5 py-3 text-white">
+        <h3 className="text-[12px] font-bold uppercase tracking-[0.14em]">Ejemplos {title.split(':')[0]}</h3>
+        <PuzzleIcon size={22} className="text-white" />
+      </div>
+      <div className="space-y-4 px-5 py-5 md:px-6">
         {examples.map((ex, index) => (
           <React.Fragment key={index}>
-            <div className="flex gap-[20px] items-center px-[27px] py-[20px] w-full">
-              <div className="border-2 border-[#5454e9] border-solid flex items-center p-[12.2px] rounded-[67px] shrink-0">
-                <div className="relative shrink-0 w-[24px] h-[24px]">
-                  <PuzzleIcon size={24} className="text-[#5454e9]" />
-                </div>
+            <div className="flex gap-4 border border-[#e2e5ee] bg-[#fbfbfd] px-4 py-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#12c96d] text-white">
+                <PuzzleIcon size={20} className="text-white" />
               </div>
-              <div className="flex flex-[1_0_0] flex-col items-start min-w-px">
-                <p className="font-normal text-[14px] text-black w-full m-0">{ex}</p>
-              </div>
+              <p className="text-[14px] leading-6 text-black">{ex}</p>
             </div>
-            {index < examples.length - 1 && (
-              <div className="border-t border-[#cecfd4] w-[90%]" />
-            )}
           </React.Fragment>
         ))}
       </div>

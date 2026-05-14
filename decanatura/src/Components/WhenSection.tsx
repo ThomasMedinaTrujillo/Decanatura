@@ -5,50 +5,53 @@ interface WhenSectionProps {
   whenNotMakeSense: string[];
 }
 
+function MailingPanel({
+  title,
+  items,
+  icon,
+  accent,
+}: {
+  title: string;
+  items: string[];
+  icon: React.ReactNode;
+  accent: string;
+}) {
+  if (!items?.length) return null;
+
+  return (
+    <div className="overflow-hidden border border-[#dfe2e8] bg-white shadow-[0_16px_36px_-30px_rgba(17,24,39,0.45)]">
+      <div className="flex items-center justify-between px-5 py-3 text-white" style={{ backgroundColor: accent }}>
+        <h3 className="text-[12px] font-bold uppercase tracking-[0.14em]">{title}</h3>
+        <div className="text-white">{icon}</div>
+      </div>
+      <div className="space-y-3 px-5 py-5">
+        {items.map((item, index) => (
+          <div key={index} className="border-l-4 border-[#12c96d] bg-[#f8f9fd] px-4 py-3">
+            <p className="text-[15px] leading-6 text-black">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function WhenSection({ whenMakeSense, whenNotMakeSense }: WhenSectionProps) {
   if (!whenMakeSense?.length && !whenNotMakeSense?.length) return null;
 
   return (
-    <div className="flex flex-col gap-12 mb-12">
-      {/* Cuándo tiene sentido */}
-      {whenMakeSense && whenMakeSense.length > 0 && (
-        <div className="flex flex-col gap-[20px] w-full">
-          <div className="border-l-2 border-[#5454e9] px-[10px]">
-            <h3 className="font-bold text-[22px] text-[#5454e9] m-0 leading-none">Cuándo tiene sentido</h3>
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-[20px] w-full items-stretch">
-            {whenMakeSense.map((item, index) => (
-              <div key={index} className="border border-[#cecfd4] flex-1 flex flex-col justify-center p-[16px]">
-                <p className="font-normal text-[18px] text-black w-full m-0">{item}</p>
-              </div>
-            ))}
-            <div className="flex items-center justify-center p-[10px] shrink-0">
-              <CheckCircle size={49} className="text-[#5454e9]" />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Cuándo no tiene sentido */}
-      {whenNotMakeSense && whenNotMakeSense.length > 0 && (
-        <div className="flex flex-col gap-[20px] w-full">
-          <div className="border-l-2 border-[#5454e9] px-[10px]">
-            <h3 className="font-bold text-[22px] text-[#5454e9] m-0 leading-none">Cuándo no tiene sentido</h3>
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-[20px] w-full items-stretch">
-            {whenNotMakeSense.map((item, index) => (
-              <div key={index} className="border border-[#cecfd4] flex-1 flex flex-col justify-center p-[16px]">
-                <p className="font-normal text-[18px] text-black w-full m-0">{item}</p>
-              </div>
-            ))}
-            <div className="flex items-center justify-center p-[10px] shrink-0">
-              <CloseCircle size={49} className="text-[#5454e9]" />
-            </div>
-          </div>
-        </div>
-      )}
+    <div className="mb-12 grid grid-cols-1 gap-6 xl:grid-cols-2">
+      <MailingPanel
+        title="Cuando tiene sentido"
+        items={whenMakeSense}
+        accent="#5454e9"
+        icon={<CheckCircle size={28} className="text-white" />}
+      />
+      <MailingPanel
+        title="Cuando no tiene sentido"
+        items={whenNotMakeSense}
+        accent="#ff6a21"
+        icon={<CloseCircle size={28} className="text-white" />}
+      />
     </div>
   );
 }

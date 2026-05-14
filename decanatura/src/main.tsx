@@ -7,6 +7,7 @@ import { createHashRouter, RouterProvider } from 'react-router'
 import Navbar from './Components/Navbar.tsx'
 import Momento2 from './pages/Momento2.tsx'
 import Momento3 from './pages/Momento3.tsx'
+import FichaTecnica from './pages/FichaTecnica.tsx'
 
 const router = createHashRouter([{
   path: '/',
@@ -23,6 +24,9 @@ const router = createHashRouter([{
   },{
     path: "transformacion",
     element: <Momento3></Momento3>
+  },{
+    path: "ficha-tecnica",
+    element: <FichaTecnica></FichaTecnica>
   }
 ]
 }])
