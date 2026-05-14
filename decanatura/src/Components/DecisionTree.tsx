@@ -17,6 +17,31 @@ export default function DecisionTree() {
   const [step, setStep] = useState<1 | 2 | 'r-25' | 'r-n1' | 'r-rediseno'>(1);
   const [answers, setAnswers] = useState<string[]>([]);
 
+  const navigateToSection = (href: string) => {
+    if (!href.startsWith('#')) {
+      window.location.assign(href);
+      return;
+    }
+
+    const targetId = href.slice(1);
+
+    if (!targetId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) {
+      return;
+    }
+
+    const navbarOffset = 120;
+    const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  };
+
   const handleQ1 = (ans: string) => {
     setAnswers([ans]);
     setStep(ans === 'NO' ? 'r-25' : 2);
@@ -48,9 +73,10 @@ export default function DecisionTree() {
       {include.map(n => {
         const l = LEVELS[n - 1];
         return (
-          <a
+          <button
             key={l.n}
-            href={l.href}
+            type="button"
+            onClick={() => navigateToSection(l.href)}
             className="flex items-center gap-4 px-5 py-4 border-[#e0e0f5] text-[#0f0f2d] hover:border-[#5454E9] hover:bg-[#F4F4FE] hover:translate-x-1 hover:shadow-sm transition-all duration-200"
           >
             <div className={`w-9 h-9  flex items-center justify-center text-[13px] font-extrabold text-white shrink-0 ${l.colorCls}`}>
@@ -60,7 +86,7 @@ export default function DecisionTree() {
               {l.txt}
             </div>
             <ArrowRightIcon className="text-[#5454E9] shrink-0" size={18} />
-          </a>
+          </button>
         );
       })}
     </div>
@@ -180,9 +206,13 @@ export default function DecisionTree() {
                 <div className="text-[24px] font-extrabold text-[#0f0f2d] leading-snug mb-3.5">Su evaluación se ubica en el Nivel 1: Sin uso de IAG</div>
                 <div className="text-[15.5px] text-[#444] leading-relaxed mb-6">Hay competencias que requieren demostración autónoma <em>y</em> puede garantizar las condiciones para verificarlo. Puede declarar su evaluación libre de IAG con respaldo pedagógico sólido.</div>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <a href="#nivel-1" className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-[14.5px] bg-[#5454E9] text-white hover:bg-[#3a3abf] hover:-translate-y-1 hover:shadow-lg transition-all">
+                  <button
+                    type="button"
+                    onClick={() => navigateToSection('#nivel-1')}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 font-bold text-[14.5px] bg-[#5454E9] text-white hover:bg-[#3a3abf] hover:-translate-y-1 hover:shadow-lg transition-all"
+                  >
                     Ver Nivel 1 en detalle <ArrowRightIcon size={18} />
-                  </a>
+                  </button>
                 </div>
                 <hr className="border-t-[1.5px] border-gray-200 mb-5" />
                 <button onClick={restart} className="flex items-center gap-1.5 text-[13px] text-gray-400 hover:text-[#5454E9] transition-colors"><RotateCcw size={16} /> Volver a empezar</button>

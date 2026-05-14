@@ -15,6 +15,31 @@ export interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ title, stepNumber, items }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleSectionNavigation = (href: string) => {
+    if (!href.startsWith('#')) {
+      window.location.assign(href);
+      return;
+    }
+
+    const targetId = href.slice(1);
+
+    if (!targetId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) {
+      return;
+    }
+
+    const navbarOffset = 120;
+    const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  };
+
   if (!isOpen) {
     return (
       <aside className="flex-shrink-0 hidden lg:flex flex-col items-start sticky top-27 self-start justify-start pt-6">
@@ -62,12 +87,22 @@ const Sidebar: React.FC<SidebarProps> = ({ title, stepNumber, items }) => {
           {items.map((item, index) => (
             <div key={index} className={`flex items-start gap-2 ${item.isIndented ? 'pl-4' : ''}`}>
               <div className="bg-gray-400 w-1 h-4 rounded-full mt-1 flex-shrink-0" />
-              <a 
-                href={item.href} 
-                className={`text-gray-500 hover:text-secondary ${item.isIndented ? 'text-sm font-normal' : 'text-sm font-bold'}`}
-              >
-                {item.label}
-              </a>
+              {item.href.startsWith('#') ? (
+                <button
+                  type="button"
+                  onClick={() => handleSectionNavigation(item.href)}
+                  className={`text-left text-gray-500 hover:text-secondary ${item.isIndented ? 'text-sm font-normal' : 'text-sm font-bold'}`}
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <a
+                  href={item.href}
+                  className={`text-gray-500 hover:text-secondary ${item.isIndented ? 'text-sm font-normal' : 'text-sm font-bold'}`}
+                >
+                  {item.label}
+                </a>
+              )}
             </div>
           ))}
         </nav>
