@@ -5,8 +5,10 @@ interface MomentCardProps {
   image: string;
   titleColor: string;
   items: string[];
+  knowmore:string;
 }
 
+import { useNavigate } from 'react-router';
 import orange from '../assets/orange.svg'
 
 export default function MomentCard({
@@ -16,9 +18,12 @@ export default function MomentCard({
   image,
   titleColor,
   items,
+  knowmore,
 
 }: MomentCardProps) {
   
+
+  const navigate = useNavigate()
 
   return (
     <div
@@ -64,7 +69,7 @@ export default function MomentCard({
       </div>
 
       {/* CTA Button */}
-      <button className="bg-black px-[15px] py-[10px] w-fit self-start">
+      <button className="bg-black px-[15px] py-[10px] w-fit self-start" onClick={()=> navigate(knowmore)}>
         <p className="font-normal text-[20px] text-center text-white whitespace-nowrap">
           Conoce más
         </p>

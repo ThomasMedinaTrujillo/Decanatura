@@ -41,6 +41,7 @@ export default function Home() {
               'El problema de la evaluación en tiempos de IAG',
               'Qué es el AIAS y por qué usarlo',
             ]}
+            knowmore='/exploracion'
         
           />
 
@@ -56,6 +57,8 @@ export default function Home() {
               'Qué y cómo evaluar',
               'Ejemplos concretos por nivel',
             ]}
+            knowmore='/profundizacion'
+
 
           />
 
@@ -70,7 +73,7 @@ export default function Home() {
               'Selección del nivel adecuado para cada actividad',
               'Herramientas y prompts para el GPT del AIAS',
             ]}
-
+            knowmore='/transformacion'
           />
         </div>
       </div>
