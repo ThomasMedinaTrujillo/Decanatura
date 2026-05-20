@@ -48,7 +48,7 @@ export default function CustomExamplesLevel5() {
               <li>Identificar riesgos y tensiones (por ejemplo, consumo energético, sesgos, impacto laboral).</li>
               <li>Diseñar un modelo de negocio donde la IAG sea parte central de la propuesta de valor.</li>
               <li>Analizar la sostenibilidad del modelo en términos económicos, sociales y ambientales.</li>
-              <li>Proponer estrategias para un uso responsable de la IAG</li>
+              <li>Proponer estrategias para un uso responsable de la IAG.</li>
             </ul>
           </div>
 

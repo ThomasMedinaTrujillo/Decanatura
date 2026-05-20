@@ -4,7 +4,7 @@ export default function DesignActivity() {
   return (
     <div>
       <p className="text-base text-gray-700 font-semibold mb-6">
-        ¿El uso de la IA invalida la evaluación? ¿invalida el aprendizaje? La respuesta corta es: depende.
+        ¿El uso de la IA invalida la evaluación? ¿Invalida el aprendizaje? La respuesta corta es: depende.
       </p>
 
       <div className="flex flex-wrap gap-[20px] items-center justify-center">

@@ -8,7 +8,7 @@ const Q2 = '¿Puede garantizar un entorno controlado o supervisado donde efectiv
 const LEVELS = [
   { n: 1, colorCls: 'bg-[#9494B8]', txt: 'Quiero evaluar habilidades esenciales sin IAG.', href: '#nivel-1' },
   { n: 2, colorCls: 'bg-[#5454E9]', txt: 'Quiero que la IAG sea solo una herramienta de apoyo, para la planeación e ideación previas a la tarea a evaluar.', href: '#nivel-2' },
-  { n: 3, colorCls: 'bg-[#5454E9]', txt: 'Quiero que la IAG participe en la elaboración de la tarea, y haya un foco en el juicio crítico de lo que genera la IA.', href: '#nivel-3' },
+  { n: 3, colorCls: 'bg-[#5454E9]', txt: 'Quiero que la IAG participe en la elaboración de la tarea y haya un foco en el juicio crítico de lo que genera la IA.', href: '#nivel-3' },
   { n: 4, colorCls: 'bg-[#5454E9]', txt: 'Quiero que el uso crítico y estratégico de la IAG sea parte explícita de lo que se evalúa.', href: '#nivel-4' },
   { n: 5, colorCls: 'bg-[#5454E9]', txt: 'Quiero que la innovación, creación y exploración de nuevas posibilidades con la IAG sea parte central de la tarea.', href: '#nivel-5' },
 ];
@@ -100,7 +100,7 @@ export default function DecisionTree() {
           Árbol de decisión
         </div>
         <h1 className="text-[30px] font-extrabold leading-tight max-w-[600px]">
-          Guía rápida IAG en la evaluación
+          Guía rápida de IAG en la evaluación
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed opacity-90 max-w-[580px]">
           Este recorrido breve puede ayudarte a:

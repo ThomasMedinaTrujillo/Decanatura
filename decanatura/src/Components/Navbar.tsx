@@ -7,10 +7,10 @@ const imgIcesiLogo = new URL('../assets/ad38d66a97762cd0ce5489eebd8376d08ea3c8be
 
 const navItems = [
   { label: 'Inicio', route: '/', activeColor: 'black' },
-  { label: 'Exploracion', route: '/Exploracion', activeColor: '#E4EB60' },
-  { label: 'Profundizacion', route: '/Profundizacion', activeColor: '#E4EB60' },
-  { label: 'Transformacion', route: '/Transformacion', activeColor: '#E4EB60' },
-  { label: 'Ficha tecnica', route: '/Ficha-tecnica', activeColor: '#E4EB60' },
+  { label: 'Exploración', route: '/Exploracion', activeColor: '#E4EB60' },
+  { label: 'Profundización', route: '/Profundizacion', activeColor: '#E4EB60' },
+  { label: 'Transformación', route: '/Transformacion', activeColor: '#E4EB60' },
+  { label: 'Ficha técnica', route: '/Ficha-tecnica', activeColor: '#E4EB60' },
 ];
 
 export default function Navbar() {

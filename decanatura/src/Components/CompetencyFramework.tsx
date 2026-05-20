@@ -26,13 +26,13 @@ export default function CompetencyFramework() {
     {
       id: 1,
       name: 'Two-Lane Model',
-      description: 'Divide las evaluaciones en dos carriles: evaluaciones seguras, donde se garantiza que el trabajo es del estudiante, y evaluaciones abiertas, donde se asume que la IAG puede estar presente. ',
+      description: 'Divide las evaluaciones en dos carriles: evaluaciones seguras, donde se garantiza que el trabajo es del estudiante, y evaluaciones abiertas, donde se asume que la IAG puede estar presente.',
       attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
     },
     {
       id: 2,
       name: 'Marco de Competencias en IA para Docentes',
-      description: 'Marco amplio e integral. Propone estándares de competencia en IA para docentes en cinco dimensiones: pedagogía, currículo, evaluación, desarrollo profesional y ética. ',
+      description: 'Marco amplio e integral. Propone estándares de competencia en IA para docentes en cinco dimensiones: pedagogía, currículo, evaluación, desarrollo profesional y ética.',
       attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
     },
     {
@@ -50,7 +50,7 @@ export default function CompetencyFramework() {
     {
       id: 5,
       name: 'AI Assessment Scale (AIAS)',
-      description: 'Marco centrado en el diseño evaluativo. Propone cinco posiciones de integración de la IAG en función de los resultados de aprendizaje. ',
+      description: 'Marco centrado en el diseño evaluativo. Propone cinco posiciones de integración de la IAG en función de los resultados de aprendizaje.',
       attribution: 'Perkins, Furze, Roe y MacVaugh (2025)',
     },
   ];

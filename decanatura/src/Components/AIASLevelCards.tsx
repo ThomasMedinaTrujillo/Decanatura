@@ -30,7 +30,7 @@ export default function AIASLevelCards({ cards }: AIASLevelCardsProps) {
           <div className="bg-[#5454e9] px-5 py-4 text-white md:px-6">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em]">Nivel AIAS</span>
-              <span className="text-[11px] font-semibold uppercase tracking-[0.12em]">Profundizacion</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.12em]">Profundización</span>
             </div>
             <h3 className="mt-5 text-3xl font-bold leading-tight">{card.title}</h3>
           </div>

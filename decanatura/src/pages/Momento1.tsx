@@ -39,7 +39,7 @@ const fadeInUpVariants = {
     { label: 'Una mirada a tu práctica', href: '#', isIndented: true },
     { label: 'Marcos de competencias y de integración de la IA en educación', href: '#', isIndented: true },
     { label: '¿Cómo diseñar actividades evaluativas que sean válidas?', href: '#' },
-    { label: 'Qué es el AIAS, y que no es', href: '#' },
+    { label: 'Qué es el AIAS, y qué no es', href: '#' },
   ];
 
   return (
@@ -176,7 +176,7 @@ const fadeInUpVariants = {
         <section className="mb-16">
           <SectionHeading
         bgcolor='#865CF0' 
-            title="¿Cómo diseñar actividades evaluativas que sean válidass?"
+            title="¿Cómo diseñar actividades evaluativas que sean válidas?"
             subtitle=""
           />
           <div className="mb-8">
@@ -187,7 +187,7 @@ const fadeInUpVariants = {
           </div>
           <ReflectionQuestions />
           <p className="text-sm text-gray-600 mt-8">
-            No es necesario tener respuestas completas por ahora, volveremos a estas en los siguientes momentos del recurso, profundización y transformación.
+              No es necesario tener respuestas completas por ahora; volveremos a ellas en los siguientes momentos del recurso: profundización y transformación.
           </p>
         </section>
         </AnimatedSection> 

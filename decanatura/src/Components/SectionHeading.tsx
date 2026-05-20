@@ -13,10 +13,10 @@ export default function SectionHeading({ title, subtitle,bgcolor }: SectionHeadi
           <div className="h-8 w-8 rounded-full border border-white/35 bg-white/12" />
           <span className="text-[11px] font-bold uppercase tracking-[0.16em]">AIAS</span>
         </div>
-        <span className="text-right text-[11px] font-semibold uppercase tracking-[0.12em] opacity-90">Profundizacion</span>
+        <span className="text-right text-[11px] font-semibold uppercase tracking-[0.12em] opacity-90">Profundización</span>
       </div>
       <div className="bg-[#12c96d] px-5 py-2 text-right text-[12px] font-semibold text-white md:px-8">
-        Criterios y decisiones de evaluacion
+        Criterios y decisiones de evaluación
       </div>
       <div className="px-5 py-7 md:px-8 md:py-9">
         <h2 className="text-2xl font-bold leading-tight text-[#5454e9] md:text-[2.4rem]">
