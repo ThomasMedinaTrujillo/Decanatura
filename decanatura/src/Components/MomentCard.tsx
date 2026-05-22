@@ -69,7 +69,8 @@ export default function MomentCard({
       </div>
 
       {/* CTA Button */}
-      <button className="bg-black px-[15px] py-[10px] w-fit self-start" onClick={()=> navigate(knowmore)}>
+      <button className="bg-black px-[15px] py-[10px] w-fit self-start" onClick={()=> {navigate(knowmore) 
+        window.scrollTo(0, 0) }}>
         <p className="font-normal text-[20px] text-center text-white whitespace-nowrap">
           Conoce más
         </p>

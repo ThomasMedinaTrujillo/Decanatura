@@ -17,6 +17,7 @@ import LimitationSection from '../Components/LimitationsSection';
 
 import { motion, type Variants } from 'framer-motion';
 import DecisionTree from '../Components/DecisionTree';
+import { useNavigate } from 'react-router';
 
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -35,6 +36,7 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function Momento2() {
+  const navigate = useNavigate()
   const sidebarItems = [
     { label: 'Momento 2: Criterios', href: '#' },
     { label: '¿Permitir la IA o no?', href: '#' },
@@ -65,6 +67,11 @@ export default function Momento2() {
       id: 'nivel-4',
       title: 'Nivel 4: Uso estratégico',
       shortDescription: 'El estudiante puede usar la IA a lo largo de todo el proceso.'
+    },
+    {
+      id: 'nivel-5',
+      title: 'Nivel 5: Exploración',
+      shortDescription: 'La IA se usa para explorar, experimentar y co-crear nuevas posibilidades.'
     }
   ];
 
@@ -107,6 +114,7 @@ export default function Momento2() {
           </AnimatedSection>
 
           <AnimatedSection>
+            <div className="mt-8 lg:mt-12" />
             <AIASLevel 
                   id='nivel-1'
                 title="Nivel 1: No IAG"
@@ -238,11 +246,11 @@ export default function Momento2() {
                   "Integración coherente de outputs en función de objetivos disciplinares.",
                   "Toma de decisiones fundamentadas durante todo el proceso."
                 ]}
-                howToEvaluateDescription="Estrategias orientadas en explicar por qué tomó decisiones y cómo evaluó calidad:"
+                howToEvaluateDescription="Estrategias de evaluación:"
                 howToEvaluateStrategies={[
-                  { title: "Componentes reflexivos", description: "Donde el estudiante explique: cómo utilizó la IAG, sus decisiones, y cómo evaluó los outputs." },
-                  { title: "Evaluaciones complementarias", description: "Defensas orales, preguntas no previstas, análisis de partes concretas del trabajo." },
-                  { title: "Instrumentos", description: "Rúbricas que valoren la calidad del resultado final y la pertinencia del uso de IAG." }
+                  { title: "Componentes reflexivos", description: "Donde el estudiante explique: cómo utilizó la IAG\npor qué tomó determinadas decisiones\ncómo evaluó la calidad de los outputs" },
+                  { title: "Evaluaciones complementarias", description: "Defensas orales\npreguntas no previstas\nanálisis de partes específicas del trabajo" },
+                  { title: "Instrumentos de evaluación", description: "Rúbricas que valoren:\ncalidad del resultado final\npertinencia del uso de IAG\nprofundidad del análisis y la toma de decisiones" }
                 ]}
                 implications={[
                   { title: "Revisión de resultados de aprendizaje", description: "El docente debe asegurar que los resultados de aprendizaje valoren competencias de orden superior, como análisis, evaluación, diseño o aplicación, y no solo producción." },
@@ -268,23 +276,15 @@ export default function Momento2() {
                   "El objetivo prioritario es que el estudiante practique y domine habilidades básicas."
                 ]}
                 whatToEvaluate={[
+                  "En este nivel, el estudiante debe:",
                   "Analizar y evaluar cuándo y cómo usar la IAG de forma estratégica.",
                   "Explorar distintos usos y proponer soluciones, artefactos o productos innovadores.",
                   "Justificar las decisiones tomadas incluyendo límites, riesgos e impacto de la IA."
                 ]}
               
                 howToEvaluateStrategies={[
-                  { title: "Estrategia de evaluación", description: `
-                    Proyectos o artefactos, como prototipos o propuestas aplicadas
-                    Componentes reflexivos, donde el estudiante analice su proceso y hallazgos
-                    Presentaciones o defensas, para discutir decisiones e implicaciones
-                    ` },
-                  { title: "Instrumentos de evaluación", description: `
-                    Rúbricas abiertas o flexibles, centradas en:
-                    calidad del análisis
-                    coherencia de la propuesta
-                    profundidad de la reflexión
-                    ` }
+                  { title: "Estrategia de evaluación", description: "Proyectos o artefactos, como prototipos o propuestas aplicadas\nComponentes reflexivos, donde el estudiante analice su proceso y hallazgos\nPresentaciones o defensas, para discutir decisiones e implicaciones" },
+                  { title: "Instrumentos de evaluación", description: "Rúbricas abiertas o flexibles, centradas en:\ncalidad del análisis\ncoherencia de la propuesta\nprofundidad de la reflexión" }
                 ]}
                 implications={[
                   { title: "Apertura en el diseño", description: "Requiere aceptar diversidad de resultados y procesos no lineales. El docente cede control." },
@@ -298,7 +298,7 @@ El acompañamiento docente y la claridad en los criterios son clave para asegura
              <CustomExamplesLevel5 />
      </AnimatedSection>
 
-          <CTASection text="Continua: transformación" />
+          <CTASection onClick={()=>navigate('/transformacion')} text="Continua: transformación" />
 
         </div>
       </div>

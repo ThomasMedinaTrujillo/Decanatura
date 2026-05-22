@@ -1,0 +1,990 @@
+Un recurso para docentes
+Marco metodológico para evaluar en contextos de IAG 
+Un marco de trabajo para que los profesores y profesoras de la Universidad Icesi puedan tomar decisiones pedagógicas y tecnológicas  fundamentadas sobre el rol de la inteligencia artificial generativa (IAG) en el diseño de actividades formativas y evaluativas. 
+Sobre este recurso
+Este recurso es una iniciativa del área IA + TIC de la Decanatura de Innovación y Fortalecimiento del PEI de la Universidad Icesi, desarrollado en coherencia con los Lineamientos para el uso pedagógico de herramientas de Inteligencia Artificial Generativa (2025) y el Manifiesto sobre Inteligencia Artificial y Educación de la Universidad Icesi (2024).
+¿Cuál es tu punto de partida?
+Selecciona el momento que corresponde a tu necesidad actual 
+Momento 1
+
+Exploración
+
+Reflexiona sobre el problema y posibles formas de abordarlo.
+
+Panorama actual 
+El problema de la evaluación en tiempos de IAG 
+Qué es el AIAS y por qué usarlo 
+Momento 2
+
+Profundización
+
+Conoce los niveles del AIAS en detalle.
+
+Niveles 1–5 del AIAS en detalle
+Sentido pedagógico de cada nivel
+Qué y cómo evaluar
+Ejemplos concretos por nivel
+Momento 3
+
+Transformación
+
+Rediseña tus evaluaciones paso a paso. 
+
+Diagnóstico de tu syllabus actual
+Selección del nivel adecuado para cada actividad
+Herramientas y prompts para el GPT del AIAS
+
+
+
+
+CONTENIDO
+Sobre este recurso	1
+1. EXPLORACIÓN	3
+1.1 Un recurso para varios puntos de partida	3
+1.2 Panorama y tendencias actuales	3
+1.3 Todo problema (no) tiene solución	4
+1.4 ¿Permitimos el uso de IA o no?	5
+1.5 ¿Cómo diseñar actividades evaluativas que sean válidas?	5
+1.5.1 Una mirada a tu práctica	6
+1.5.2 Marcos de competencias y de integración de la IA en educación	6
+1.6 Qué es el AIAS , y que no es	7
+2. PROFUNDIZACIÓN	7
+2.1  Permitir la IA o no en la evaluación	8
+2.2 Qué implica cada nivel del AIAS	9
+2.2.1 Nivel 1: No IAG	9
+Sentido pedagógico	9
+Qué evaluar	10
+Cómo evaluar	10
+Lo que implica para el docente	10
+Ejemplos Nivel 1	11
+2.2.2 Nivel 2: IAG para planificación e ideación	11
+Sentido pedagógico	11
+Qué evaluar	12
+Cómo evaluar	12
+Lo que implica para el docente	12
+Limitaciones y Consideraciones	13
+Ejemplo Nivel 2	13
+2.2.3 Nivel 3: Colaboración con IAG	14
+Sentido pedagógico	14
+Qué evaluar	15
+Cómo evaluar	15
+Lo que implica para el docente	17
+Ejemplo Nivel 3	17
+2.2.4 Nivel 4: Uso estratégico de IAG	18
+Sentido pedagógico	19
+Qué evaluar	19
+Cómo evaluar	19
+Lo que implica para el docente	20
+Ejemplo nivel 4	20
+2.2.5 Nivel 5: Exploración con IAG	21
+Sentido pedagógico	21
+Qué evaluar	21
+Cómo evaluar	22
+Lo que implica para el docente	22
+Limitaciones y consideraciones	22
+Ejemplo Nivel 5	23
+1. TRANSFORMACIÓN	23
+3.1 Diagnóstico inicial	23
+3.1.1 Qué estás evaluando	23
+Prompt 1: Análisis resultados de aprendizaje	24
+Producto 1	26
+3.1.2 Cómo estás evaluando	27
+Prompt 2: Análisis actividades evaluativas	27
+3.2 Prioriza	28
+Producto 2	29
+3.3 Decide	29
+Prompt 3: Decisión Niveles AIAS	31
+Producto 3	32
+3.4 Rediseña	32
+Prompt 4: Rediseño de actividades	33
+3.5 Producto final	34
+Referencias	35
+
+EXPLORACIÓN 
+1.1 Un recurso para varios puntos de partida
+Quizás ya repensaste tu práctica docente, quizás buscas unas pautas claras, quizás tienes críticas y reservas, o quizás sientes agotamiento por todos los cambios sin pausa que se han desarrollado en el contexto de la IAG. 
+Todas estas posiciones son comprensibles. Y todas comparten algo: el escenario ya no es el mismo de hace unos años y es momento de pensar cómo afrontar el cambio. Este recurso es un espacio para pensar con detenimiento qué está realmente en juego, y qué acciones y recursos se pueden emplear para navegarlo con criterio.
+1.2 Panorama y tendencias actuales 
+La IA está transformando el mercado laboral
+Un análisis de cerca de mil millones de ofertas de empleo en seis continentes — The Fearless Future, PwC (2025),  revela que el impacto de la IA es transversal y está ocurriendo ahora:
+Las organizaciones mejor posicionadas para adoptar la IA registran ingresos por empleado tres veces mayores. 
+El 100% de las industrias está ampliando su uso de IA. Y en los roles más expuestos a la IA, las habilidades demandadas están cambiando un 66% más rápido, 2.5 veces más rápido que el año anterior.
+Los estudiantes que egresan hoy entrarán a ese mercado.
+Lo que revela la encuesta regional más grande sobre IA en educación superior 
+Con cerca de 30.000 respuestas en 29 instituciones de América Latina, el Digital Education Council (2026) revela que :
+El 92% de los estudiantes utiliza la IA en su aprendizaje. 
++50% vería una prohibición institucional de la IA como un retroceso, no como una protección.
+El 73% espera usarla en su trabajo futuro.
+Pero hay una tensión en el estudiantado que vale nombrar: 
+El 65% teme que la IA erosione el pensamiento crítico y la creatividad. 
++45% considera que sus competencias en IAG son aún limitadas. 
+El 57% espera que su institución brinde mayor formación en competencias de IA.
+Afrontar este desafío exige criterio docente. Sin embargo: 
++50% de los docentes reconoce limitaciones en sus competencias de IA. 
+Los estudiantes piden más formación. Los docentes reconocen que también la necesitan. Cerrar esta brecha no es una tarea sencilla, principalmente porque nos enfrentamos a un desafío que no tiene una única respuesta correcta.
+1.3 Todo problema (no) tiene solución 
+Hay problemas que son síntomas de falencias estructurales más profundas: desvinculación estudiantil, mercantilización de la educación, sobrecarga laboral. Problemas que crecen y mutan más rápido de lo que cualquier política podría responder. Donde no hay forma de probar todas las soluciones posibles o de saber cuándo se resolvió el problema. 
+Rittel y Webber (1973) llamaron a estos desafíos “wicked problems”, problemas que resisten toda solución definitiva. La evaluación en tiempos de IA exhibe justamente esas características: sin formulación única, sin criterio claro de éxito, y donde cada “solución” implica sacrificar algo (Corbin, Bearman, Boud y Dawson, 2025).
+Reconocer esto puede ser liberador. Permite al docente fallar, crear, iterar y navegar la complejidad sin la presión de encontrar la solución perfecta (Corbin et., al 2025). 
+“Universities that continue to chase the elusive ‘right answer’ to AI in assessment will exhaust their educators while failing their students. Those that embrace the wicked nature of this problem can build cultures that support thoughtful professional judgment rather than punish imperfect solutions.” (Corbin et. al 2025)
+1.4 ¿Permitimos el uso de IA o no? 
+La pregunta que más se hace no es la más útil.
+Dada la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores de IA, la pregunta no puede seguir siendo si permitir o prohibirla (Perkins et al. 2025). 
+La anterior declaración invita a soltar el control, pero abre otras preocupaciones respecto al aprendizaje de los estudiantes, ¿el uso de la IA invalida la evaluación? ¿invalida el aprendizaje? 
+La respuesta corta es: depende.
+ Posible buen uso: un estudiante usa la IA para generar contraargumentos y luego los analiza críticamente. 
+Posible mal uso: un estudiante le pide a la IA que genere por completo su ensayo.  
+La conversación debe entonces desplazarse hacia donde tenemos mayor agencia: el diseño y propósito de nuestras actividades. 
+
+1.5 ¿Cómo diseñar actividades evaluativas que sean válidas?
+Responder con criterio exige primero claridad sobre qué se está evaluando y para qué. 
+1.5.1 Una mirada a tu práctica 
+Piensa en una evaluación que haces en tu curso. No con el objetivo de juzgar, sino para observar con nuevas preguntas.
+¿Qué esperas que el estudiante sepa y pueda hacer sin ayuda de la IA?
+¿Podrían alcanzarse los resultados de aprendizaje incluso si el estudiante usara la IA en el proceso?
+¿Hay aspectos de esa evaluación en los que la IA podría ser un aliado para aprendizaje?
+
+No es necesario tener respuestas completas por ahora, volveremos a estas en los siguientes momentos del recurso, profundización y transformación. 
+1.5.2 Marcos de competencias y de integración de la IA en educación 
+Cinco marcos que lideran la literatura actual: 
+Two-Lane Model - Liu & Bridgeman, Universidad de Sydney (2023): Divide las evaluaciones en dos carriles: evaluaciones seguras, donde se garantiza que el trabajo es del estudiante, y evaluaciones abiertas, donde se asume que la IAG puede estar presente. 
+ Marco de Competencias en IA para Docentes - UNESCO (2022): Marco amplio e integral. Propone estándares de competencia en IA para docentes en cinco dimensiones: pedagogía, currículo, evaluación, desarrollo profesional y ética. 
+Suplemento DigCompEdu - Bekiaridis & Attwell (2024): Amplía el marco original de la Comisión Europea mediante la definición de competencias específicas en IA. Se centra en la alfabetización en IA (AI Literacy), capacitando a los docentes para comprender el funcionamiento de los algoritmos, gestionar la ética y la privacidad, y utilizar la IA generativa para la creación de recursos y la inclusión educativa.
+DigComp 3.0 - Cosgrove & Cachia (2025): Quinta edición del Marco Europeo de Competencias Digitales que consolida la IA como un componente transversal de la ciudadanía. Define los conocimientos y actitudes necesarios para interactuar con sistemas inteligentes, haciendo especial énfasis en la curación de datos, la mitigación de sesgos y la seguridad en entornos automatizados.
+AI Assessment Scale (AIAS) - Perkins, Furze, Roe y MacVaugh (2024): Marco centrado en el diseño evaluativo. Propone cinco posiciones de integración de la IAG en función de los resultados de aprendizaje. 
+Estos marcos proporcionan una base conceptual y ética para comprender el nuevo rol docente y las competencias asociadas en la era de la inteligencia artificial.
+Volviendo a la pregunta central de este apartado: ¿cómo diseñar actividades evaluativas que sean válidas? Este recurso desarrolla en profundidad la escala AIAS, por su orientación práctica y énfasis en el rediseño estructural de las evaluaciones. 
+1.6 Qué es el AIAS , y qué no es 
+El AIAS, desarrollado por Perkins, Furze, Roe y MacVaugh, actualmente en su segunda versión (2025), es un marco centrado en el diseño evaluativo, que busca orientar la integración de la IAG en función de los resultados de aprendizaje, y no al revés. 
+El AIAS está fundamentado en principios del constructivismo social, particularmente en la idea de que el aprendizaje ocurre a través de la interacción con otros, con el entorno y con las herramientas culturales disponibles (Vygotsky, 1978 citado por Perkins et al., 2025), siendo la IAG una herramienta potencial para apoyar el aprendizaje (Perkins et al., 2025). 
+Este marco propone 5 niveles de integración, que van desde el no uso de IA hasta la co-creación plena con IA. Los niveles no son jerárquicos, su elección depende de varias consideraciones. Con mayor detalle, abordaremos los niveles en los siguientes momentos. 
+Para tener en cuenta: 
+El AIAS es:
+Un marco flexible para el diseño evaluativo.
+Una orientación para formar a estudiantes en capacidades críticas respecto a la IA. 
+Un lenguaje común para hacer explícito y transparente las expectativas de docentes y estudiantes. 
+El AIAS no es:
+Una solución universal aplicable sin adaptación.
+Una herramienta para restringir o prohibir el uso de la IAG, o para permitir su uso sin buen motivo. 
+
+ PROFUNDIZACIÓN  
+ Este momento busca explicar en detalle lo que implica evaluar con o sin IAG, tomando como marco la escala AIAS. 
+No es necesario recorrerlo en orden ni completo. Identifica qué pregunta te trajo hasta aquí y empieza por esa.
+2.1 "No sé si debo permitir IAG en mi evaluación" 
+2.2 “¿Qué implica cada nivel del AIAS?”
+2.3 "Quiero ver cómo lo hacen en mi disciplina" (sección futura a construir)
+
+2.1  Permitir la IA o no en la evaluación
+Formule las siguientes preguntas para una evaluación de su curso:
+¿Hay competencias en esta evaluación que el estudiante debe demostrar de forma completamente autónoma , sin apoyo externo de ningún tipo, porque son fundamento para lo que viene después, en el programa o en su vida profesional?
+¿El uso de IAG invalidaría la evidencia del aprendizaje que quiero evaluar? 
+SI O NO
+
+Si la respuesta es sí:
+¿Puedo garantizar un entorno controlado o supervisado donde efectivamente no se utilice IA?
+Sí: Tu evaluación se ubica en el Nivel 1 (No IAG).  [Link a Nivel 1]
+No: Tu evaluación necesita ser rediseñada para que se garantice esas condiciones. Declarar "sin IAG" sin que puedas verificarlo no protege el aprendizaje. [Link a Nivel 1]
+
+Si la respuesta es no:
+Los niveles del 2 al 5 son un territorio pertinente.  [Link a 2.2]
+
+
+2.2 Del nivel 1 al 5: el AIAS en detalle
+En este apartado encontrarás el sentido pedagógico, criterios claros de qué y cómo evaluar, y ejemplos concretos de cada nivel del AIAS. Puedes recorrerlo en orden o ir directamente al nivel que más se ajusta a lo que buscas, cada afirmación a continuación te lleva ahí.
+Quiero evaluar habilidades esenciales sin IAG - Nivel 1
+Quiero que la IAG sea solo una herramienta de apoyo, para la planeación e ideación previas a la tarea a evaluar. - Nivel 2
+Quiero que la IAG participe en la elaboración de la tarea, y haya un foco en el juicio crítico de lo que genera la IA. - Nivel 3
+Quiero que el uso crítico y estratégico de la IAG sea parte explícita de lo que se evalúa. - Nivel 4
+Quiero que la innovación, creación y exploración de nuevas posibilidades con la IAG sea parte central de la tarea- Nivel 5
+
+2.2.1 Nivel 1: Sin IAG 
+En este nivel, la actividad evaluativa es desarrollada en su totalidad sin la ayuda de la IA. 
+ Sentido pedagógico
+Ubicar, y luego diseñar, una actividad en este nivel, tiene un objetivo pedagógico claro:  evaluar habilidades esenciales e irreductibles, que el estudiante debe dominar y demostrar sin apoyo de la IAG. 
+Cuándo tiene sentido: 
+La evaluación mide una habilidad que es prerrequisito explícito o implícito para cursos posteriores.
+La IAG puede simular por completo el resultado de aprendizaje, pero se requiere evidencia de que el estudiante puede hacerlo por sí mismo.
+La actividad evalúa una competencia crítica que será clave cuando el estudiante deba tomar decisiones críticas bajo su propia responsabilidad. Estas decisiones tienen implicaciones legales, éticas o de seguridad, como ocurre al firmar un informe médico, certificar un diseño de ingeniería o validar un balance contable. 
+Cuándo no tiene sentido: 
+No se puede verificar que el estudiante usó IAG.
+El aprendizaje no depende de trabajar sin herramientas, sino de interpretar, evaluar, diseñar o tomar decisiones en un contexto disciplinar.
+Qué evaluar 
+El dominio individual de conocimientos y habilidades fundamentales, demostrados sin apoyo externo y en condiciones controladas.
+Cómo evaluar
+Algunas estrategias para evaluar en este nivel son: 
+Exámenes presenciales y supervisados: Puede incluir restricciones de dispositivos electrónicos. 
+ Evaluaciones prácticas supervisadas: Como prácticas de laboratorio, simulaciones clínicas, intervenciones supervisadas en práctica docente. 
+Evaluaciones orales: Respuesta inmediata sin preparación previa, donde se evalúa el pensamiento en situ. Como debates, resolución de problemas en tiempo real, resolución comentada en voz alta, sustentación sin notas y con preguntas espontáneas del docente y compañeros.  
+Evaluaciones con software seguro: Plataformas que limitan el acceso a internet u otros recursos externos durante la actividad. 
+Reflexiones situadas: Respuestas en las que el estudiante analiza y da sentido a una experiencia concreta vivida (por ejemplo, en clase o en una actividad), conectando lo que hizo, pensó o decidió con el aprendizaje.
+Lo que implica para el docente
+Reflexión sobre los resultados de aprendizaje
+El docente debe reflexionar sobre qué aspectos del aprendizaje son esenciales e indelegables, y por tanto justifican el uso de un Nivel 1, donde la autonomía y la ejecución directa son centrales.
+Garantizar un entorno controlado. 
+El docente debe diseñar la actividad garantizando que la restricción de uso de la IAG es real y no sólo discursiva. Declarar que una actividad es nivel 1, pero permitir que sea trabajo en casa o actividad en clase sin supervisión es depender de la buena intención del estudiante o de herramientas de detección cuya fiabilidad está ampliamente cuestionada en la literatura (Perkins et al. 2025). 
+Comunicación a estudiantes
+Asimismo, el docente debe comunicar claramente al estudiante la razón por la que la actividad evaluativa es sin IAG, e involucrarlo en la discusión. 
+Ejemplos Nivel 1 
+-En un curso de licenciatura, los estudiantes discuten en grupos diferentes estrategias didácticas para un caso específico y luego escriben una reflexión situada sobre su experiencia: qué propusieron, qué aprendieron de las ideas de otros y cómo ajustarán su enfoque basándose en la interacción vivida y en los conceptos vistos en clase. 
+
+-En un curso de Microeconomía, los estudiantes participan en un debate en clase donde cada grupo formula preguntas analíticas y situadas a partir de lo que exponen otros grupos, y los grupos interrogados deben responder en el momento, sin preparación previa. Luego escriben una reflexión sobre su participación, cómo sus ideas cambiaron al escuchar a otros y qué aprendieron de la dinámica. Esta interacción en tiempo real asegura que la evidencia del aprendizaje sea auténtica y no pueda generarse con IA.
+
+2.2.2 Nivel 2: IAG para planificación e ideación
+En este nivel, el estudiante puede utilizar la IAG exclusivamente para apoyar la fase inicial de una tarea o proyecto, tales como la exploración de ideas, esquematización, e investigación inicial (Perkins et al., 2025). El producto final no debe tener contenido generado directamente por la IA. Siendo así, lo que realmente debe evaluarse es la capacidad del estudiante de descartar, refinar, criticar o desarrollar de forma independiente eso que la IAG le esté proponiendo. 
+Sentido pedagógico
+Utilizar la IAG como apoyo inicial puede enriquecer el aprendizaje, especialmente en tareas donde no importa tanto el orígen de las ideas, sino cómo el estudiante las analiza y desarrolla por su cuenta. 
+Cuándo tiene sentido: 
+La exploración de nuevas ideas y perspectivas usando IAG amplía la mirada del estudiante y puede potenciar el proceso de aprendizaje. 
+Cuándo no tiene sentido: 
+Se evalúan habilidades fundamentales o básicas que deben demostrarse sin herramientas externas. 
+La ideación, la argumentación desde cero, o la exploración de soluciones, es una competencia esencial que el curso busca desarrollar de forma autónoma. Este puede ser el caso en cursos introductorios de composición musical, pensamiento matemático y lógico, diagnóstico clínico, innovación, o escritura creativa. 
+Qué evaluar 
+En este nivel el estudiante debe demostrar: 
+Capacidad de formular prompts con intención y criterio claro.
+Selección y refinamiento de ideas generadas por la IAG 
+Desarrollo autónomo de un producto final que refleje comprensión, criterio y elaboración propia.
+Cómo evaluar
+La evaluación se centra en el producto final, y opcionalmente la evidencia de interacción con IA. 
+Algunas estrategias de evaluación incluyen:  
+Presentación integrada en el producto final que evidencie el proceso de interacción con IAG. Por ejemplo, se muestra una lista de ideas generadas y el por qué se escogió una en particular. 
+Comentario reflexivo sobre cómo la IA apoyó en la ideación y planificación de la tarea.
+Instrumento de evaluación: 
+Rúbrica o lista de chequeo para evaluar el producto final. El docente puede usar su rúbrica sin cambios o hacerle un ajuste que considere como criterio el uso de la IAG para la planificación e ideación. 
+Lo que implica para el docente
+Reflexión sobre los resultados de aprendizaje
+El docente debe preguntarse si el uso de la IAG como apoyo en la planificación y exploración de ideas podría potenciar o dificultar que el estudiante alcancé el resultado de aprendizaje específico. 
+Ajustar la consigna
+El docente debe especificar qué usos de IAG están permitidos (deben ser específicos según la tarea) y en qué momentos se puede usar la IAG (en la fase inicial, en el borrador, en el producto final, etc). 
+Decidir si se ajustan las evidencias
+El docente decide si es pertinente ajustar las evidencias para que sea visible el proceso de interacción con IAG (ejemplos en Cómo evaluar). 
+Limitaciones y Consideraciones 
+Una advertencia que los autores señalan y vale tener presente: separar con precisión la fase dependiente de IAG de la fase independiente puede no ser técnicamente viable en todos los casos. No siempre es posible, ni necesario, trazar una línea exacta entre dónde terminó la IAG y dónde empezó el estudiante. 
+Ejemplo Nivel 2
+En un curso de Diseño de Medios Interactivos, los estudiantes desarrollan una pieza multimedia a lo largo del semestre. En la fase inicial, pueden usar IAG para explorar ideas de concepto, posibles estructuras narrativas y propuestas de público objetivo. Lo que se evalúa no es esa exploración sino el desarrollo que el estudiante construye a partir de ella: el storyboard, las decisiones de diseño visual y la pieza final. 
+Ejemplo instrucciones a estudiantes 
+En la fase inicial de conceptualización, puedes utilizar herramientas de Inteligencia Artificial Generativa (IAG) para apoyar procesos de ideación. 
+Usos permitidos de IAG:
+Generar ideas de concepto para la pieza multimedia.
+Explorar posibles estructuras narrativas.
+Identificar perfiles de público objetivo.
+Crear listas preliminares de enfoques creativos o referencias.
+Límites de uso:
+La IAG solo puede utilizarse en la fase de ideación y planificación.
+El storyboard, las decisiones de diseño visual y la pieza multimedia final deben ser desarrollados por el estudiante.
+El producto final debe reflejar decisiones propias, refinamiento y desarrollo independiente.
+Transparencia del uso de IAG:
+Debes incluir una breve declaración de uso de IA indicando:
+Qué herramienta utilizaste (si aplica).
+Para qué etapa del proceso la utilizaste.
+Qué ideas decidiste desarrollar y cuáles descartaste.
+
+Posibles evidencias 
+Un breve documento (ej. 500–800 palabras) donde el estudiante explique:
+por qué eligió ese concepto
+cómo evolucionó desde la fase de ideación
+cómo responde al público objetivo
+Pieza multimedia final 
+prototipo multimedia
+experiencia digital
+narrativa transmedia
+Si es necesario, el docente puede añadir un componente controlado como:
+una defensa del proyecto con sesión de preguntas espontáneas realizadas por el docente y compañeros. 
+
+
+2.2.3 Nivel 3: Colaboración con IAG 
+La IAG colabora con el estudiante en el desarrollo de la actividad evaluativa. Esta puede proponer ideas, generar argumentos, dar retroalimentación y sugerencias. Sin embargo, el estudiante debe evaluar críticamente estas contribuciones y decidir qué aceptar, mejorar o descartar. Aunque se utilice la IAG como apoyo, el estudiante mantiene la responsabilidad intelectual del resultado final.
+Sentido pedagógico
+Enmarcar una actividad evaluativa en este nivel tiene como intención desplazar el foco al desarrollo del juicio crítico respecto al contenido generado por la IAG (el output).  
+Cuándo tiene sentido: 
+Quieres que tu actividad evaluativa se enfoque en la capacidad del estudiante de analizar, evaluar y mejorar los outputs de la IAG. 
+El proceso de aprendizaje puede ocurrir en la revisión y mejora del contenido generado por la IAG.
+Cuándo no tiene sentido: 
+Quieres verificar el dominio de una competencia de forma autónoma (nivel 1). 
+Quieres que la IAG sea sólo usada como un apoyo inicial (nivel 2).
+Quieres que la IAG se use en todo el proceso (nivel 4). 
+Qué evaluar
+Las actividades diseñadas por el docente pueden evaluar:
+La reflexión y el juicio crítico respecto al contenido generado por la IAG (outputs).
+La capacidad de revisión y mejora de outputs.
+La integración de outputs con el propio entendimiento y perspectiva, manteniendo así la voz propia.
+El razonamiento disciplinar. 
+El producto final. 
+Cómo evaluar
+Aquí se evalúa cómo el estudiante trabaja críticamente con la IA, no solo el resultado final. Sin embargo, evaluar el juicio crítico sobre lo que genera la IAG requiere de acompañamiento y de estrategias específicas. 
+Bearman et al. (2024) identifican tres habilidades clave para el desarrollo del juicio crítico en interacción con la IAG: evaluar la calidad de los outputs de IAG, evaluar la calidad del proceso de interacción con IAG (por ejemplo la formulación de prompts), y contrastar el propio juicio con el de la IAG para identificar discrepancias y justificar decisiones. 
+Las siguientes estrategias abarcan esos tres focos, y pueden usarse como práctica formativa, como evidencia evaluable, o como ambas. Asimismo, se enlistan instrumentos o evidencias que concreten las estrategias. 
+Estrategias para el desarrollo del juicio crítico en la interacción con la IAG 
+Estrategia
+Incluye actividades donde el estudiante:
+Evidencias
+Autoevaluación 
+Evalúa la calidad de los outputs (contenido generado) de IAG. 
+Evalúa la integración de los outputs a la tarea.
+Reflexiona sobre los prompts usados y su efectividad.
+Compara el juicio propio con el de la IAG.
+Registro de interacción: conversación exportada y anotada en el que el estudiante marca qué prompts usó, qué información usó y/o descartó.
+Borradores iterativos: versiones sucesivas de un trabajo donde se ve cómo el estudiante parte de un output de IA y lo transforma mediante análisis crítico y mejora.
+Reflexión crítica sobre el aporte y limitaciones de la IAG durante la actividad.
+Análisis comparativo entre el output de la IAG y el producto final entregado.
+Diario reflexivo sobre el proceso de colaboración con IAG. 
+Defensa oral donde el estudiante explica sus decisiones.
+Rúbrica diligenciada por el estudiante evaluando la calidad del output de IAG que usó.
+Debate estructurado donde dos estudiantes defienden decisiones distintas tomadas a partir del mismo output de IAG.
+Coevaluación 
+Revisa entre pares los outputs e integración de la IAG a la tarea. 
+Ajusta e iterar prompts, contrastando los outputs generados. 
+Compara su juicio con el de la IAG.
+Retroalimentación
+Solicita feedback iterativo a la IAG y lo compara con su propio juicio, el de pares o docentes.​​
+Analiza su proceso de trabajo con la IAG, valorando la efectividad de sus prompts, decisiones e iteraciones.
+Solicita a la IAG una valoración sobre su forma de uso y contrasta esa evaluación con su propia percepción.
+Compara distintos tipos de feedback (humano vs. IAG) y reflexiona sobre su utilidad y limitaciones.
+Rúbricas 
+Usa rúbricas para evaluar outputs de IAG e identifica qué aspectos requieren intervención humana. 
+Crea o adapta una rúbrica con apoyo de la IAG.
+Solicita a la IAG que evalúe cómo aplicó la rúbrica, y contrasta esa valoración con su propio juicio.    
+Ejemplos
+Compara su propio trabajo con ejemplares generados con IAG y utiliza esas comparaciones para ajustar y mejorar su producción.
+Analiza ejemplares generados con IAG para identificar características de calidad en trabajos similares al que debe producir.
+Nota: Es posible que se deba usar ejemplos de fuentes rigurosas (artículos de investigación, etc) para que la comparación sea de mayor calidad. 
+
+
+Adaptado de Bearman et al. (2024).
+
+Elaboración propia
+
+
+
+Lo que implica para el docente
+Orientación y expectativas para estudiantes:
+Es esencial que el docente identifique las creencias con las que llegan sus estudiantes. Muchos asumen que la IAG siempre tiene la razón o que usarla siempre es problemático. Los estudiantes deben ser apoyados en entender las limitaciones de la IAG, y de empoderarse de su propio conocimiento y criterio, evitando que la colaboración con IAG termine en delegación o dependencia. 
+Pautas:
+El docente también debe establecer directrices claras sobre cómo documentar el uso de IAG (por ejemplo, compartiendo conversaciones, extractos de interacción o explicaciones del proceso de uso).
+Evaluación del proceso:
+Más allá del producto final, se debe valorar cómo el estudiante interactúa con la IAG, analiza y mejora los outputs, y demuestra juicio propio en cada iteración.
+Orientación y retroalimentación:
+Proporcionar acompañamiento sobre cómo integrar y criticar la información de la IAG, fomentando habilidades de análisis, síntesis y evaluación.
+
+Ejemplo Nivel 3
+En un curso de Biología, los estudiantes usan IAG para generar posibles preguntas de investigación, hipótesis y diseños preliminares de experimentos. Los estudiantes deben analizar críticamente el material generado por la IA sin ayuda de esta. Posteriormente, deben modificar y mejorar ese diseño hasta convertirlo en un protocolo experimental científicamente válido. Esta última fase se realiza sin apoyo de IAG para asegurar que el estudiante demuestre su razonamiento disciplinar independiente.
+Instrucciones a estudiantes 
+Primera etapa: Puedes utilizar la IAG para generar:
+Al menos tres posibles preguntas de investigación
+Hipótesis asociadas
+Propuestas iniciales de diseño
+	Segunda etapa: Sin ayuda de la IAG, analiza las propuestas generadas e identifica:
+Errores conceptuales
+Fortalezas y debilidades metodológicas 
+Tercera etapa: Sin ayuda de la IAG, refina el diseño experimental seleccionado.
+	Cuarta etapa: Intercambia tu diseño refinado con un compañero. Tu par evaluará:
+si el diseño responde coherentemente al análisis crítico que hiciste de los outputs de IAG
+si las decisiones metodológicas están bien justificadas
+qué mejoraría antes de redactar el protocolo
+Quinta etapa:  Sin ayuda de la IAG, redacta el protocolo experimental incorporando los ajustes del proceso de coevaluación.
+Posibles evidencias a evaluar  
+Diseño anotado con feedback del par: el estudiante entrega su diseño de la etapa 3 con los comentarios de coevaluación recibidos y una nota breve sobre qué incorporó y qué descartó, con justificación.
+Protocolo final evaluado con rúbrica que incluye un criterio explícito sobre la coherencia entre el análisis crítico de los outputs de IAG y las decisiones metodológicas del diseño final.
+
+2.2.4 Nivel 4: Uso estratégico de IAG
+El estudiante puede utilizar la IAG a lo largo de todo el proceso de desarrollo del trabajo, incluyendo la producción de partes del producto final.
+La evaluación se centra en la capacidad del estudiante para utilizar la IAG de manera estratégica, crítica y fundamentada, demostrando comprensión disciplinar, toma de decisiones informadas y control sobre el proceso y el resultado.
+Sentido pedagógico
+Este nivel prepara al estudiante para dirigir, evaluar e integrar la IAG en función de un objetivo concreto.
+Cuándo tiene sentido: 
+El uso estratégico e intencional de la IAG es coherente con cómo opera la disciplina en contextos profesionales reales.
+Quieres que el estudiante demuestre conocimiento de la disciplina y a su vez criterio sobre cuándo y cómo usar la IAG, considerando el objetivo de la tarea. 
+El resultado de aprendizaje se relaciona con la resolución de problemas complejos. 
+Cuándo no tiene sentido: 
+La disciplina o el momento del programa requieren demostración autónoma de competencias fundacionales — niveles 1 o 2
+Qué evaluar
+En este nivel, el estudiante debe demostrar: 
+Capacidad para seleccionar y utilizar herramientas de IAG de manera pertinente.
+Evaluación crítica de los resultados generados por la IAG (precisión, sesgos, relevancia).
+Integración coherente de outputs de IAG en función de objetivos disciplinares.
+Toma de decisiones fundamentadas durante el proceso.
+Cómo evaluar
+Estrategias de evaluación: 
+Componentes reflexivos o justificativos, donde el estudiante explique:
+cómo utilizó la IAG
+por qué tomó determinadas decisiones
+cómo evaluó la calidad de los outputs
+Evaluaciones complementarias, como:
+defensas orales
+preguntas no previstas
+análisis de partes específicas del trabajo
+Instrumentos de evaluación: 
+Rúbricas que valoren:
+calidad del resultado final
+pertinencia del uso de IAG
+profundidad del análisis y la toma de decisiones
+Lo que implica para el docente
+Revisión de resultados de aprendizaje
+El docente debe asegurar que los resultados de aprendizaje valoren competencias de orden superior, como análisis, evaluación, diseño o aplicación, y no solo producción.
+Claridad disciplinar 
+El docente debe tener claridad sobre qué constituye un uso estratégico de la IAG en su disciplina, ya que este varía según el campo, el tipo de tarea y los resultados de aprendizaje esperados.
+Diseño de la consigna
+Es necesario explicitar:
+que el uso de IAG está permitido en todo el proceso
+que se espera un uso estratégico, no automático
+qué tipo de decisiones y justificaciones serán evaluadas
+Equidad
+El docente debe considerar:
+acceso desigual a herramientas
+diferencias en habilidades de uso de IAG
+Cuando sea posible, se recomienda:
+ofrecer herramientas institucionales
+o diseñar tareas que no dependan de herramientas avanzadas de pago
+Ejemplo nivel 4
+En un curso de Derecho Constitucional, los estudiantes deben elaborar un concepto jurídico (legal brief) sobre un caso complejo relacionado con la protección de derechos fundamentales en un contexto contemporáneo (por ejemplo, uso de tecnologías digitales y privacidad).
+Se permite el uso de herramientas de IAG a lo largo de todo el proceso, incluyendo:
+búsqueda inicial de jurisprudencia relevante
+generación de posibles argumentos jurídicos
+estructuración del documento
+apoyo en redacción
+Sin embargo, la evaluación no se centra en la producción del texto en sí, sino en la capacidad del estudiante para:
+seleccionar críticamente normas, precedentes y doctrinas pertinentes, evitando errores o invenciones de la IAG;
+evaluar la solidez jurídica de los argumentos generados, identificando inconsistencias, sesgos o simplificaciones;
+tomar decisiones estratégicas sobre qué argumentos utilizar, cuáles descartar y cómo articularlos en función del caso;
+adaptar el contenido al contexto jurídico específico, demostrando comprensión del marco normativo aplicable;
+justificar sus elecciones jurídicas, mostrando control sobre el razonamiento desarrollado.
+
+2.2.5 Nivel 5: Exploración con IAG
+A diferencia de niveles anteriores, que buscan regular o guiar el uso de la IAG, este nivel promueve la co-creación de nuevos enfoques, artefactos y productos, que pueden desafiar las formas tradicionales de trabajo en una disciplina.
+Sentido pedagógico
+Este nivel posiciona al estudiante como agente activo en la exploración de la IAG, no solo como usuario. La IAG se utiliza para experimentar, analizar y cuestionar sus resultados, así como para proponer nuevos usos en contextos disciplinares.
+Cuándo tiene sentido: 
+El objetivo es que el estudiante experimente, innove o cree algo nuevo usando IA
+Cuándo no tiene sentido: 
+Los estudiantes no cuentan con suficiente base y criterio disciplinar para crear con la IAG.
+El objetivo es que el estudiante practique y domine habilidades básicas.
+Qué evaluar
+En este nivel, el estudiante debe:
+Analizar y evaluar cuándo y cómo usar la IAG de forma estratégica.
+Explorar y experimentar con distintos usos de la IAG en contextos diversos. 
+Conceptualizar y crear soluciones, artefactos o productos innovadores. 
+Valorar y justificar las decisiones tomadas, incluyendo límites, riesgos e impacto de la IA.
+Cómo evaluar
+Estrategias de evaluación: 
+Proyectos o artefactos, como prototipos o propuestas aplicadas
+Componentes reflexivos, donde el estudiante analice su proceso y hallazgos
+Presentaciones o defensas, para discutir decisiones e implicaciones
+Instrumentos de evaluación: 
+Rúbricas abiertas o flexibles, centradas en:
+calidad del análisis
+coherencia de la propuesta
+profundidad de la reflexión
+Lo que implica para el docente
+Revisión de resultados de aprendizaje
+El docente debe asegurar que los resultados incluyan exploración, creación o innovación apoyados en IAG. 
+Apertura en el diseño
+Este nivel requiere aceptar diversidad de resultados y procesos no lineales. El docente debe permitir que el estudiante defina parte del camino.
+Criterios claros y flexibles
+Es necesario definir criterios de calidad (análisis, rigor, coherencia), evitando limitar la exploración o la creatividad.
+Limitaciones y consideraciones
+Este nivel implica apertura e incertidumbre, lo que puede resultar desafiante. Requiere una base disciplinar suficiente para sostener el análisis crítico.
+El acompañamiento docente y la claridad en los criterios son clave para asegurar la calidad del aprendizaje.
+Ejemplos Nivel 5
+En un curso de Pedagogía, los estudiantes deben diseñar y prototipar una nueva forma de evaluación mediada por IAG, orientada a transformar cómo se evidencia el aprendizaje en un contexto educativo específico (por ejemplo, educación escolar, universitaria o formación corporativa).
+El proyecto implica:
+Analizar críticamente prácticas tradicionales de evaluación.
+Explorar el potencial y las limitaciones de la IAG en contextos educativos.
+Diseñar una propuesta de evaluación que integre IAG de manera innovadora.
+Prototipar la experiencia (por ejemplo, simulaciones, sistemas interactivos o evaluaciones basadas en diálogo con IA).
+Analizar implicaciones pedagógicas, éticas y prácticas.
+Evidencias:
+Prototipo o modelo de evaluación (digital o conceptual)
+Documento explicativo del diseño (propuesta pedagógica)
+Análisis crítico de implicaciones (éticas, prácticas, educativas)
+Presentación o defensa del proyecto
+----
+En un curso de Desarrollo de Negocios Sostenibles, los estudiantes deben diseñar una propuesta de modelo de negocio que integre IAG, considerando no solo su potencial para generar valor, sino también sus implicaciones sociales, éticas y ambientales.
+El proyecto implica:
+Explorar usos actuales de la IAG en contextos empresariales.
+Identificar riesgos y tensiones (por ejemplo, consumo energético, sesgos, impacto laboral).
+Diseñar un modelo de negocio donde la IAG sea parte central de la propuesta de valor.
+Analizar la sostenibilidad del modelo en términos económicos, sociales y ambientales.
+Proponer estrategias para un uso responsable de la IAG
+Evidencias: 
+Propuesta de modelo de negocio (canvas, documento o prototipo)
+Análisis de impacto (social, ético, ambiental)
+Documento de justificación estratégica
+Presentación o pitch del proyecto
+
+
+
+TRANSFORMACIÓN
+Este momento te guía desde el diagnóstico de lo que tienes hoy hasta el rediseño concreto de tus evaluaciones: paso a paso, con preguntas y prompts para el GPT del AIAS.
+3.1 Diagnóstico inicial
+Este diagnóstico revisa dos elementos de tu syllabus: los resultados de aprendizaje y las actividades evaluativas. En el primer momento se analiza si los resultados de aprendizaje son vulnerables a la IAG, es decir, si la IA puede simular el desempeño esperado sin que el estudiante demuestre realmente la competencia, y si es necesario ajustarlos antes de pasar al diseño evaluativo. En el segundo momento se analizan las actividades actuales: qué tan visibles hacen el pensamiento del estudiante, qué nivel de riesgo tienen frente a la IAG y qué potencial tiene la IAG para apoyar el aprendizaje. 
+3.1.1 Qué estás evaluando 
+Antes de modificar una actividad evaluativa, revisa los resultados de aprendizaje del curso.
+Pregúntate:
+¿Qué deben saber los estudiantes al finalizar el curso?
+¿Qué deben ser capaces de hacer sin IAG?
+¿Alguno de estos resultados puede potenciarse con la IAG?
+¿Cuáles resultados de aprendizaje se ven impactados por la IAG? 
+Si quieres usar el GPT para reflexionar te invitamos a pegar los siguientes prompts en el gpt del AIAS diseñado por los mismos autores. 
+Prompt 1: Análisis resultados de aprendizaje
+Adjunta el PDF de tu syllabus y luego copia el siguiente prompt en el chat: 
+Asume el rol de un experto en diseño curricular y evaluación educativa con experiencia avanzada en integración de IA generativa (IAG).
+Vas a trabajar con un syllabus completo en formato PDF que te proporcionaré. 
+Evita respuestas excesivamente seguras. Si hay ambigüedad, hazla explícita. El objetivo no es clasificar correctamente, sino revelar tensiones pedagógicas.
+Fase 1: Comprensión del contexto (NO GENERAR SALIDA AÚN)
+Analiza el documento completo para identificar:
+Nivel educativo (ej. pregrado, posgrado)
+Tipo de asignatura (teórica, práctica, mixta)
+Enfoque pedagógico predominante
+Tipo de competencias (disciplinares, pedagógicas, profesionales)
+Relación con práctica real (si aplica)
+No generes resultados en esta fase. Solo construye contexto interno.
+Fase 2: Identificación de resultados de aprendizaje
+Ubica la sección titulada:
+“Resultados de aprendizaje de la asignatura”, “Objetivos terminales”, o equivalente.
+Reglas:
+Si el título no coincide exactamente, identifica la sección funcionalmente equivalente.
+Extrae TODA la tabla. No omitas filas ni columnas.
+Fase 3: Análisis estructurado
+
+A partir de esa tabla analiza cada resultado de aprendizaje de forma individual.
+Genera una nueva tabla titulada "Análisis resultados de aprendizaje" con las siguientes columnas (no modifiques los títulos):
+1. Resultado de aprendizaje  
+2. Competencia(s) asociada(s)  
+3. Competencia(s) del perfil de egreso  
+4. Clasificación según impacto de la IA
+5. Justificación pedagógica  
+6. Cambio en clasificación según cómo se evalúe 
+ 
+
+Definición de la columna 4 (OBLIGATORIO):
+
+Clasifica cada resultado en UNA de estas categorías:
+
+🔴 Simulable por IA  
+→ La IA puede generar productos o respuestas que imitan el resultado de aprendizaje sin que el estudiante demuestre realmente la competencia o movilice los procesos cognitivos implicados.  
+
+🟡 Transformado por IA (humano + IA)  
+→ La IA puede apoyar o parcialmente simular el desempeño, pero no puede sustituir completamente la toma de decisiones o el proceso cognitivo del estudiante
+
+
+🟢 Profundamente humano  
+→ El resultado o competencia exige juicio crítico, contexto, experiencia o desempeño situado que la IA no puede sustituir ni simular de forma válida.
+
+Regla clave:
+La clasificación debe basarse en:
+el tipo de desempeño descrito en el resultado de aprendizaje
+el nivel cognitivo implicado
+el grado en que la IA puede simular ese desempeño
+Crucial:
+No asumir tipos específicos de evaluación
+No inferir formatos (ensayo, examen, etc.)
+No basarse solo en el verbo del resultado
+Reconocer ambigüedad cuando exista ( No fuerces clasificaciones si el resultado lo permite múltiples interpretaciones)
+Definición de la columna 5 (OBLIGATORIO):
+Máximo 2-3 líneas por resultado  
+- Explica por qué el desempeño descrito es (o no) simulable por IA  
+- Enfócate en:
+ tipo de proceso cognitivo implicado  
+ grado de simulación posible por IA  
+si la IA reproduce forma, contenido o juicio
+Definición de la columna 6 (OBLIGATORIO):
+Explica si la clasificación depende del diseño de la evaluación (y en qué grado) y no del resultado en sí. Utiliza lenguaje accesible para docentes de cualquier área. Es decir, explica si este resultado:
+Puede ser resuelto fácilmente con IA cuando se pide de forma general
+O si cambia cuando se trabaja con situaciones reales, contexto específico o experiencia del estudiante
+Escribe en 2–3 líneas, con lenguaje directo. Evita términos abstractos o técnicos.
+Salida final
+Tabla clara y sintética
+Resumen breve:
+Resultados más vulnerables
+Resultados cuya clasificación depende fuertemente del diseño de la evaluación y no del resultado en sí.
+Posibles incoherencias entre resultados de aprendizaje y competencias
+Si alguna competencia podría estar siendo transformada por la IA o si siguen siendo pertinentes. 
+Formato:
+- Tabla clara y legible
+- Lenguaje aplicable al diseño docente
+- Lenguaje claro y profesional, pero accesible para docentes de cualquier área que no sean especialistas en pedagogía. 
+- Evita frases abstractas
+- Cada idea debe poder entenderse en una lectura rápida
+- Prioriza frases concretas sobre explicaciones conceptuales
+
+Interacción con el usuario (OBLIGATORIO)
+Al finalizar la respuesta pregunta al usuario: 
+“¿Hay algún resultado de aprendizaje cuya clasificación no te convenza o quisieras discutir?
+¿Te gustaría ajustar alguno de estos resultados de aprendizaje para mejorar su claridad o su resistencia frente a IA?
+¿Tienes alguna duda sobre la tabla o el resumen generado?” 
+OBLIGATORIO: NO PROPONGAS O MENCIONES LA ESCALA AIAS A MENOS QUE EL USUARIO LO HAGA PRIMERO. 
+
+
+Producto 1 
+Te invitamos a completar la siguiente tabla usando la información generada en el paso anterior. 
+Resultado de aprendizaje
+Clasificación según impacto de la IA
+Justificación breve
+Ajuste al resultado de aprendizaje (si aplica)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.1.2 Cómo estás evaluando
+Algunas preguntas que puedes hacerte respecto a tus actividades evaluativas son: 
+¿La evidencia que estoy evaluando podría haber sido generada por IA sin que el estudiante realmente domine la competencia?
+¿Estoy evaluando el resultado final o el proceso de construcción del aprendizaje?
+¿La tarea exige que el estudiante tome decisiones fundamentadas y las justifique en su contexto, o podría resolverse sin ese nivel de juicio?
+Para apoyar tu análisis respecto a las actividades evaluativas, puedes copiar el siguiente prompt en el gpt del AIAS.
+Prompt 2: Análisis actividades evaluativas
+Usa el mismo PDF que adjunté antes. 
+Ubica la sección titulada “Evaluación de aprendizajes” y extrae la tabla de mecanismos de evaluación (incluyendo su relación con resultados de aprendizaje y competencias).
+
+PASO 1: Antes de analizar, NECESITAS más información
+Dado que los mecanismos de evaluación suelen estar descritos de forma muy general (ej. “ensayo”, “proyecto”, “lectura intertextual”), NO realices el análisis todavía.
+Primero, formula al docente las siguientes preguntas para cada mecanismo: 
+
+Para cada mecanismo, pregunta:
+¿Qué tienen que hacer exactamente los estudiantes en esta actividad?
+(Describe en 1–3 líneas la actividad)
+¿Qué deben demostrar para que se considere un buen desempeño?
+¿Durante la actividad se observa el proceso o solo el resultado final?
+
+Indica al docente que responda de forma breve y estructurada. Indica al docente que puede dejar en blanco los mecanismos que no quiera analizar. 
+Detente y espera sus respuestas antes de continuar. Avanza con la información proporcionada por el docente pero señala igualmente si hay vacíos o limitaciones importantes en el análisis que vas a generar. 
+
+PASO 2: Análisis diagnóstico (solo después de respuestas)
+Una vez el docente haya respondido, integra:
+la información del PDF y las aclaraciones del docente.
+Y genera una tabla titulada “Análisis actividades evaluativas” con las siguientes columnas. No cambies los nombres de las columnas, y usa la información en paréntesis para su definición.
+Mecanismo de evaluación
+Resultado(s) de aprendizaje asociado(s)
+Competencia(s) asociada(s)
+¿Qué tipo de pensamiento debe demostrar el estudiante?
+(Procesos cognitivos. Taxonomia de Bloom) 
+¿Cómo se evidencia ese pensamiento en el mecanismo de evaluación?
+(Evidencia alineada al proceso cognitivo) 
+(Claramente / Parcialmente / No. Con breve justificación)
+¿Es visible el proceso del estudiante o solo el producto final?
+(Sí / Parcialmente / No. Con breve justificación)
+Posibilidad de resolución con IA sin evidenciar el proceso cognitivo
+(Sí / Parcialmente / No. Con breve justificación)
+Riesgo para la validez de la evaluación 
+(Alto/Medio/Bajo. Con justificación) (Considera que hay alto riesgo cuando la IA puede generar el producto final sin que el estudiante evidencie el proceso o la competencia.)
+¿Cómo podría la IA transformar o enriquecer este aprendizaje? 
+(Explica con ejemplo(s) breve(s) si podría apoyar el proceso, permitir nuevas formas de aprendizaje, etc)
+Recomendación
+(Selecciona una de las siguientes opciones:
+Ajuste mínimo: en la consigna, las condiciones, o en declaración transparencia del uso de IA
+Ajuste en el diseño para evidenciar mejor el aprendizaje
+Rediseño para evitar sustitución por IA
+Rediseño para integrar la IA y potenciar el aprendizaje
+Reglas de decisión:
+Si hay bajo riesgo pero falta claridad → Ajuste mínimo
+Si el problema es visibilidad del proceso → Ajuste en el diseño
+Si la IA sustituye el aprendizaje → Rediseño para evitar sustitución
+Si la actividad:
+ya usa IA o podría usarla
+y su integración podría aumentar el nivel cognitivo
+→ Rediseño para integrar la IA y potenciar el aprendizaje
+La recomendación debe considerar AMBAS dimensiones:
+Riesgo (columna 8)
+Potencial de enriquecimiento (columna 9)
+👉 No basar la recomendación solo en el riesgo.) 
+
+
+PASO 3: Diagnóstico general (SIN hablar aún de niveles AIAS)
+Al final, incluye un análisis sintético:
+1. Principales riesgos y oportunidades del diseño actual
+2. Qué tan visible es el pensamiento del estudiante en las evaluaciones
+3. Grado de dependencia del producto vs proceso 
+4. Oportunidades para usar la IA de forma que fortalezca o transforme el aprendizaje
+
+
+Formato:
+- Tabla clara y legible
+- Lenguaje aplicable al diseño docente
+- Lenguaje claro y profesional, pero accesible para docentes de cualquier área que no sean especialistas en pedagogía. 
+- Evita frases abstractas
+- Cada idea debe poder entenderse en una lectura rápida
+- Prioriza frases concretas sobre explicaciones conceptuales
+
+
+
+3.2 Prioriza
+No tienes que repensar todo. 
+Con el diagnóstico en mano, consolida los hallazgos en la siguiente tabla, una fila por actividad evaluativa. Usa la columna de recomendación del diagnóstico como punto de partida. Una vez completa, tendrás una vista general de tu curso que te permitirá identificar por dónde empezar: las actividades con recomendación de rediseño estructural son la prioridad, las de ajuste menor pueden seguir, y las que están bien pueden mantenerse con solo declarar el nivel AIAS.
+Producto 2
+Mecanismo o actividad evaluativa
+Resultado de aprendizaje (original o ajustado)
+Principal problema identificado 
+
+(E.g. La tarea evalúa más el producto que el pensamiento.
+La IA puede simular fácilmente el resultado)
+Recomendación
+
+(Mantener como está, ajuste menor, rediseño estructural)
+1.
+
+
+
+
+
+
+2.
+
+
+
+
+
+
+3.
+
+
+
+
+
+
+4.
+
+
+
+
+
+
+
+
+3.3 Decide 
+Es momento de decidir el nivel AIAS para cada actividad priorizada en el paso anterior.
+Cómo usar esta sección:
+Toma una actividad de tu tabla de priorización.
+Con esa actividad en mente, lea las tres listas que aparecen a continuación y selecciona para cada una la opción que mejor describa tu intención para esa actividad.
+Con base en las opciones que elegiste, completa los espacios del Prompt 3 y cópialo en el GPT del AIAS para recibir una recomendación de nivel fundamentada.
+Repite el proceso para cada actividad priorizada.
+Si en alguna lista no tienes claridad sobre qué seleccionar, no es necesario forzar una respuesta — indícalo en el prompt con "No estoy seguro".
+Las listas están diseñadas para ayudarte a clarificar tu intención pedagógica antes de consultar al GPT. Entre más clara sea tu intención, más útil será la recomendación del GPT.
+
+Lista A — Desempeño esperado con o sin IAG
+¿Qué quieres que el estudiante demuestre con o sin la IAG?
+Selecciona la opción más alta que aplique a tu caso.
+⚠️ Importante:
+Las opciones están organizadas en orden progresivo.
+Cada opción incluye las anteriores.
+Razonamiento disciplinar autónomo 
+Exploración y búsqueda inicial de información 
+Organización y selección de ideas relevantes generadas generadas por la IAG
+Juicio crítico sobre los outputs de la IAG
+Revisión y mejora del contenido generado por la IAG
+Integración de ideas generadas por IAG manteniendo voz propia
+Reflexión estructurada sobre el uso de la IAG en el proceso
+Toma de decisiones estratégicas sobre el uso de la IAG en todo el proceso 
+Adaptación creativa de herramientas de IAG
+Creación de artefactos, sistemas o nuevos enfoques basados en IAG
+Lista B — Rol de la IAG
+Selecciona el rol que mejor describe cómo debería participar la IAG en la actividad:
+Sin IAG — no se permite su uso
+Herramienta de apoyo - para búsqueda de información, exploración de ideas, retroalimentación, revisión, etc.  
+Herramienta de colaboración - Parte central del proceso o producto 
+Objeto de estudio — la IAG es analizada, diseñada o transformada como contenido del curso
+Lista C — Fase de participación
+Indica en qué momento quieres que participe la IAG:
+Solo en la planificación o tareas previas
+Durante la revisión y mejora
+Durante algunos momentos de la producción del trabajo
+En todas las fases del proceso
+
+
+Prompt 3: Decisión Niveles AIAS 
+Completa los espacios del siguiente prompt con la información de tu actividad evaluativa. Si cuentas con un PDF que detalle la actividad evaluativa o incluya el instrumento de evaluación (rúbricas, etc) adjúntalo al chat. Luego copia el prompt completo en el GPT del AIAS.
+Estoy revisando una actividad evaluativa de mi curso y necesito tu ayuda para determinar el nivel AIAS más adecuado.
+Información de la actividad evaluativa
+Descripción de la actividad evaluativa: [Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega como ensayo o defensa oral, si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si hay instrumento de evaluación, etc ]
+Resultado de aprendizaje asociado: [pegar del syllabus]
+Tipo de pensamiento o decisión que debe demostrar el estudiante: [Por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones]
+Desempeño esperado con IAG: [pega la opción que seleccionaste de la lista A]
+Rol de la IAG: [pega la opción que seleccionaste de la lista B]
+Fase de participación: [pega la opción que seleccionaste de la lista C]
+Con base en el marco AIAS, analiza mi caso como si estuvieras ejecutando un árbol de decisiones.
+Instrucciones para GPT
+Antes de recomendar un nivel AIAS:
+Haz preguntas claras al docente sobre cualquier detalle faltante, solo si es esencial para generar el texto resumen. 
+Fase 1 
+Solo cuando tengas suficiente información, genera una tabla titulada “Decisión AIAS”, que incluya las siguientes columnas (no modifiques los títulos):
+Actividad evaluativa
+Resultado de aprendizaje 
+Tipo de pensamiento o decisión asociado 
+Desempeño y rol de la IA seleccionado por el docente
+GPT indica si el desempeño esperado, el rol y la fase de la IA escogidos por el docente son coherentes con la actividad. Pegalos si no hay que hacer cambios. De lo contrario señala inconsistencias entre la actividad (columna 1) y estos elementos, y propón la mejora. Explicación breve y clara.
+Nivel AIAS
+ Recomienda el nivel AIAS más coherente (1–5). OBLIGATORIO: explica por qué ese nivel, cuál es el sentido pedagógico, cuál es la oportunidad de potenciar el aprendizaje que ofrece el nivel, etc.  
+Otros niveles 
+Explica brevemente por qué NO son más adecuados los niveles adyacentes.
+Tipo de rediseño
+GPT indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para que la actividad se alinee con el nivel AIAS de la columna 5. Relaciona la respuesta explicando cómo la visibilidad del proceso, oportunidad positiva de uso de la IA para el aprendizaje, y la validez de la evaluación influyen en la decisión. Y también  debe especificar dónde debería ocurrir el ajuste, por ejemplo: 
+Alineación mecanismo de evaluación y resultado de aprendizaje
+Tipo de pensamiento o procesos cognitivos de la tarea
+Consigna de la actividad
+Rúbrica o criterios de evaluación
+Evidencias solicitadas
+Uso de la IA en la tarea
+Fase 2
+Genera un resumen en bullets de la tabla titulado “Resumen Decisión AIAS” con los puntos claves de la tabla, con explicación breve de esos puntos, e incluye 2 o 3 implicaciones para el diseño evaluativo. 
+Formato:
+- Tabla clara y legible
+- Lenguaje aplicable al diseño docente
+- Lenguaje claro y profesional, pero accesible para docentes de cualquier área que no sean especialistas en pedagogía. 
+- Evita frases abstractas
+- Cada idea debe poder entenderse en una lectura rápida
+- Prioriza frases concretas sobre explicaciones conceptuales
+Interacción con el usuario (OBLIGATORIO)
+Al finalizar la respuesta pregunta al usuario: 
+“¿El nivel recomendado coincide con lo que quieres?
+¿Tienes alguna duda sobre la tabla o el resumen generado?” 
+
+
+
+
+Producto 3
+Te invitamos a completar la siguiente tabla con la reflexión que realizaste en el paso anterior: 
+Actividad evaluativa
+Resultado de aprendizaje
+Nivel AIAS decidido 
+Justificación Breve 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.4 Rediseña 
+Ya tienes lo más difícil resuelto: sabes qué quieres evaluar y qué nivel es el más coherente con ese propósito. Este paso te ayuda a traducir esa decisión en cambios concretos sobre tu actividad.
+Prompt 4: Rediseño de actividades
+Completa el espacio del siguiente prompt con el nombre del mecanismo de evaluación que analizaste en el prompt 3. Luego copia el prompt completo en la conversación que llevas con el GPT del AIAS.  
+Vas a rediseñar la actividad evaluativa [inserta nombre del mecanismo de evaluación] a partir de la información generada previamente en la tabla “Decisión AIAS”.
+El objetivo es traducir esa decisión en acciones concretas de rediseño evaluativo, asegurando coherencia entre:
+el nivel AIAS seleccionado
+el tipo de pensamiento que se busca evaluar
+y la validez de la evaluación
+
+Estructura de salida (OBLIGATORIO)
+Usa la información de la tabla ‘Decisión AIAS’ generada previamente en la conversación. Si no está disponible, pide al usuario que la comparta antes de continuar
+Genera la siguiente tabla titulada “Rediseño de una actividad evaluativa”
+Filas obligatorias (No modifiques los títulos)
+Descripción breve mecanismo de evaluación
+Resultado de aprendizaje
+Nivel AIAS
+Qué evaluar
+Estrategia de evaluación
+Instrumento de evaluación 
+Consigna al estudiante
+Recursos (si aplica)
+
+Definición operativa de filas (OBLIGATORIO)
+Fila 4: Qué evaluar (en relación al desempeño con IAG)
+→ Por ejemplo: Juicio crítico sobre los outputs de la IAG, razonamiento disciplinar autónomo, 
+Fila 5: Estrategia de evaluación
+→ Describe cómo se organiza la experiencia evaluativa completa: qué hacen los estudiantes, si se evalúa el proceso o solo el producto, los momentos o fases de la actividad evaluativa, el rol de la IAG, etc. 
+
+Criterios de calidad (OBLIGATORIO)
+Evita frases abstractas como:
+“fomentar la reflexión”
+“hacer visible el proceso”
+“mejorar el aprendizaje”
+Traduce siempre a acciones observables, por ejemplo:
+“Incluye una fase donde el estudiante compare su propuesta con una generada por IA”
+Evita redundancias
+
+Coherencia con AIAS (OBLIGATORIO)
+Asegura que:
+La tabla refleje explícitamente el nivel AIAS seleccionado
+Se haga visible el proceso del estudiante, no solo el producto
+El uso de la IA no pueda reemplazar fácilmente el desempeño evaluado
+La IA se use como apoyo al aprendizaje, no como sustituto del pensamiento, incluso cuando se ubica la actividad en nivel 4 o 5 del AIAS. 
+
+Interacción con el usuario (OBLIGATORIO)
+Al finalizar, pregunta:
+¿El rediseño propuesto es viable en tu contexto?
+¿Hay algún elemento que quisieras ajustar o adaptar a tu asignatura?
+¿Te gustaría que desarrollemos una rúbrica o consigna más detallada a partir de esto?
+
+3.5 Producto final 
+La siguiente plantilla está diseñada para que registres y consolides el rediseño de tus actividades evaluativas. Completa una fila por actividad intervenida.
+https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQDCEPn7uhlSSZxm5kP2xi5iATtSn-XI4zfP3yIlV04t2g0?e=nd3jTS 
+
+Referencias
+Bekiaridis, G., & Attwell, G. (2024). Supplement to the DigCompEDU Framework: Outlining the skills and competences of educators related to AI in education. University of Bremen: Institut Technik und Bildung (ITB). https://doi.org/10.26092/elib/2708 
+Corbin, T., Bearman, M., Boud, D., & Dawson, P. (2025). The wicked problem of AI and assessment. Assessment & evaluation in higher education, 1-17.
+Cosgrove, J., & Cachia, R. (2025). DigComp 3.0: European Digital Competence Framework - Fifth edition. Publications Office of the European Union. https://data.europa.eu/doi/10.2760/0001149
+Digital Education Council. (2026). Encuesta sobre la IA en la educación superior en América Latina. 
+Liu, D., and A. Bridgeman. (2023). “What to Do about Assessments If we Can’t out-Design or out-Run AI? Teaching@Sydney.” https://educational-innovation.sydney.edu.au/teaching%40sydney/what-to-do-about-assessments-if-we-cant-out-design-or-out-run-ai/
+Miao, F., & Cukurova, M. (2025). Marco de competencias para docentes en materia de IA. UNESCO. https://doi.org/10.54675/AQKZ9414
+Perkins, M., Roe, J., & Furze, L. (2025). Reimagining the Artificial Intelligence Assessment Scale (AIAS): A refined framework for educational assessment. Journal of University Teaching and Learning Practice, 22(7). https://doi.org/10.53761/rrm4y757  
+PwC. (2025). The Fearless Future: 2025 Global AI Jobs Barometer. AI makes people more valuable.PricewaterhouseCoopers.https://www.pwc.com/gx/en/issues/artificial-intelligence/job-barometer/2025/report.pdf
+
+
+
+Ficha técnica
+Título: 
+Evaluar en tiempos de IA: un recurso para docentes
+Autor/a:
+Laura Sofía Gutiérrez Martínez
+Correo: 
+laura.gutierrez5@u.icesi.edu.co 
+Institución:
+Universidad Icesi
+Decanatura
+Decanatura de Innovación y Fortalecimiento del PEI
+Área:
+IA + TIC para la educación 
+Revisor/a
+Henry Taquez 
+Año:
+2026 
+Licencia
+Creative Commons Atribución 4.0 Internacional (CC BY 4.0)
+(logo) con codigo 
+
+
+
+Este recurso puede ser reproducido, distribuido y adaptado libremente, siempre que se cite la autoría original.
+
+
+

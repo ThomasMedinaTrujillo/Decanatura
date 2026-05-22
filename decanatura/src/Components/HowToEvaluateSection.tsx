@@ -18,7 +18,7 @@ export default function HowToEvaluateSection({
     <div className="mb-12 overflow-hidden border border-[#dfe2e8] bg-white shadow-[0_16px_36px_-30px_rgba(17,24,39,0.45)]">
       <div className="flex items-center justify-between bg-[#5454e9] px-5 py-3 text-white">
         <h3 className="text-[12px] font-bold uppercase tracking-[0.14em]">{howToEvaluateTitle}</h3>
-        <div className="h-3 w-20 bg-[#12c96d]" />
+        
       </div>
 
       <div className="px-5 py-5 md:px-6">
@@ -33,7 +33,21 @@ export default function HowToEvaluateSection({
                 <h4 className="text-[17px] font-bold text-[#5454e9]">{strategy.title}</h4>
               </div>
               <div className="px-4 py-4">
-                <p className="text-[15px] leading-6 text-black">{strategy.description}</p>
+                {strategy.description.includes('\n') ? (
+                  <ul className="space-y-2 text-[15px] leading-6 text-black">
+                    {strategy.description
+                      .split('\n')
+                      .map((item) => item.trim())
+                      .filter(Boolean)
+                      .map((item) => (
+                        <li key={item} className="ml-5 list-disc">
+                          {item}
+                        </li>
+                      ))}
+                  </ul>
+                ) : (
+                  <p className="text-[15px] leading-6 text-black">{strategy.description}</p>
+                )}
               </div>
             </div>
           ))}
