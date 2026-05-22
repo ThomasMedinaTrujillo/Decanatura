@@ -256,7 +256,7 @@ export default function Momento3() {
     if (!endpoint) {
       setSharedProductFormStatus({
         type: 'error',
-        message: 'Falta configurar VITE_MOMENTO3_FORM_POST_URL para enviar a la hoja correcta.',
+        message: 'Endpoint no configurado.',
       });
       return;
     }
@@ -298,7 +298,7 @@ export default function Momento3() {
 
       setSharedProductFormStatus({
         type: 'success',
-        message: `Registro enviado a la hoja ${sharedProductForm.productSheet}.`,
+        message: `Enviado a ${sharedProductForm.productSheet} con éxito.`,
       });
 
       // Clear all shared product fields after successful submit
@@ -322,7 +322,7 @@ export default function Momento3() {
     } catch (error) {
       setSharedProductFormStatus({
         type: 'error',
-        message: 'No se pudo enviar el formulario compartido. Revisa el endpoint y permisos.',
+        message: 'Error al enviar.',
       });
     } finally {
       setIsSubmittingSharedProductForm(false);
@@ -337,7 +337,7 @@ export default function Momento3() {
     if (!endpoint) {
       setFinalFormStatus({
         type: 'error',
-        message: 'Falta configurar VITE_MOMENTO3_FINAL_POST_URL para enviar el formulario a Sheets o Excel.',
+        message: 'Endpoint no configurado.',
       });
       return;
     }
@@ -363,7 +363,7 @@ export default function Momento3() {
 
       setFinalFormStatus({
         type: 'success',
-        message: 'Registro enviado. Si el endpoint está conectado a Sheets, la fila quedará guardada.',
+        message: 'Enviado con éxito.',
       });
 
       setFinalForm((current) => ({
@@ -382,7 +382,7 @@ export default function Momento3() {
     } catch (error) {
       setFinalFormStatus({
         type: 'error',
-        message: 'No se pudo enviar el formulario. Revisa el endpoint, permisos y CORS.',
+        message: 'Error al enviar.',
       });
     } finally {
       setIsSubmittingFinalForm(false);
