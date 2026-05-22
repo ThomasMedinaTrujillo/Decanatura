@@ -8,7 +8,7 @@ interface FrameworkCardProps {
 const FrameworkCard = ({ name, description, attribution }: FrameworkCardProps) => (
   <div className="bg-white border" style={{ borderColor: '#cecfd4', padding: '15px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '234px' }}>
     <div className="flex flex-col gap-[13.175px]">
-      <p className="font-bold leading-[1.5]" style={{ color: '#865cf0', fontSize: '24px' }}>
+      <p className="font-bold leading-normal" style={{ color: '#865cf0', fontSize: '24px' }}>
         {name}
       </p>
       <p className="font-normal leading-normal" style={{ fontSize: '14px', color: 'black' }}>
@@ -27,25 +27,25 @@ export default function CompetencyFramework() {
       id: 1,
       name: 'Two-Lane Model',
       description: 'Divide las evaluaciones en dos carriles: evaluaciones seguras, donde se garantiza que el trabajo es del estudiante, y evaluaciones abiertas, donde se asume que la IAG puede estar presente.',
-      attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
+      attribution: 'Liu & Bridgeman (2023)',
     },
     {
       id: 2,
       name: 'Marco de Competencias en IA para Docentes',
       description: 'Marco amplio e integral. Propone estándares de competencia en IA para docentes en cinco dimensiones: pedagogía, currículo, evaluación, desarrollo profesional y ética.',
-      attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
+      attribution: 'Miao & Cukurova (2025) / UNESCO (2025)',
     },
     {
       id: 3,
       name: 'DigComp 3.0',
       description: 'Quinta edición del Marco Europeo de Competencias Digitales que consolida la IA como un componente transversal de la ciudadanía. Define los conocimientos y actitudes necesarios para interactuar con sistemas inteligentes, haciendo especial énfasis en la curación de datos, la mitigación de sesgos y la seguridad en entornos automatizados.',
-      attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
+      attribution: 'Cosgrove & Cachia (2025)',
     },
     {
       id: 4,
       name: 'Suplemento DigCompEdu',
       description: 'Amplía el marco original de la Comisión Europea mediante la definición de competencias específicas en IA. Se centra en la alfabetización en IA (AI Literacy), capacitando a los docentes para comprender el funcionamiento de los algoritmos, gestionar la ética y la privacidad, y utilizar la IA generativa para la creación de recursos y la inclusión educativa.',
-      attribution: 'Liu & Bridgeman, Universidad de Sydney (2023)',
+      attribution: 'Bekiaridis & Attwell (2024)',
     },
     {
       id: 5,

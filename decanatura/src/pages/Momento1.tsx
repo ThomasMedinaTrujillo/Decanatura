@@ -10,13 +10,15 @@ import DesignActivity from '../Components/DesignActivity';
 import PanoramaSection from '../Components/PanoramaSection';
 import ReflectionQuestions from '../Components/ReflectionQuestions';
 import CompetencyFramework from '../Components/CompetencyFramework';
-import Button from '../Components/Button';
 import Sidebar from '../Components/Sidebar';
 
 import {motion} from 'framer-motion'
+import CTASection from '../Components/CTASection';
+import { useNavigate } from 'react-router';
 
 export default function Momento1() {
-  
+
+  const navigate = useNavigate();
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6,  } }
@@ -69,6 +71,7 @@ const fadeInUpVariants = {
 
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="Un recurso con varios puntos de partida"
             subtitle=""
@@ -85,6 +88,7 @@ const fadeInUpVariants = {
         {/* Section 2: Panorama y tendencias actuales */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="Panorama y tendencias actuales"
             subtitle=""
@@ -99,6 +103,7 @@ const fadeInUpVariants = {
 
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="Lo que revela la encuesta regional más grande sobre IA en educación superior"
             subtitle=""
@@ -121,9 +126,26 @@ const fadeInUpVariants = {
               description="de docentes reconoce limitaciones propias en comprensión y juicio crítico sobre IA"
             />
           </div>
-          <p className="text-center text-sm text-gray-600">
-            Con cerca de 30.000 respuestas en 29 instituciones de América Latina, el Digital Education Council (2026).
-          </p>
+          <div className="space-y-4 text-sm leading-6 text-gray-700">
+            <p>
+              Con cerca de 30.000 respuestas en 29 instituciones de América Latina, el Digital Education Council
+              (2026) revela que el 92% de los estudiantes utiliza la IA en su aprendizaje, el 73% espera usarla en su
+              trabajo futuro y más del 50% vería una prohibición institucional de la IA como un retroceso, no como una
+              protección.
+            </p>
+            <p>
+              Pero hay una tensión en el estudiantado que vale nombrar: el 65% teme que la IA erosione el pensamiento
+              crítico y la creatividad, más del 45% considera que sus competencias en IAG son aún limitadas, y el 57%
+              espera que su institución brinde mayor formación en competencias de IA. Afrontar este desafío exige
+              criterio docente. Sin embargo, más del 50% de los docentes reconoce limitaciones en sus propias
+              competencias de IA.
+            </p>
+            <p>
+              Los estudiantes piden más formación. Los docentes reconocen que también la necesitan. Cerrar esta brecha
+              no es una tarea sencilla, principalmente porque nos enfrentamos a un desafío que no tiene una única
+              respuesta correcta.
+            </p>
+          </div>
         </section>
         </AnimatedSection> 
         <AnimatedSection>
@@ -140,6 +162,7 @@ const fadeInUpVariants = {
         {/* Section 4: Wicked Problems */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="Todo problema (no) tiene solución"
             subtitle=""
@@ -158,13 +181,33 @@ const fadeInUpVariants = {
         {/* Section 5: Allow AI or not */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
             bgcolor='#865CF0' 
             title="¿Permitimos el uso de IA o no?"
             subtitle=""
           />
-          <p className="mb-8 text-base">
-            La pregunta que más se hace no es la más útil. Si estamos dispuestos a reconocer la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores, la pregunta no puede seguir siendo si permitir o prohibirla (Perkins et al., 2025).
-          </p>
+          <div className="space-y-4 text-base leading-7 text-gray-700">
+            <p className="font-semibold text-gray-900">La pregunta que más se hace no es la más útil.</p>
+            <p>
+              Dada la creciente ubicuidad de la IA, sumado a la baja fiabilidad de los detectores de IA, la pregunta
+              no puede seguir siendo si permitir o prohibirla (Perkins et al., 2025).
+            </p>
+            <p>
+              La anterior declaración invita a soltar el control, pero abre otras preocupaciones respecto al
+              aprendizaje de los estudiantes: ¿el uso de la IA invalida la evaluación? ¿Invalida el aprendizaje?
+            </p>
+            <p>La respuesta corta es: depende.</p>
+            <p>
+              Posible buen uso: un estudiante usa la IA para generar contraargumentos y luego los analiza críticamente.
+            </p>
+            <p>
+              Posible mal uso: un estudiante le pide a la IA que genere por completo su ensayo.
+            </p>
+            <p>
+              La conversación debe entonces desplazarse hacia donde tenemos mayor agencia: el diseño y propósito de
+              nuestras actividades.
+            </p>
+          </div>
           <DesignActivity />
 
         </section>
@@ -175,10 +218,14 @@ const fadeInUpVariants = {
         {/* Section 6: How to design valid assessments */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="¿Cómo diseñar actividades evaluativas que sean válidas?"
             subtitle=""
           />
+          <p className="mb-6 text-base leading-7 text-gray-700">
+            Responder con criterio exige primero claridad sobre qué se está evaluando y para qué.
+          </p>
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Una mirada a tu práctica</h3>
             <p className="text-base text-gray-700 mb-8">
@@ -197,6 +244,7 @@ const fadeInUpVariants = {
         {/* Section 7: Competency Frameworks */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
             title="Marcos de competencias y de integración de la IA en educación"
             subtitle="Cinco marcos que lideran la literatura actual"
@@ -210,14 +258,36 @@ const fadeInUpVariants = {
         {/* Section 8: AIAS Definition */}
         <section className="mb-16">
           <SectionHeading
+          uppertitle="Exploración"
         bgcolor='#865CF0' 
-        title="Qué es el AIAS, y que no es"
+        title="Qué es el AIAS, y qué no es"
         subtitle=""
           />
           <ContentSection 
             leftText="El AIAS, desarrollado por Perkins, Furze, Roe y MacVaugh (actualmente en su segunda versión, 2025), es un marco centrado en el diseño evaluativo que busca orientar la integración de la IAG en función de los resultados de aprendizaje — y no al revés."
-            rightText="Está fundamentado en principios del constructivismo social: el aprendizaje ocurre a través de la interacción con otros, con el entorno y con las herramientas culturales disponibles (Vygotsky, 1978 citado por Perkins et al., 2025), siendo la IAG una herramienta potencial para apoyar ese aprendizaje."
+            rightText="Está fundamentado en principios del constructivismo social, particularmente en la idea de que el aprendizaje ocurre a través de la interacción con otros, con el entorno y con las herramientas culturales disponibles (Vygotsky, 1978 citado por Perkins et al., 2025), siendo la IAG una herramienta potencial para apoyar el aprendizaje (Perkins et al., 2025)."
           />
+          <div className="mt-8 space-y-4 text-base leading-7 text-gray-700">
+            <p>
+              Este marco propone 5 niveles de integración, que van desde el no uso de IA hasta la co-creación plena
+              con IA. Los niveles no son jerárquicos, su elección depende de varias consideraciones. Con mayor detalle,
+              abordaremos los niveles en los siguientes momentos.
+            </p>
+            <div>
+              <p className="font-semibold text-gray-900">Para tener en cuenta:</p>
+              <p className="mt-2 font-semibold text-[#865CF0]">El AIAS es:</p>
+              <ul className="mt-2 list-disc space-y-2 pl-6">
+                <li>Un marco flexible para el diseño evaluativo.</li>
+                <li>Una orientación para formar a estudiantes en capacidades críticas respecto a la IA.</li>
+                <li>Un lenguaje común para hacer explícito y transparente las expectativas de docentes y estudiantes.</li>
+              </ul>
+              <p className="mt-4 font-semibold text-[#865CF0]">El AIAS no es:</p>
+              <ul className="mt-2 list-disc space-y-2 pl-6">
+                <li>Una solución universal aplicable sin adaptación.</li>
+                <li>Una herramienta para restringir o prohibir el uso de la IAG, o para permitir su uso sin buen motivo.</li>
+              </ul>
+            </div>
+          </div>
         </section>
         </AnimatedSection> 
         <AnimatedSection>
@@ -269,9 +339,7 @@ const fadeInUpVariants = {
 
         {/* CTA Button */}
         <section className="mb-16 text-center">
-          <Button variant="primary" size="lg">
-            Continuar al siguiente momento
-          </Button>
+          <CTASection onClick={() => navigate('/profundizacion')} text="Continuar: Profundización" />
         </section>
         </div>
       </div>

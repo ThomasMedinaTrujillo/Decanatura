@@ -2,10 +2,10 @@ import Button from './Button';
 
 
 
-export default function CTASection({text}: {text: string}) {
+export default function CTASection({text, onClick}: {text: string; onClick: () => void}) {
   return (
     <section className="mb-16 text-center">
-      <Button variant="primary" size="lg">
+      <Button onClick={onClick} variant="primary" size="lg">
         {text}
       </Button>
     </section>

@@ -1,17 +1,17 @@
 import React, { useMemo, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 
-import imgTemplatePreview from '../assets/96f660d6615c50208ecad72b513730a26d83679f.png';
+import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
 import Momento1Banner from '../Components/Momento1Banner';
+import SectionHeading from '../Components/SectionHeading';
 import GPTCard from '../Components/GPTCard';
 import { FileIcon } from '../Components/Icons';
 import { Prompt } from '../Components/Prompt';
 import Momento3OptionGroup from '../Components/Momento3OptionGroup';
-import Momento3ResourceCard from '../Components/Momento3ResourceCard';
-import Momento3Section from '../Components/Momento3Section';
 import CTASection from '../Components/CTASection';
 import { momento3Prompts } from '../prompts/prompts';
+import { useNavigate } from 'react-router';
 
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -32,7 +32,7 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
 const sidebarItems = [
   { label: 'Diagnóstico inicial', href: '#diagnostico' },
   { label: 'Prompt 1: Resultados de aprendizaje', href: '#prompt-1', isIndented: true },
-  { label: 'Prioriza', href: '#prioriza' },
+  { label: 'Cómo estás evaluando', href: '#prioriza' },
   { label: 'Prompt 2: Actividades evaluativas', href: '#prompt-2', isIndented: true },
   { label: 'Decide el nivel AIAS', href: '#decide' },
   { label: 'Prompt 3: Decisión AIAS', href: '#prompt-3', isIndented: true },
@@ -78,6 +78,12 @@ const participationOptions = [
   'Durante la revisión y mejora',
   'Durante algunos momentos de la producción del trabajo',
   'En todas las fases del proceso',
+];
+
+const sharedProductOptions = [
+  { label: 'Producto 1', value: 'producto1' },
+  { label: 'Producto 2', value: 'producto2' },
+  { label: 'Producto 3', value: 'producto3' },
 ];
 
 function buildDynamicPrompt({
@@ -168,10 +174,47 @@ Tienes alguna duda sobre la tabla o el resumen generado?"`;
 }
 
 export default function Momento3() {
+  const navigate = useNavigate()
   const [selectedPerformance, setSelectedPerformance] = useState<string[]>([]);
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
   const [selectedPhases, setSelectedPhases] = useState<string[]>([]);
   const [prompt3Text, setPrompt3Text] = useState<string>(momento3Prompts.prompt3);
+  const [sharedProductForm, setSharedProductForm] = useState({
+    productSheet: 'producto1',
+    profesor: '',
+    curso: '',
+    // Producto 1 fields
+    resultadoAprendizaje: '',
+    clasificacion: '',
+    justificacion: '',
+    ajuste: '',
+    // Producto 2 fields
+    mecanismo: '',
+    resultadoActividad: '',
+    problemaPrincipal: '',
+    recomendacion: '',
+    // Producto 3 fields
+    actividadEvaluativa: '',
+    resultadoProducto3: '',
+    nivelAIAS: '',
+    justificacionBreve3: '',
+  });
+  const [isSubmittingSharedProductForm, setIsSubmittingSharedProductForm] = useState(false);
+  const [sharedProductFormStatus, setSharedProductFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [finalForm, setFinalForm] = useState({
+    profesor: '',
+    curso: '',
+    mecanismoEvaluacion: '',
+    resultadoAprendizaje: '',
+    nivelAIAS: '',
+    queEvaluar: '',
+    comoEvaluar: '',
+    consignaEstudiante: '',
+    recursos: '',
+    notasObservaciones: '',
+  });
+  const [isSubmittingFinalForm, setIsSubmittingFinalForm] = useState(false);
+  const [finalFormStatus, setFinalFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   const dynamicPromptPreview = useMemo(
     () =>
@@ -191,40 +234,183 @@ export default function Momento3() {
     setPrompt3Text(dynamicPromptPreview);
   };
 
+  const handleFinalFormChange = (field: keyof typeof finalForm, value: string) => {
+    setFinalForm((current) => ({
+      ...current,
+      [field]: value,
+    }));
+  };
+
+  const handleSharedProductChange = (field: keyof typeof sharedProductForm, value: string) => {
+    setSharedProductForm((current) => ({
+      ...current,
+      [field]: value,
+    }));
+  };
+
+  const submitSharedProductForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const endpoint = (import.meta.env.VITE_MOMENTO3_FORM_POST_URL as string | undefined) || (import.meta.env.VITE_MOMENTO3_FINAL_POST_URL as string | undefined);
+
+    if (!endpoint) {
+      setSharedProductFormStatus({
+        type: 'error',
+        message: 'Falta configurar VITE_MOMENTO3_FORM_POST_URL para enviar a la hoja correcta.',
+      });
+      return;
+    }
+
+    setIsSubmittingSharedProductForm(true);
+    setSharedProductFormStatus(null);
+
+    try {
+      const payload = {
+        source: 'momento-3-producto-compartido',
+        sheetName: sharedProductForm.productSheet,
+        profesor: sharedProductForm.profesor,
+        curso: sharedProductForm.curso,
+        // Producto 1
+        resultadoAprendizaje: sharedProductForm.resultadoAprendizaje,
+        clasificacion: sharedProductForm.clasificacion,
+        justificacion: sharedProductForm.justificacion,
+        ajuste: sharedProductForm.ajuste,
+        // Producto 2
+        mecanismo: sharedProductForm.mecanismo,
+        resultadoActividad: sharedProductForm.resultadoActividad,
+        problemaPrincipal: sharedProductForm.problemaPrincipal,
+        recomendacion: sharedProductForm.recomendacion,
+        // Producto 3
+        actividadEvaluativa: sharedProductForm.actividadEvaluativa,
+        resultadoProducto3: sharedProductForm.resultadoProducto3,
+        nivelAIAS: sharedProductForm.nivelAIAS,
+        justificacionBreve3: sharedProductForm.justificacionBreve3,
+      };
+
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      setSharedProductFormStatus({
+        type: 'success',
+        message: `Registro enviado a la hoja ${sharedProductForm.productSheet}.`,
+      });
+
+      // Clear all shared product fields after successful submit
+      setSharedProductForm((current) => ({
+        ...current,
+        profesor: '',
+        curso: '',
+        resultadoAprendizaje: '',
+        clasificacion: '',
+        justificacion: '',
+        ajuste: '',
+        mecanismo: '',
+        resultadoActividad: '',
+        problemaPrincipal: '',
+        recomendacion: '',
+        actividadEvaluativa: '',
+        resultadoProducto3: '',
+        nivelAIAS: '',
+        justificacionBreve3: '',
+      }));
+    } catch (error) {
+      setSharedProductFormStatus({
+        type: 'error',
+        message: 'No se pudo enviar el formulario compartido. Revisa el endpoint y permisos.',
+      });
+    } finally {
+      setIsSubmittingSharedProductForm(false);
+    }
+  };
+
+  const submitFinalForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const endpoint = import.meta.env.VITE_MOMENTO3_FINAL_POST_URL as string | undefined;
+
+    if (!endpoint) {
+      setFinalFormStatus({
+        type: 'error',
+        message: 'Falta configurar VITE_MOMENTO3_FINAL_POST_URL para enviar el formulario a Sheets o Excel.',
+      });
+      return;
+    }
+
+    setIsSubmittingFinalForm(true);
+    setFinalFormStatus(null);
+
+    try {
+      const payload = {
+        source: 'momento-3-formulario-final',
+        sheetName: 'productoFinal',
+        ...finalForm,
+      };
+
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      setFinalFormStatus({
+        type: 'success',
+        message: 'Registro enviado. Si el endpoint está conectado a Sheets, la fila quedará guardada.',
+      });
+
+      setFinalForm((current) => ({
+        ...current,
+        profesor: '',
+        curso: '',
+        mecanismoEvaluacion: '',
+        resultadoAprendizaje: '',
+        nivelAIAS: '',
+        queEvaluar: '',
+        comoEvaluar: '',
+        consignaEstudiante: '',
+        recursos: '',
+        notasObservaciones: '',
+      }));
+    } catch (error) {
+      setFinalFormStatus({
+        type: 'error',
+        message: 'No se pudo enviar el formulario. Revisa el endpoint, permisos y CORS.',
+      });
+    } finally {
+      setIsSubmittingFinalForm(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#f7f7f9]">
+    <div className="min-h-screen relative">
+      <Navbar />
       <Momento1Banner momento="Momento 3" title="Transformación" />
 
-      <div className="flex gap-8 px-4 py-8 lg:px-8">
-        <Sidebar title="Transformación" stepNumber={3} items={sidebarItems} />
+      <div className="w-full px-4 lg:px-8 flex gap-8 py-8">
+        <div className="hidden lg:block">
+          <Sidebar title="Transformación" stepNumber={3} items={sidebarItems} />
+        </div>
 
-        <main className="flex-1 space-y-8">
+        <main className="flex-1 w-full space-y-12">
           <AnimatedSection>
-            <Momento3Section
-              id="diagnostico"
-              title="Diagnóstico inicial"
-              description={
-                <>
-                  <p>
-                    Este momento te guía desde el diagnóstico de lo que tienes hoy hasta el rediseño concreto de tus
-                    evaluaciones, paso a paso y con apoyo del GPT del AIAS.
-                  </p>
-                  <p>
-                    Aquí revisas dos elementos de tu syllabus: los resultados de aprendizaje y las actividades
-                    evaluativas. La meta es identificar qué ajustar primero y llegar a una decisión de diseño clara.
-                  </p>
-                </>
-              }
-              aside={
-                <div className="bg-[#eef8f2] p-5 ring-1 ring-[#dceee3]">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Producto final</p>
-                  <p className="mt-3 text-sm leading-6 text-[#272727]">
-                    La plantilla final está pensada para consolidar el rediseño de tus actividades evaluativas. Completa
-                    una fila por actividad intervenida.
-                  </p>
-                </div>
-              }
-            >
+            <section className="mb-16" id="diagnostico">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Diagnóstico inicial" subtitle="" />
+              <p className="mb-6 text-base">
+                Este momento te guía desde el diagnóstico de lo que tienes hoy hasta el rediseño concreto de tus
+                evaluaciones, paso a paso y con apoyo del GPT del AIAS.
+              </p>
+              <p className="mb-8 text-base">
+                Aquí revisas dos elementos de tu syllabus: los resultados de aprendizaje y las actividades
+                evaluativas. La meta es identificar qué ajustar primero y llegar a una decisión de diseño clara.
+              </p>
               <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
                 <div className="border border-[#d7d8dc] bg-[#fcfcfd] p-5">
                   <h3 className="text-xl font-bold text-[#4cb979]">Qué estás evaluando</h3>
@@ -255,55 +441,39 @@ export default function Momento3() {
                   />
                 </div>
               </div>
-            </Momento3Section>
+            </section>
           </AnimatedSection>
 
           <AnimatedSection>
-            <Momento3Section
-              id="prompt-1"
-              title="Prompt 1 y Producto 1"
-              description={
-                <>
-                    <p>Adjunta el PDF de tu syllabus y usa este prompt para analizar los resultados de aprendizaje.</p>
-                  <p>
-                    Después, completa la tabla del producto 1 con la información generada. Recuerda crear una copia
-                    antes de editarla.
-                  </p>
-                </>
-              }
-            >
+            <section className="mb-16" id="prompt-1">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Análisis resultados de aprendizaje" subtitle="" />
+              <p className="mb-6 text-base">
+                Adjunta el PDF de tu syllabus y usa este prompt para analizar los resultados de aprendizaje.
+              </p>
+              <p className="mb-8 text-base">
+                Después, completa la tabla del producto 1 con la información generada. Recuerda crear una copia
+                antes de editarla.
+              </p>
               <div className="flex flex-col gap-6">
                 <Prompt text="Prompt 1: Análisis resultados de aprendizaje" prompt={momento3Prompts.prompt1} />
-                <Momento3ResourceCard
-                  eyebrow="Producto 1"
-                  title="Recursos tablas IAG resultados"
-                  description="Plantilla para organizar el análisis de resultados de aprendizaje y dejar trazabilidad de los hallazgos del diagnóstico."
-                  href="https://1drv.ms/x/c/486392b43e092453/IQB0XwvvYwLXT48USC9GueWgAdTzGUEnhRV6I1JQEIOBdkg?e=wt5ZCr"
-                  cta="Abrir tabla"
-                  imageSrc={imgTemplatePreview}
-                />
               </div>
-            </Momento3Section>
+            </section>
           </AnimatedSection>
 
+
+
           <AnimatedSection>
-            <Momento3Section
-              id="prioriza"
-              title="Prioriza"
-              description={
-                <>
-                  <p className="font-semibold text-[#19191b]">No tienes que repensarlo todo.</p>
-                  <p>
-                    Consolida los hallazgos del diagnóstico en una tabla, una fila por actividad evaluativa. Las
-                    actividades con recomendación de rediseño estructural son la prioridad; las de ajuste menor pueden
-                    seguir despues.
-                  </p>
-                </>
-              }
-            >
+            <section className="mb-16" id="prioriza">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Cómo estás evaluando" subtitle="" />
+              <p className="mb-6 font-semibold text-[#19191b]">No tienes que repensarlo todo.</p>
+              <p className="mb-8 text-base">
+                Consolida los hallazgos del diagnóstico en una tabla, una fila por actividad evaluativa. Las
+                actividades con recomendación de rediseño estructural son la prioridad; las de ajuste menor pueden
+                seguir despues.
+              </p>
               <div className="flex flex-col gap-6">
                 <div className="border border-[#d7d8dc] bg-[#fcfcfd] p-5">
-                  <h3 className="text-xl font-bold text-[#4cb979]">Cómo estás evaluando</h3>
+                  <h3 className="text-xl font-bold text-[#4cb979]">Prioriza</h3>
                   <p className="mt-3 text-sm leading-6 text-[#272727]">
                     Algunas preguntas que puedes hacerte respecto a tus actividades evaluativas son:
                   </p>
@@ -326,32 +496,19 @@ export default function Momento3() {
                   </div>
                 </div>
               </div>
-
-              <Momento3ResourceCard
-                eyebrow="Producto 3"
-                title="Plantilla de priorizacion y producto final"
-                description="Consolida en una sola vista las actividades del curso, su recomendación y el punto de partida para el rediseño."
-                href="https://1drv.ms/x/c/486392b43e092453/IQB0XwvvYwLXT48USC9GueWgAdTzGUEnhRV6I1JQEIOBdkg?e=wt5ZCr"
-                cta="Abrir recurso"
-                imageSrc={imgTemplatePreview}
-              />
-            </Momento3Section>
+            </section>
           </AnimatedSection>
 
           <AnimatedSection>
-            <Momento3Section
-              id="decide"
-              title="Decide el nivel AIAS"
-              description={
-                <>
-                  <p>
-                    Ya con el diagnóstico claro, este paso te ayuda a traducir lo que quieres evaluar en una decisión
-                    concreta sobre desempeño esperado, rol de la IAG y fase de participación.
-                  </p>
-                  <p>Marca todas las opciones que apliquen a tu caso y luego actualiza el prompt con el boton.</p>
-                </>
-              }
-            >
+            <section className="mb-16" id="decide">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Decide el nivel AIAS" subtitle="" />
+              <p className="mb-6 text-base">
+                Ya con el diagnóstico claro, este paso te ayuda a traducir lo que quieres evaluar en una decisión
+                concreta sobre desempeño esperado, rol de la IAG y fase de participación.
+              </p>
+              <p className="mb-8 text-base">
+                Marca todas las opciones que apliquen a tu caso y luego actualiza el prompt con el boton.
+              </p>
               <div className="grid gap-6 lg:grid-cols-3">
                 <Momento3OptionGroup
                   title="Lista A - Desempeño esperado con o sin IAG"
@@ -402,41 +559,422 @@ export default function Momento3() {
               <div id="prompt-3">
                 <Prompt text="Prompt 3: Decisión AIAS" prompt={prompt3Text} />
               </div>
-            </Momento3Section>
+            </section>
           </AnimatedSection>
 
           <AnimatedSection>
-            <Momento3Section
-              id="redisena"
-              title="Rediseña"
-              description={
-                <>
-                  <p>
-                    Ya tienes lo más difícil resuelto: sabes qué quieres evaluar y qué nivel es el más coherente con
-                    ese proposito.
+            <section className="mb-16" id="productos-compartidos">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Formulario compartido para productos 1, 2 y 3" subtitle="" />
+              <p className="mb-6 text-base">
+                Usa el mismo formulario para registrar los productos 1, 2 y 3. Solo cambia la hoja destino dentro
+                del mismo Google Sheets.
+              </p>
+              <p className="mb-8 text-base">
+                El producto final sigue aparte porque necesita otro flujo de registro.
+              </p>
+              <form onSubmit={submitSharedProductForm} className="border border-[#d7d8dc] bg-white p-5">
+                <div className="space-y-2">
+                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Productos 1, 2 y 3</p>
+                  <h3 className="text-xl font-bold text-[#19191b]">Formulario compartido por hoja</h3>
+                  <p className="text-sm leading-6 text-[#5d6169]">
+                    Selecciona el producto y envía una nueva fila a la pestaña correspondiente.
                   </p>
-                  <p>
-                    Este paso te ayuda a traducir esa decisión en cambios concretos sobre la actividad, la consigna, el
-                    instrumento de evaluación y las evidencias solicitadas.
+                </div>
+
+                <div className="mt-6 grid gap-5">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Nombre del profesor</span>
+                    <textarea
+                      value={sharedProductForm.profesor}
+                      onChange={(event) => handleSharedProductChange('profesor', event.target.value)}
+                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Escribe el nombre del profesor"
+                      required
+                    />
+                  </label>
+
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Curso</span>
+                    <textarea
+                      value={sharedProductForm.curso}
+                      onChange={(event) => handleSharedProductChange('curso', event.target.value)}
+                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Escribe el curso al que aplica la transformación"
+                      required
+                    />
+                  </label>
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Producto</span>
+                    <select
+                      value={sharedProductForm.productSheet}
+                      onChange={(event) => handleSharedProductChange('productSheet', event.target.value)}
+                      className="border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                    >
+                      {sharedProductOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    {sharedProductForm.productSheet === 'producto1' && (
+                      <p>
+                        Te invitamos a completar la siguiente tabla usando la información generada en el paso anterior.
+                      </p>
+                    )}
+                    {sharedProductForm.productSheet === 'producto2' && (
+                      <p>
+                        Con el diagnóstico en mano, consolida los hallazgos en la siguiente tabla, una fila por actividad evaluativa. Usa la columna de recomendación del diagnóstico como punto de partida. Una vez completa, tendrás una vista general de tu curso que te permitirá identificar por dónde empezar: las actividades con recomendación de rediseño estructural son la prioridad, las de ajuste menor pueden seguir, y las que están bien pueden mantenerse con solo declarar el nivel AIAS.
+                      </p>)}
+                    {
+                      sharedProductForm.productSheet === 'producto3' && (
+                        <p>
+                          Te invitamos a completar la siguiente tabla con la reflexión que realizaste en el paso anterior:
+                        </p>
+                      )
+                    }
+                  </label>
+
+                  {/* Render fields depending on selected product */}
+                  {sharedProductForm.productSheet === 'producto1' && (
+                    <>
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje</span>
+                        <textarea
+                          value={sharedProductForm.resultadoAprendizaje}
+                          onChange={(event) => handleSharedProductChange('resultadoAprendizaje', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Escribe el resultado de aprendizaje"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Clasificación según impacto de la IA</span>
+                        <textarea
+                          value={sharedProductForm.clasificacion}
+                          onChange={(event) => handleSharedProductChange('clasificacion', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Escribe la clasificación según impacto de la IA"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Justificación breve</span>
+                        <textarea
+                          value={sharedProductForm.justificacion}
+                          onChange={(event) => handleSharedProductChange('justificacion', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Explica en pocas líneas por qué clasificaste así el resultado"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Ajuste al resultado de aprendizaje (si aplica)</span>
+                        <textarea
+                          value={sharedProductForm.ajuste}
+                          onChange={(event) => handleSharedProductChange('ajuste', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Si hace falta, propone un ajuste breve"
+                        />
+                      </label>
+                    </>
+                  )}
+
+                  {sharedProductForm.productSheet === 'producto2' && (
+                    <>
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Mecanismo o actividad evaluativa</span>
+                        <textarea
+                          value={sharedProductForm.mecanismo}
+                          onChange={(event) => handleSharedProductChange('mecanismo', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Describe el mecanismo o actividad evaluativa"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje (original o ajustado)</span>
+                        <textarea
+                          value={sharedProductForm.resultadoActividad}
+                          onChange={(event) => handleSharedProductChange('resultadoActividad', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Pega el resultado de aprendizaje original o el ajustado"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Principal problema identificado</span>
+                        <textarea
+                          value={sharedProductForm.problemaPrincipal}
+                          onChange={(event) => handleSharedProductChange('problemaPrincipal', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Describe el principal problema identificado"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Recomendación</span>
+                        <textarea
+                          value={sharedProductForm.recomendacion}
+                          onChange={(event) => handleSharedProductChange('recomendacion', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Propuesta de recomendación breve"
+                          required
+                        />
+                      </label>
+                    </>
+                  )}
+
+                  {sharedProductForm.productSheet === 'producto3' && (
+                    <>
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Actividad evaluativa</span>
+                        <textarea
+                          value={sharedProductForm.actividadEvaluativa}
+                          onChange={(event) => handleSharedProductChange('actividadEvaluativa', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Describe la actividad evaluativa"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje</span>
+                        <textarea
+                          value={sharedProductForm.resultadoProducto3}
+                          onChange={(event) => handleSharedProductChange('resultadoProducto3', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Resultado de aprendizaje asociado"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Nivel AIAS decidido</span>
+                        <textarea
+                          value={sharedProductForm.nivelAIAS}
+                          onChange={(event) => handleSharedProductChange('nivelAIAS', event.target.value)}
+                          className="min-h-12 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Indica el nivel AIAS decidido (1-5)"
+                          required
+                        />
+                      </label>
+
+                      <label className="grid gap-2">
+                        <span className="text-sm font-semibold text-[#19191b]">Justificación Breve</span>
+                        <textarea
+                          value={sharedProductForm.justificacionBreve3}
+                          onChange={(event) => handleSharedProductChange('justificacionBreve3', event.target.value)}
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          placeholder="Justificación breve del nivel AIAS elegido"
+                          required
+                        />
+                      </label>
+                    </>
+                  )}
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <button
+                    type="submit"
+                    disabled={isSubmittingSharedProductForm}
+                    className="bg-black px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1f1f1f] disabled:cursor-not-allowed disabled:bg-[#8f9094]"
+                  >
+                    {isSubmittingSharedProductForm ? 'Enviando...' : 'Enviar a hoja del producto'}
+                  </button>
+                  <p className="text-sm leading-6 text-[#5d6169]">
+                    El envío agrega una fila a la pestaña seleccionada.
                   </p>
-                </>
-              }
-            >
+                </div>
+
+                {sharedProductFormStatus ? (
+                  <p
+                    className={`mt-4 text-sm leading-6 ${sharedProductFormStatus.type === 'success' ? 'text-[#248a46]' : 'text-[#b63b26]'
+                      }`}
+                  >
+                    {sharedProductFormStatus.message}
+                  </p>
+                ) : null}
+              </form>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <section className="mb-16" id="redisena">
+              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Rediseña" subtitle="" />
+              <p className="mb-6 text-base">
+                Ya tienes lo más difícil resuelto: sabes qué quieres evaluar y qué nivel es el más coherente con
+                ese proposito.
+              </p>
+              <p className="mb-8 text-base">
+                Este paso te ayuda a traducir esa decisión en cambios concretos sobre la actividad, la consigna, el
+                instrumento de evaluación y las evidencias solicitadas.
+              </p>
               <div id="prompt-4">
                 <Prompt text="Prompt 4: Rediseño de actividades" prompt={momento3Prompts.prompt4} />
               </div>
 
-              <Momento3ResourceCard
-                eyebrow="Producto final"
-                title="Diseño evaluativo con IAG"
-                description="Descarga la plantilla final para consolidar el rediseño de la actividad, sus criterios y el uso esperado de la IAG."
-                href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQDCEPn7uhlSSZxm5kP2xi5iATtSn-XI4zfP3yIlV04t2g0?e=nd3jTS"
-                cta="Descargar"
-              />
-            </Momento3Section>
+              <form onSubmit={submitFinalForm} className="border border-[#d7d8dc] bg-white p-5">
+                <div className="space-y-2">
+                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Producto final</p>
+                  <h3 className="text-xl font-bold text-[#19191b]">Formulario de registro evaluativo</h3>
+                </div>
+
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Nombre del profesor</span>
+                    <input
+                      value={finalForm.profesor}
+                      onChange={(event) => handleFinalFormChange('profesor', event.target.value)}
+                      className="w-full border border-[#d7d8dc] bg-white p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Nombre del profesor"
+                      required
+                    />
+                  </label>
+
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Curso</span>
+                    <input
+                      value={finalForm.curso}
+                      onChange={(event) => handleFinalFormChange('curso', event.target.value)}
+                      className="w-full border border-[#d7d8dc] bg-white p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Curso"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-6 overflow-x-auto border border-[#d7d8dc]">
+                  <table className="min-w-300 w-full border-collapse text-sm">
+                    <thead className="bg-[#f3f4f8]">
+                      <tr>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Mecanismo de evaluación</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Resultado de aprendizaje</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Nivel AIAS</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Qué evaluar (desempeño esperado)</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Cómo evaluar (estrategias y evidencias)</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Consigna al estudiante</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Recursos (si aplica)</th>
+                        <th className="border border-[#d7d8dc] p-3 text-left font-semibold text-[#19191b]">Notas / Observaciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.mecanismoEvaluacion}
+                            onChange={(event) => handleFinalFormChange('mecanismoEvaluacion', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Escribe el mecanismo de evaluación"
+                            aria-label="Mecanismo de evaluación"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.resultadoAprendizaje}
+                            onChange={(event) => handleFinalFormChange('resultadoAprendizaje', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Escribe el resultado de aprendizaje"
+                            aria-label="Resultado de aprendizaje"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.nivelAIAS}
+                            onChange={(event) => handleFinalFormChange('nivelAIAS', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Ej: Nivel 3"
+                            aria-label="Nivel AIAS"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.queEvaluar}
+                            onChange={(event) => handleFinalFormChange('queEvaluar', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Describe el desempeño esperado"
+                            aria-label="Qué evaluar"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.comoEvaluar}
+                            onChange={(event) => handleFinalFormChange('comoEvaluar', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Estrategias e evidencias"
+                            aria-label="Cómo evaluar"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.consignaEstudiante}
+                            onChange={(event) => handleFinalFormChange('consignaEstudiante', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Escribe la consigna al estudiante"
+                            aria-label="Consigna al estudiante"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.recursos}
+                            onChange={(event) => handleFinalFormChange('recursos', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Recursos utilizados"
+                            aria-label="Recursos"
+                            required
+                          />
+                        </td>
+                        <td className="border border-[#d7d8dc] p-2 align-top">
+                          <textarea
+                            value={finalForm.notasObservaciones}
+                            onChange={(event) => handleFinalFormChange('notasObservaciones', event.target.value)}
+                            className="min-h-28 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                            placeholder="Opcional"
+                            aria-label="Notas u observaciones"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <button
+                    type="submit"
+                    disabled={isSubmittingFinalForm}
+                    className="bg-black px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1f1f1f] disabled:cursor-not-allowed disabled:bg-[#8f9094]"
+                  >
+                    {isSubmittingFinalForm ? 'Enviando...' : 'Enviar a hoja compartida'}
+                  </button>
+                  <p className="text-sm leading-6 text-[#5d6169]">
+                    Cada envío agrega una nueva fila al registro.
+                  </p>
+                </div>
+
+                {finalFormStatus ? (
+                  <p
+                    className={`mt-4 text-sm leading-6 ${finalFormStatus.type === 'success' ? 'text-[#248a46]' : 'text-[#b63b26]'
+                      }`}
+                  >
+                    {finalFormStatus.message}
+                  </p>
+                ) : null}
+              </form>
+            </section>
           </AnimatedSection>
 
-          <CTASection text="Continúa: transformación" />
+          <CTASection onClick={() => navigate('/ficha-tecnica')} text="Continúa: ficha técnica" />
         </main>
       </div>
     </div>

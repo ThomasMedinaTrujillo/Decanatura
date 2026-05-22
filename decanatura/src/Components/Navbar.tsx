@@ -26,13 +26,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed left-0 top-0 z-20 flex min-w-screen items-center gap-[33px] bg-[#5454e9] pl-[80px] pr-[180px]">
+      <div className="fixed left-0 top-0 z-20 flex min-w-screen items-center bg-[#5454e9]">
         <div className="relative h-[102.8px] w-[200px] shrink-0">
           <img alt="ICESI Logo" className="pointer-events-none absolute inset-0 size-full object-cover" src={imgIcesiLogo} />
         </div>
 
-        <div className="flex flex-row items-center self-stretch">
-          <div className="relative hidden h-full shrink-0 items-center px-[20px] md:flex">
+        <div className="flex flex-row items-center">
+          <div className="relative hidden h-full items-center px-[20px] md:flex">
             {navItems.map((item) => (
               <NavItem
                 key={item.route}
