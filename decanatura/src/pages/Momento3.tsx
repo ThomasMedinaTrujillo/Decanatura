@@ -787,10 +787,7 @@ export default function Momento3() {
                   >
                     {isSubmittingSharedProductForm ? 'Enviando...' : 'Enviar a hoja del producto'}
                   </button>
-                  <p className="text-sm leading-6 text-[#5d6169]">
-                    El envío agrega una fila a la pestaña seleccionada.
-                  </p>
-                </div>
+                 </div>
 
                 {sharedProductFormStatus ? (
                   <p
@@ -957,9 +954,7 @@ export default function Momento3() {
                   >
                     {isSubmittingFinalForm ? 'Enviando...' : 'Enviar a hoja compartida'}
                   </button>
-                  <p className="text-sm leading-6 text-[#5d6169]">
-                    Cada envío agrega una nueva fila al registro.
-                  </p>
+                  
                 </div>
 
                 {finalFormStatus ? (
