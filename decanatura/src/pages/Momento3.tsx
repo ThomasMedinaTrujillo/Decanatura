@@ -64,6 +64,7 @@ const expectedPerformanceOptions = [
   'Toma de decisiones estratégicas sobre el uso de la IAG en todo el proceso',
   'Adaptación creativa de herramientas de IAG',
   'Creación de artefactos, sistemas o nuevos enfoques basados en IAG',
+  'Aún no lo tengo claro',
 ];
 
 const aiRoleOptions = [
@@ -71,6 +72,7 @@ const aiRoleOptions = [
   'Herramienta de apoyo - para búsqueda de información, exploración de ideas, retroalimentación, revisión, etc.',
   'Herramienta de colaboración - parte central del proceso o producto',
   'Objeto de estudio - la IAG es analizada, diseñada o transformada como contenido del curso',
+  'Aún no lo tengo claro',
 ];
 
 const participationOptions = [
@@ -78,6 +80,7 @@ const participationOptions = [
   'Durante la revisión y mejora',
   'Durante algunos momentos de la producción del trabajo',
   'En todas las fases del proceso',
+  'Aún no lo tengo claro',
 ];
 
 const sharedProductOptions = [
@@ -616,22 +619,6 @@ export default function Momento3() {
                         </option>
                       ))}
                     </select>
-                    {sharedProductForm.productSheet === 'producto1' && (
-                      <p>
-                        Te invitamos a completar la siguiente tabla usando la información generada en el paso anterior.
-                      </p>
-                    )}
-                    {sharedProductForm.productSheet === 'producto2' && (
-                      <p>
-                        Con el diagnóstico en mano, consolida los hallazgos en la siguiente tabla, una fila por actividad evaluativa. Usa la columna de recomendación del diagnóstico como punto de partida. Una vez completa, tendrás una vista general de tu curso que te permitirá identificar por dónde empezar: las actividades con recomendación de rediseño estructural son la prioridad, las de ajuste menor pueden seguir, y las que están bien pueden mantenerse con solo declarar el nivel AIAS.
-                      </p>)}
-                    {
-                      sharedProductForm.productSheet === 'producto3' && (
-                        <p>
-                          Te invitamos a completar la siguiente tabla con la reflexión que realizaste en el paso anterior:
-                        </p>
-                      )
-                    }
                   </label>
 
                   {/* Render fields depending on selected product */}
