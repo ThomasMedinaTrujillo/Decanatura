@@ -93,11 +93,6 @@ const learningQuestions = [
   '¿Cuáles resultados de aprendizaje se ven impactados por la IAG?',
 ];
 
-const assessmentQuestions = [
-  '¿La evidencia que estoy evaluando podría haber sido generada por IA sin que el estudiante domine la competencia?',
-  '¿Estoy evaluando el resultado final o el proceso de construcción del aprendizaje?',
-  '¿La tarea exige decisiones fundamentadas y justificadas en su contexto?',
-];
 
 const expectedPerformanceOptions = [
   'Razonamiento disciplinar autónomo',
