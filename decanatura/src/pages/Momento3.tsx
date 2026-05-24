@@ -526,6 +526,9 @@ export default function Momento3() {
               </ul>
               <p className="mb-8 text-base leading-7 text-[#272727]">Para apoyar tu análisis puedes seguir la conversación en el mismo chat del GPT del AIAS.</p>
               <div className="flex flex-col gap-6">
+              <div id="prompt-2">
+                    <Prompt text="Prompt 2: Analisis actividades evaluativas" prompt={momento3Prompts.prompt2} />
+                  </div>
                 
                   <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Prioriza" subtitle="" />
                   <p className="mt-3 font-bold  leading-6 text-[#272727]">
@@ -542,17 +545,14 @@ export default function Momento3() {
                   <div className="mb-6">
                     <PromptStepGuide
                       steps={[
-                        'Usa el mismo chat del GPT del AIAS.',
-                        'Pega el Prompt 2 en ese mismo chat.',
+                        
                         'Consolida tu análisis en el Producto 2.',
                       ]}
                       targetId="productos-compartidos-form"
                       buttonLabel="Ir al producto 2"
                     />
                   </div>
-                  <div id="prompt-2">
-                    <Prompt text="Prompt 2: Analisis actividades evaluativas" prompt={momento3Prompts.prompt2} />
-                  </div>
+                  
                 </div>
               </div>
             </section>
@@ -564,6 +564,17 @@ export default function Momento3() {
               <p className="mb-6 text-base leading-7 text-[#272727]">
               El siguiente paso es asignar un nivel AIAS a cada actividad evaluativa. Las listas que siguen te ayudan a clarificar tu intención antes de consultar al GPT.
               </p>
+               <div className="mt-6">
+                <PromptStepGuide
+                  steps={[
+                    'Escoge una actividad evaluativa del Producto 2.',
+                    'Selecciona una opción en cada lista según tu intención.',
+                    'Consolida tu análisis en el Producto 3.',
+                  ]}
+                  targetId="productos-compartidos-form"
+                  buttonLabel="Ir al producto 3"
+                />
+              </div>
               <div className="grid gap-6 lg:grid-cols-3">
                 <Momento3OptionGroup
                   title="Lista A - Desempeño esperado con o sin IAG"
@@ -610,17 +621,7 @@ export default function Momento3() {
                 </div>
               </div>
 
-              <div className="mt-6">
-                <PromptStepGuide
-                  steps={[
-                    'Escoge una actividad evaluativa del Producto 2.',
-                    'Selecciona una opción en cada lista según tu intención.',
-                    'Consolida tu análisis en el Producto 3.',
-                  ]}
-                  targetId="productos-compartidos-form"
-                  buttonLabel="Ir al producto 3"
-                />
-              </div>
+             
 
               <div id="prompt-3">
                 <Prompt text="Prompt 3: Decisión AIAS" prompt={prompt3Text} />
@@ -856,15 +857,12 @@ export default function Momento3() {
               <p className="mb-6 text-base leading-7 text-[#272727]">
                 Con el nivel definido, rediseña la actividad para que las instrucciones, las evidencias y los criterios de evaluación reflejen con claridad el rol de la IAG.
               </p>
-              <p className="mb-8 text-base leading-7 text-[#272727]">
-                La guía superior ya resume el recorrido para llegar al formulario final.
-              </p>
               <div className="mb-6">
                 <PromptStepGuide
                   steps={[
-                    'Pega el Prompt 3 en el GPT del AIAS.',
-                    'Completa el Producto 3 con la reflexión obtenida.',
-                    'Usa el Prompt 4 para rediseñar la actividad evaluativa.',
+                    'Pega el Prompt 4 en el GPT del AIAS.',
+                    '⁠Completa el espacio del Prompt 4 antes de mandarlo “[inserta nombre del mecanismo de evaluación]”',
+                    'Realiza el Producto Final',
                   ]}
                   targetId="formulario-final"
                   buttonLabel="Ir al formulario final"
