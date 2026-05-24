@@ -32,7 +32,7 @@ export const Prompt = ({ text, prompt }: {text: string, prompt: string}) => {
         </button>
 
         {isOpen && (
-            <div className="border-t border-white/15 bg-[#5b21b6] px-5 py-4 text-white">
+            <div className="border-t border-white/15 bg-[#ffffff] px-5 py-4 text-black">
                 <div className="mb-4 flex justify-end">
                     <button
                         type="button"
@@ -42,7 +42,7 @@ export const Prompt = ({ text, prompt }: {text: string, prompt: string}) => {
                         {copied ? 'Copiado' : 'Copiar prompt'}
                     </button>
                 </div>
-                <pre className="whitespace-pre-wrap font-['Plus_Jakarta_Sans:Regular',sans-serif] text-[14px] leading-6 text-white">
+                <pre className="whitespace-pre-wrap font-['Plus_Jakarta_Sans:Regular',sans-serif] text-[14px] leading-6 text-black">
                     {prompt}
                 </pre>
             </div>

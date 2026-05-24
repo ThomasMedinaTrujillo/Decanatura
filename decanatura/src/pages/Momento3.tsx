@@ -29,6 +29,52 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
   </motion.div>
 );
 
+const PromptStepGuide = ({
+  steps,
+  targetId,
+  buttonLabel,
+}: {
+  steps: string[];
+  targetId: string;
+  buttonLabel: string;
+}) => (
+  <div className="rounded-sm border border-[#d7d8dc] bg-[#fcfcfd] p-5">
+    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#4cb979]">Paso a paso</p>
+    <div className="mt-4 space-y-3 border-l-2 border-[#d7d8dc] pl-4">
+      {steps.map((step, index) => (
+        <div key={step} className="flex items-start gap-3">
+          <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4cb979] text-xs font-bold text-white">
+            {index + 1}
+          </div>
+          <p className={`${index === 0 ? 'text-sm font-semibold text-[#19191b]' : 'text-sm font-medium text-[#272727]'}`}>
+            {step.replace(/^[0-9]+\.\s*/, '')}
+          </p>
+        </div>
+      ))}
+    </div>
+    <div className="mt-5">
+      <button
+        type="button"
+        onClick={() => {
+          const targetElement = document.getElementById(targetId);
+
+          if (!targetElement) {
+            return;
+          }
+
+          const navbarOffset = 120;
+          const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }}
+        className="inline-flex items-center bg-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1f1f1f]"
+      >
+        {buttonLabel}
+      </button>
+    </div>
+  </div>
+);
+
 const sidebarItems = [
   { label: 'Diagnóstico inicial', href: '#diagnostico' },
   { label: 'Prompt 1: Resultados de aprendizaje', href: '#prompt-1', isIndented: true },
@@ -450,14 +496,22 @@ export default function Momento3() {
           <AnimatedSection>
             <section className="mb-16" id="prompt-1">
               <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Análisis resultados de aprendizaje" subtitle="" />
-              <p className="mb-6 text-base">
-                Adjunta el PDF de tu syllabus y usa este prompt para analizar los resultados de aprendizaje.
+              <p className="mb-6 text-base leading-7 text-[#272727]">
+                Diagnóstico inicial de tu syllabus actual: identifica qué resultados de aprendizaje requieren demostrarse sin apoyo de IAG y qué aspectos podrían analizarse con ayuda del GPT del AIAS.
               </p>
-              <p className="mb-8 text-base">
-                Después, completa la tabla del producto 1 con la información generada. Recuerda crear una copia
-                antes de editarla.
+              <p className="mb-8 text-base leading-7 text-[#272727]">
+                El paso a paso aparece arriba en la guía de apoyo para este prompt.
               </p>
               <div className="flex flex-col gap-6">
+                <PromptStepGuide
+                  steps={[
+                    'Abre el GPT del AIAS.',
+                    'Adjunta el PDF de tu syllabus y pega el Prompt 1 en el mismo mensaje.',
+                    'Consolida tu reflexión en el Producto 1.',
+                  ]}
+                  targetId="productos-compartidos-form"
+                  buttonLabel="Ir al producto 1"
+                />
                 <Prompt text="Prompt 1: Análisis resultados de aprendizaje" prompt={momento3Prompts.prompt1} />
               </div>
             </section>
@@ -468,31 +522,38 @@ export default function Momento3() {
           <AnimatedSection>
             <section className="mb-16" id="prioriza">
               <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Cómo estás evaluando" subtitle="" />
-              <p className="mb-6 font-semibold text-[#19191b]">No tienes que repensarlo todo.</p>
-              <p className="mb-8 text-base">
-                Consolida los hallazgos del diagnóstico en una tabla, una fila por actividad evaluativa. Las
-                actividades con recomendación de rediseño estructural son la prioridad; las de ajuste menor pueden
-                seguir despues.
+              <p className="mb-4 text-base leading-7 text-[#272727]">
+                Con los resultados de aprendizaje analizados, el siguiente paso es revisar tus actividades evaluativas. Pregúntate:
               </p>
+              <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
+                <li>¿La evidencia que estoy evaluando podría haber sido generada por IA sin que el estudiante realmente domine la competencia?</li>
+                <li>¿Estoy evaluando el resultado final o el proceso de construcción del aprendizaje?</li>
+              </ul>
+              <p className="mb-8 text-base leading-7 text-[#272727]">Para apoyar tu análisis puedes seguir la conversación en el mismo chat del GPT del AIAS.</p>
               <div className="flex flex-col gap-6">
-                <div className="border border-[#d7d8dc] bg-[#fcfcfd] p-5">
-                  <h3 className="text-xl font-bold text-[#4cb979]">Prioriza</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#272727]">
-                    Algunas preguntas que puedes hacerte respecto a tus actividades evaluativas son:
+                
+                  <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Prioriza" subtitle="" />
+                  <p className="mt-3 font-bold  leading-6 text-[#272727]">
+                    No tienes que intervenir todo a la vez.
                   </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-[#272727]">
-                    {assessmentQuestions.map((question) => (
-                      <li key={question} className="ml-5 list-disc">
-                        {question}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <p className="mt-3 leading-6 text-[#272727]">
+                    El Producto 2 te ayuda a consolidar las recomendaciones del análisis anterior y a identificar qué actividades requieren rediseño (y más tiempo de dedicación) y cuáles un ajuste menor.
+                  </p>
+                  
+                
 
                 <div className="border border-[#d7d8dc] bg-white p-5">
-                  <div className="mb-5 border-l-2 border-[#4cb979] pl-4 text-sm leading-6 text-[#272727]">
-                    Usa el siguiente prompt para analizar mecanismos de evaluación con más detalle antes de decidir qué
-                    rediseñar.
+                
+                  <div className="mb-6">
+                    <PromptStepGuide
+                      steps={[
+                        'Usa el mismo chat del GPT del AIAS.',
+                        'Pega el Prompt 2 en ese mismo chat.',
+                        'Consolida tu análisis en el Producto 2.',
+                      ]}
+                      targetId="productos-compartidos-form"
+                      buttonLabel="Ir al producto 2"
+                    />
                   </div>
                   <div id="prompt-2">
                     <Prompt text="Prompt 2: Analisis actividades evaluativas" prompt={momento3Prompts.prompt2} />
@@ -505,12 +566,8 @@ export default function Momento3() {
           <AnimatedSection>
             <section className="mb-16" id="decide">
               <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Decide el nivel AIAS" subtitle="" />
-              <p className="mb-6 text-base">
-                Ya con el diagnóstico claro, este paso te ayuda a traducir lo que quieres evaluar en una decisión
-                concreta sobre desempeño esperado, rol de la IAG y fase de participación.
-              </p>
-              <p className="mb-8 text-base">
-                Marca todas las opciones que apliquen a tu caso y luego actualiza el prompt con el boton.
+              <p className="mb-6 text-base leading-7 text-[#272727]">
+              El siguiente paso es asignar un nivel AIAS a cada actividad evaluativa. Las listas que siguen te ayudan a clarificar tu intención antes de consultar al GPT.
               </p>
               <div className="grid gap-6 lg:grid-cols-3">
                 <Momento3OptionGroup
@@ -545,8 +602,7 @@ export default function Momento3() {
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold text-[#19191b]">Generar prompt con selecciones</h3>
                     <p className="text-sm leading-6 text-[#5d6169]">
-                      Cuando termines de marcar los checkboxes, usa este botón para actualizar el Prompt 3 con tus
-                      selecciones actuales.
+                      Ajusta las selecciones y genera el Prompt 3 desde aquí.
                     </p>
                   </div>
                   <button
@@ -559,6 +615,18 @@ export default function Momento3() {
                 </div>
               </div>
 
+              <div className="mt-6">
+                <PromptStepGuide
+                  steps={[
+                    'Escoge una actividad evaluativa del Producto 2.',
+                    'Selecciona una opción en cada lista según tu intención.',
+                    'Consolida tu análisis en el Producto 3.',
+                  ]}
+                  targetId="productos-compartidos-form"
+                  buttonLabel="Ir al producto 3"
+                />
+              </div>
+
               <div id="prompt-3">
                 <Prompt text="Prompt 3: Decisión AIAS" prompt={prompt3Text} />
               </div>
@@ -569,13 +637,12 @@ export default function Momento3() {
             <section className="mb-16" id="productos-compartidos">
               <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Formulario compartido para productos 1, 2 y 3" subtitle="" />
               <p className="mb-6 text-base">
-                Usa el mismo formulario para registrar los productos 1, 2 y 3. Solo cambia la hoja destino dentro
-                del mismo Google Sheets.
+                Completa aquí los productos compartidos asociados al análisis y priorización.
               </p>
               <p className="mb-8 text-base">
-                El producto final sigue aparte porque necesita otro flujo de registro.
+                Luego continúa con el rediseño en el Prompt 4 y completa el formulario final.
               </p>
-              <form onSubmit={submitSharedProductForm} className="border border-[#d7d8dc] bg-white p-5">
+              <form id="productos-compartidos-form" onSubmit={submitSharedProductForm} className="scroll-mt-24 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
                   <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Productos 1, 2 y 3</p>
                   <h3 className="text-xl font-bold text-[#19191b]">Formulario compartido por hoja</h3>
@@ -791,19 +858,28 @@ export default function Momento3() {
           <AnimatedSection>
             <section className="mb-16" id="redisena">
               <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Rediseña" subtitle="" />
-              <p className="mb-6 text-base">
-                Ya tienes lo más difícil resuelto: sabes qué quieres evaluar y qué nivel es el más coherente con
-                ese proposito.
+              <p className="mb-6 text-base leading-7 text-[#272727]">
+                Con el nivel definido, rediseña la actividad para que las instrucciones, las evidencias y los criterios de evaluación reflejen con claridad el rol de la IAG.
               </p>
-              <p className="mb-8 text-base">
-                Este paso te ayuda a traducir esa decisión en cambios concretos sobre la actividad, la consigna, el
-                instrumento de evaluación y las evidencias solicitadas.
+              <p className="mb-8 text-base leading-7 text-[#272727]">
+                La guía superior ya resume el recorrido para llegar al formulario final.
               </p>
+              <div className="mb-6">
+                <PromptStepGuide
+                  steps={[
+                    'Pega el Prompt 3 en el GPT del AIAS.',
+                    'Completa el Producto 3 con la reflexión obtenida.',
+                    'Usa el Prompt 4 para rediseñar la actividad evaluativa.',
+                  ]}
+                  targetId="formulario-final"
+                  buttonLabel="Ir al formulario final"
+                />
+              </div>
               <div id="prompt-4">
                 <Prompt text="Prompt 4: Rediseño de actividades" prompt={momento3Prompts.prompt4} />
               </div>
 
-              <form onSubmit={submitFinalForm} className="border border-[#d7d8dc] bg-white p-5">
+              <form id="formulario-final" onSubmit={submitFinalForm} className="scroll-mt-24 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
                   <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Producto final</p>
                   <h3 className="text-xl font-bold text-[#19191b]">Formulario de registro evaluativo</h3>

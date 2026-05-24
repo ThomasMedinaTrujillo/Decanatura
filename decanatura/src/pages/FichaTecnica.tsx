@@ -43,7 +43,8 @@ const technicalNotes = [
 
 const bibliography = [
   'Bekiaridis, G., & Attwell, G. (2024). Supplement to the DigCompEDU Framework: Outlining the skills and competences of educators related to AI in education. University of Bremen: Institut Technik und Bildung (ITB). https://doi.org/10.26092/elib/2708',
-  'Corbin, T., Bearman, M., Boud, D., & Dawson, P. (2025). The wicked problem of AI and assessment. Assessment & evaluation in higher education, 1-17.',
+  'Bearman, M., Tai, J., Dawson, P., Boud, D., & Ajjawi, R. (2024). Developing evaluative judgement for a time of generative artificial intelligence. Assessment & Evaluation in Higher Education, 49(6), 893-905.'
+  ,'Corbin, T., Bearman, M., Boud, D., & Dawson, P. (2025). The wicked problem of AI and assessment. Assessment & evaluation in higher education, 1-17.',
   'Cosgrove, J., & Cachia, R. (2025). DigComp 3.0: European Digital Competence Framework - Fifth edition. Publications Office of the European Union. https://data.europa.eu/doi/10.2760/0001149',
   'Digital Education Council. (2026). Encuesta sobre la IA en la educación superior en América Latina.',
   'Liu, D., and A. Bridgeman. (2023). What to Do about Assessments If we Can’t out-Design or out-Run AI? Teaching@Sydney. https://educational-innovation.sydney.edu.au/teaching%40sydney/what-to-do-about-assessments-if-we-cant-out-design-or-out-run-ai/',
