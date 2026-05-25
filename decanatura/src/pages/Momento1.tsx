@@ -197,16 +197,7 @@ const fadeInUpVariants = {
               aprendizaje de los estudiantes: ¿el uso de la IA invalida la evaluación? ¿Invalida el aprendizaje?
             </p>
             <p>La respuesta corta es: depende.</p>
-            <p>
-              Posible buen uso: un estudiante usa la IA para generar contraargumentos y luego los analiza críticamente.
-            </p>
-            <p>
-              Posible mal uso: un estudiante le pide a la IA que genere por completo su ensayo.
-            </p>
-            <p>
-              La conversación debe entonces desplazarse hacia donde tenemos mayor agencia: el diseño y propósito de
-              nuestras actividades.
-            </p>
+            
           </div>
           <DesignActivity />
 
@@ -273,20 +264,7 @@ const fadeInUpVariants = {
               con IA. Los niveles no son jerárquicos, su elección depende de varias consideraciones. Con mayor detalle,
               abordaremos los niveles en los siguientes momentos.
             </p>
-            <div>
-              <p className="font-semibold text-gray-900">Para tener en cuenta:</p>
-              <p className="mt-2 font-semibold text-[#865CF0]">El AIAS es:</p>
-              <ul className="mt-2 list-disc space-y-2 pl-6">
-                <li>Un marco flexible para el diseño evaluativo.</li>
-                <li>Una orientación para formar a estudiantes en capacidades críticas respecto a la IA.</li>
-                <li>Un lenguaje común para hacer explícito y transparente las expectativas de docentes y estudiantes.</li>
-              </ul>
-              <p className="mt-4 font-semibold text-[#865CF0]">El AIAS no es:</p>
-              <ul className="mt-2 list-disc space-y-2 pl-6">
-                <li>Una solución universal aplicable sin adaptación.</li>
-                <li>Una herramienta para restringir o prohibir el uso de la IAG, o para permitir su uso sin buen motivo.</li>
-              </ul>
-            </div>
+            
           </div>
         </section>
         </AnimatedSection> 

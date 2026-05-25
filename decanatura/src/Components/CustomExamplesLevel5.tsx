@@ -11,7 +11,7 @@ export default function CustomExamplesLevel5() {
 
         <div className="flex flex-col lg:flex-row gap-[20px] items-stretch w-full mt-4">
           <div className="bg-[#5454e9] flex flex-col gap-[19px] px-[20px] py-[20px] flex-1 text-white">
-            <h4 className="font-bold text-[36px] m-0">El proyecto implica:</h4>
+            <h4 className="font-bold text-[24px] m-0">El proyecto implica:</h4>
             <ul className="list-disc pl-[24px] font-normal text-[16px] m-0 leading-[1.5]">
               <li>Analizar críticamente prácticas tradicionales de evaluación.</li>
               <li>Explorar el potencial y las limitaciones de la IAG en contextos educativos.</li>
@@ -22,7 +22,7 @@ export default function CustomExamplesLevel5() {
           </div>
 
           <div className="bg-[#5454e9] flex flex-col gap-[19px] px-[20px] py-[20px] flex-1 text-white">
-            <h4 className="font-bold text-[36px] m-0">Evidencias:</h4>
+            <h4 className="font-bold text-[24px] m-0">Evidencias:</h4>
             <ul className="list-disc pl-[24px] font-normal text-[16px] m-0 leading-[1.5]">
               <li>Prototipo o modelo de evaluación (digital o conceptual)</li>
               <li>Documento explicativo del diseño (propuesta pedagógica)</li>
@@ -42,7 +42,7 @@ export default function CustomExamplesLevel5() {
 
         <div className="flex flex-col lg:flex-row gap-[20px] items-stretch w-full mt-4">
           <div className="bg-[#5454e9] flex flex-col gap-[19px] px-[20px] py-[20px] flex-1 text-white">
-            <h4 className="font-bold text-[36px] m-0">El proyecto implica:</h4>
+            <h4 className="font-bold text-[24px] m-0">El proyecto implica:</h4>
             <ul className="list-disc pl-[24px] font-normal text-[16px] m-0 leading-[1.5]">
               <li>Explorar usos actuales de la IAG en contextos empresariales.</li>
               <li>Identificar riesgos y tensiones (por ejemplo, consumo energético, sesgos, impacto laboral).</li>
@@ -53,7 +53,7 @@ export default function CustomExamplesLevel5() {
           </div>
 
           <div className="bg-[#5454e9] flex flex-col gap-[19px] px-[20px] py-[20px] flex-1 text-white">
-            <h4 className="font-bold text-[36px] m-0">Evidencias:</h4>
+            <h4 className="font-bold text-[24px] m-0">Evidencias:</h4>
             <ul className="list-disc pl-[24px] font-normal text-[16px] m-0 leading-[1.5]">
               <li>Propuesta de modelo de negocio (canvas, documento o prototipo)</li>
               <li>Análisis de impacto (social, ético, ambiental)</li>

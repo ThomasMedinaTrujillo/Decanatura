@@ -16,7 +16,7 @@ export default function DesignActivity() {
           <div className="flex flex-col gap-[5px] items-start p-[10px]">
             <h4 className="font-bold text-[18px] text-black">Buen uso</h4>
             <p className="text-[14px] text-black leading-normal">
-              Un estudiante de ciencia política usa IA para generar contraargumentos, los analiza críticamente, descarta los débiles y construye una posición propia.
+              Un estudiante usa la IA para generar contraargumentos y luego los analiza críticamente.
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function DesignActivity() {
           <div className="flex flex-col gap-[5px] items-start p-[10px] h-[102px]">
             <h4 className="font-bold text-[18px] text-black">Uso incorrecto</h4>
             <p className="text-[14px] text-black leading-normal">
-              Un estudiante entrega un ensayo generado por IA en un curso de escritura académica.
+              Un estudiante le pide a la IA que genere por completo su ensayo.
             </p>
           </div>
         </div>
