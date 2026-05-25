@@ -376,7 +376,7 @@ export default function Momento3() {
   const submitFinalForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const endpoint = import.meta.env.VITE_MOMENTO3_FINAL_POST_URL as string | undefined;
+    const endpoint = import.meta.env.VITE_MOMENTO3_FORM_POST_URL as string | undefined;
 
     if (!endpoint) {
       setFinalFormStatus({
