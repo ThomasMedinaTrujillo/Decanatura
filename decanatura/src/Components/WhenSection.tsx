@@ -40,14 +40,14 @@ export default function WhenSection({ whenMakeSense, whenNotMakeSense }: WhenSec
 
   return (
     <div className="mb-12 grid grid-cols-1 gap-6 xl:grid-cols-2">
-      <MailingPanel
-        title="Cuando tiene sentido"
+        <MailingPanel
+          title="Cuándo tiene sentido"
         items={whenMakeSense}
         accent="#5454e9"
         icon={<CheckCircle size={28} className="text-white" />}
       />
       <MailingPanel
-        title="Cuando no tiene sentido"
+          title="Cuándo no tiene sentido"
         items={whenNotMakeSense}
         accent="#ff6a21"
         icon={<CloseCircle size={28} className="text-white" />}

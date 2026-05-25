@@ -34,7 +34,7 @@ export default function AIASLevel({
   whenMakeSense,
   whenNotMakeSense,
   whatToEvaluate,
-  howToEvaluateTitle = 'Como evaluar',
+  howToEvaluateTitle = 'Cómo evaluar',
   howToEvaluateDescription,
   howToEvaluateStrategies,
   implications,
@@ -69,12 +69,12 @@ export default function AIASLevel({
 
       {downloadResource && (
         <div className="mb-12 overflow-hidden border border-[#dfe2e8] bg-white p-5 shadow-[0_16px_36px_-30px_rgba(17,24,39,0.45)] md:p-6">
-          <h3 className="mb-5 text-[22px] font-bold leading-[normal] text-[#5454e9]">
-            Estrategias para el desarrollo del juicio critico en la interaccion con la IAG
+            <h3 className="mb-5 text-[22px] font-bold leading-[normal] text-[#5454e9]">
+            Estrategias para el desarrollo del juicio crítico en la interacción con la IAG
           </h3>
 
           <GPTCard
-            title="Estrategias para el desarrollo del juicio critico en la interaccion con la IAG"
+            title="Estrategias para el desarrollo del juicio crítico en la interacción con la IAG"
             subtitle="Recurso Genially"
             buttonText="Descargar"
             bgColor="bg-[#5454E9]"
