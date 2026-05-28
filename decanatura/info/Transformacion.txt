@@ -1,0 +1,81 @@
+Momento 3 
+Transformación
+
+
+Resumen
+Este momento te guía desde el diagnóstico de tu curso hasta el rediseño concreto de tus evaluaciones, paso a paso y con apoyo del GPT de los autores del AIAS.
+
+Nota importante
+
+Sobre el uso del GPT del AIAS
+Necesitas iniciar sesión en ChatGPT para usar el GPT del AIAS y adjuntar documentos.
+Las recomendaciones del GPT son un punto de partida: revísalas con criterio, cuestiona lo que no te convenza y recuerda que el juicio pedagógico final es tuyo.
+
+Sobre los productos de este momento
+Para registrar de forma ordenada los análisis de cada paso, se proponen 4 productos en formato de tabla Excel.
+Crea una copia del archivo y edítalo directamente.
+
+
+
+
+Analiza tus resultados de aprendizaje
+Revisa los resultados de aprendizaje de tu curso con estas preguntas: 
+¿Qué deben ser capaces de hacer mis estudiantes sin IAG?
+¿Cuáles resultados de aprendizaje pueden ser simulados por la IAG? 
+¿Cuáles podrían ser transformados y ajustados debido a los cambios que trae la IAG? 
+Puedes apoyar tu análisis con apoyo del GPT del AIAS:
+Paso a paso
+1. Abre el GPT del AIAS. 
+2.Adjunta el PDF de tu syllabus y pega el Prompt 1 en el mismo mensaje.
+3. Consolida tu reflexión en el Producto 1. 
+[PROMPT 1]
+
+
+Analiza tus actividades evaluativas
+
+
+Con los resultados de aprendizaje analizados, el siguiente paso es revisar tus actividades evaluativas. Pregúntate: 
+¿La evidencia que estoy evaluando podría haber sido generada por IA sin que el estudiante realmente domine la competencia?
+¿Estoy evaluando el resultado final o el proceso de construcción del aprendizaje?
+
+
+Para apoyar tu análisis puedes seguir la conversación en el mismo chat del gpt del AIAS. 
+Paso a paso
+1. Pega el Prompt 2 en el mismo chat. 
+2. Consolida tu reflexión en el Producto 2. 
+[PROMPT 2]
+
+
+
+Decide el nivel AIAS
+
+El siguiente paso es asignar un nivel AIAS a una actividad evaluativa de tu curso. Pregúntate: 
+¿Qué quieres que el estudiante demuestre con o sin la IAG?
+¿Qué rol quieres que la IAG tenga en la evaluación?
+¿En qué momentos de la actividad evaluativa podría el estudiante usar la IAG?
+
+Paso a paso
+1. Escoge una actividad evaluativa del Producto 2.
+2. Con esa actividad en mente, lee las listas y selecciona una opción en cada una. Las listas pueden ayudarte a clarificar tu intención pedagógica respecto a la IAG en tu actividad evaluativa. 
+3. Presiona “Actualizar Prompt 3” (al actualizar el prompt 3 lo que selecciones en las listas se incluye en este). 
+4. Pega el prompt en el GPT del AIAS. Si tienes archivos relacionados a la actividad evaluativa (la consigna, rúbrica, presentación, etc) adjunta estos en el mismo mensaje.  
+5. Consolida tu análisis en el Producto 3. 
+[PROMPT 3]
+Rediseña una actividad evaluativa
+
+En la fase anterior decidiste el mejor nivel del AIAS para una actividad evaluativa, ahora el último paso es rediseñar o ajustar esa actividad. Pregúntate: 
+
+¿Qué añade o cambia el nivel AIAS elegido en lo que quiero evaluar? Por ejemplo, una evaluación en Nivel 3 debería preguntarse por la capacidad de juicio crítico que tiene el estudiante respecto a lo que la IAG genera. 
+¿Qué estrategias y formatos evaluativos son coherentes con lo que quiero evidenciar? 
+Un examen presencial protege la autonomía en el Nivel 1, una defensa oral donde el estudiante justifica sus decisiones sobre los outputs de IAG funciona mejor en el Nivel 3 o 4, etc. 
+
+Paso a paso
+1. Pega el Prompt 4 en el mismo chat. 
+2. Realiza el Producto Final
+3. Repite la fase 3 (Decide el nivel AIAS) y 4 (Rediseña una actividad evaluativa) para otra actividad de evaluación en tu curso. 
+[PROMPT 4]
+----
+
+
+¿Quieres compartir tu proceso con nosotros?
+Si completaste el diseño evaluativo, te invitamos a registrarlo en el siguiente formulario. Es opcional. Tu información nos ayuda a entender cómo está siendo usado este recurso, identificar necesidades de acompañamiento y, si lo deseas, ofrecerte retroalimentación desde el equipo sobre tu rediseño.

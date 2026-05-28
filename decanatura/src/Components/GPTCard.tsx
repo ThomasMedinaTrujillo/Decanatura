@@ -24,14 +24,14 @@ iconSrc,
   className = '',
 }) => (
   <a
-    className={`${bgColor} content-stretch cursor-pointer flex items-center justify-between px-[15px] py-[10px] relative shrink-0 w-full ${className}`}
+    className={`${bgColor} content-stretch cursor-pointer flex items-center justify-between px-4 py-2.5 relative w-full ${className}`}
     href={href}
     target="_blank"
     rel="noopener noreferrer"
   >
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0">
-      <div className="content-stretch flex items-center p-[10px] relative rounded-[5px] shrink-0">
-        <div className="relative shrink-0 size-[32px]">
+    <div className="content-stretch flex gap-4 items-center relative">
+      <div className="content-stretch flex items-center p-2.5 relative rounded-[5px]">
+        <div className="relative w-8 h-8">
           <div className="absolute inset-[10%_17.5%]">
             <div className="absolute inset-[-3.91%_-4.81%]">
               {iconSrc}
@@ -39,17 +39,17 @@ iconSrc,
           </div>
         </div>
       </div>
-      <div className="content-stretch flex flex-col gap-[5px] items-start justify-center leading-[1.5] relative shrink-0 text-left text-white whitespace-nowrap">
-        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold relative shrink-0 text-[14px]">
+      <div className="content-stretch flex flex-col gap-1 items-start justify-center leading-6 relative text-left text-white whitespace-normal">
+        <p className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold relative text-[14px]">
           {title}
         </p>
-        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[12px]">
+        <p className="font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal relative text-[12px]">
           {subtitle}
         </p>
       </div>
     </div>
-    <div className={`${buttonBgColor} border border-[#cecfd4] border-solid content-stretch flex items-center justify-center px-[15px] py-[10px] relative shrink-0`}>
-      <p className={`font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[20px] text-center whitespace-nowrap ${buttonTextColor}`}>
+    <div className={`${buttonBgColor} border border-[#cecfd4] border-solid content-stretch flex items-center justify-center px-3 py-2 relative`}>
+      <p className={`font-['Plus_Jakarta_Sans:Regular',sans-serif] font-normal leading-[normal] relative text-[14px] text-center ${buttonTextColor}`}>
         {buttonText}
       </p>
     </div>

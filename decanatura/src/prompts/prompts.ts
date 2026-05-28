@@ -157,38 +157,46 @@ Formato:
 - Cada idea debe poder entenderse en una lectura rápida
 - Prioriza frases concretas sobre explicaciones conceptuales
 `,
-    prompt3: `Estoy revisando una actividad evaluativa de mi curso y necesito tu ayuda para determinar el nivel AIAS más adecuado.
-Información de la actividad evaluativa
-Descripción de la actividad evaluativa: [Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega como ensayo o defensa oral, si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si hay instrumento de evaluación, etc ]
-Resultado de aprendizaje asociado: [pegar del syllabus]
-Tipo de pensamiento o decisión que debe demostrar el estudiante: [Por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones]
+    prompt3: `Estoy revisando una actividad evaluativa de mi curso y necesito determinar el nivel AIAS más adecuado.
+PASO 1: 
+Pregunta al usuario lo siguiente (OBLIGATORIO):  
+Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega como ensayo o defensa oral, si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si hay instrumento de evaluación, etc ]
+Pega el resultado de aprendizaje asociado 
+Describe el tipo de pensamiento o decisión que debe demostrar el estudiante: [Por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones]
+
+NO AVANCES HASTA QUE TENGAS ESA INFORMACIÓN DEL USUARIO. 
+
+PASO 2: 
+
+Utiliza la información del PASO 1 y la información a continuación, para decidir el nivel AIAS más coherente. 
+
+En mi actividad evaluativa quiero que se considere lo siguiente: 
+
 Desempeño esperado con IAG: [pega la opción que seleccionaste de la lista A]
 Rol de la IAG: [pega la opción que seleccionaste de la lista B]
-Fase de participación: [pega la opción que seleccionaste de la lista C]
-Con base en el marco AIAS, analiza mi caso como si estuvieras ejecutando un árbol de decisiones.
-Instrucciones para GPT
-Antes de recomendar un nivel AIAS:
-Haz preguntas claras al docente sobre cualquier detalle faltante, solo si es esencial para generar el texto resumen. 
-Fase 1 
+Fase de participación de la IAG: [pega la opción que seleccionaste de la lista C]
+PASO 3: 
 Solo cuando tengas suficiente información, genera una tabla titulada “Decisión AIAS”, que incluya las siguientes columnas (no modifiques los títulos):
 Actividad evaluativa
 Resultado de aprendizaje 
 Tipo de pensamiento o decisión asociado 
-Desempeño y rol de la IA seleccionado por el docente
+Desempeño y rol de la IA (seleccionado por el docente)
 GPT indica si el desempeño esperado, el rol y la fase de la IA escogidos por el docente son coherentes con la actividad. Pegalos si no hay que hacer cambios. De lo contrario señala inconsistencias entre la actividad (columna 1) y estos elementos, y propón la mejora. Explicación breve y clara.
 Nivel AIAS
  Recomienda el nivel AIAS más coherente (1–5). OBLIGATORIO: explica por qué ese nivel, cuál es el sentido pedagógico, cuál es la oportunidad de potenciar el aprendizaje que ofrece el nivel, etc.  
 Otros niveles 
 Explica brevemente por qué NO son más adecuados los niveles adyacentes.
 Tipo de rediseño
-GPT indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para que la actividad se alinee con el nivel AIAS de la columna 5. Relaciona la respuesta explicando cómo la visibilidad del proceso, oportunidad positiva de uso de la IA para el aprendizaje, y la validez de la evaluación influyen en la decisión. Y también  debe especificar dónde debería ocurrir el ajuste, por ejemplo: 
-Alineación mecanismo de evaluación y resultado de aprendizaje
+GPT indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para que la actividad se alinee con el nivel AIAS de la columna 5. Relaciona la respuesta explicando cómo la visibilidad del proceso, oportunidad positiva de uso de la IA o riesgo de la validez para el aprendizaje, y la validez de la evaluación, influyen en la decisión. También debes especificar dónde debería ocurrir el ajuste, por ejemplo en: 
+La alineación mecanismo de evaluación y resultado de aprendizaje
 Tipo de pensamiento o procesos cognitivos de la tarea
 Consigna de la actividad
 Rúbrica o criterios de evaluación
+Las condiciones de evaluación 
+Declaración transparencia del uso de IA
 Evidencias solicitadas
-Uso de la IA en la tarea
-Fase 2
+Estrategia de evaluación 
+PASO 4: 
 Genera un resumen en bullets de la tabla titulado “Resumen Decisión AIAS” con los puntos claves de la tabla, con explicación breve de esos puntos, e incluye 2 o 3 implicaciones para el diseño evaluativo. 
 Formato:
 - Tabla clara y legible
@@ -197,35 +205,38 @@ Formato:
 - Evita frases abstractas
 - Cada idea debe poder entenderse en una lectura rápida
 - Prioriza frases concretas sobre explicaciones conceptuales
+
+PASO 5: 
 Interacción con el usuario (OBLIGATORIO)
 Al finalizar la respuesta pregunta al usuario: 
 “¿El nivel recomendado coincide con lo que quieres?
-¿Tienes alguna duda sobre la tabla o el resumen generado?” 
- `,
-    prompt4: `Vas a rediseñar la actividad evaluativa [inserta nombre del mecanismo de evaluación] a partir de la información generada previamente en la tabla “Decisión AIAS”.
+¿Tienes alguna duda sobre la tabla o el resumen generado?”
+`,
+    prompt4: `Vas a rediseñar una actividad evaluativa a partir de la información generada previamente en la tabla “Decisión AIAS”.
 El objetivo es traducir esa decisión en acciones concretas de rediseño evaluativo, asegurando coherencia entre:
 el nivel AIAS seleccionado
 el tipo de pensamiento que se busca evaluar
 y la validez de la evaluación
-
-Estructura de salida (OBLIGATORIO)
+PASO 1: Estructura de salida (OBLIGATORIO)
 Usa la información de la tabla ‘Decisión AIAS’ generada previamente en la conversación. Si no está disponible, pide al usuario que la comparta antes de continuar
 Genera la siguiente tabla titulada “Rediseño de una actividad evaluativa”
 Filas obligatorias (No modifiques los títulos)
-Descripción breve mecanismo de evaluación
+Nombre mecanismo de evaluación
+Descripción mecanismo de evaluación
 Resultado de aprendizaje
 Nivel AIAS
 Qué evaluar
-Estrategia de evaluación
-Instrumento de evaluación 
+Cómo evaluar
 Consigna al estudiante
 Recursos (si aplica)
 
 Definición operativa de filas (OBLIGATORIO)
-Fila 4: Qué evaluar (en relación al desempeño con IAG)
-→ Por ejemplo: Juicio crítico sobre los outputs de la IAG, razonamiento disciplinar autónomo, 
-Fila 5: Estrategia de evaluación
-→ Describe cómo se organiza la experiencia evaluativa completa: qué hacen los estudiantes, si se evalúa el proceso o solo el producto, los momentos o fases de la actividad evaluativa, el rol de la IAG, etc. 
+Fila 4: Nivel AIAS
+→ Indica el nivel AIAS decidido, su nombre, una descripción breve de lo que implica y el rol que cumple la IAG en la actividad según ese nivel.
+Fila 5: Qué evaluar (en relación al desempeño con IAG)
+→ Por ejemplo: juicio crítico sobre los outputs de la IAG, razonamiento disciplinar autónomo, integración coherente de outputs en función de objetivos disciplinares, creación innovadora con la IAG, etc. 
+Fila 6: Cómo evaluar (estrategias de evaluación y evidencias) 
+→ Para cada estrategia propuesta especifica: (1) nombre y descripción de la estrategia, (2) evidencia concreta que produce el estudiante (3) los momentos o fases de la actividad evaluativa. 
 
 Criterios de calidad (OBLIGATORIO)
 Evita frases abstractas como:
@@ -240,10 +251,9 @@ Coherencia con AIAS (OBLIGATORIO)
 Asegura que:
 La tabla refleje explícitamente el nivel AIAS seleccionado
 Se haga visible el proceso del estudiante, no solo el producto
-El uso de la IA no pueda reemplazar fácilmente el desempeño evaluado
 La IA se use como apoyo al aprendizaje, no como sustituto del pensamiento, incluso cuando se ubica la actividad en nivel 4 o 5 del AIAS. 
 
-Interacción con el usuario (OBLIGATORIO)
+PASO 2: 
 Al finalizar, pregunta:
 ¿El rediseño propuesto es viable en tu contexto?
 ¿Hay algún elemento que quisieras ajustar o adaptar a tu asignatura?

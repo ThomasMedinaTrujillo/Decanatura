@@ -31,8 +31,6 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
 
 const PromptStepGuide = ({
   steps,
-  targetId,
-  buttonLabel,
 }: {
   steps: string[];
   targetId: string;
@@ -53,44 +51,27 @@ const PromptStepGuide = ({
       ))}
     </div>
     <div className="mt-5">
-      <button
-        type="button"
-        onClick={() => {
-          const targetElement = document.getElementById(targetId);
-
-          if (!targetElement) {
-            return;
-          }
-
-          const navbarOffset = 120;
-          const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - navbarOffset;
-
-          window.scrollTo({ top: targetTop, behavior: 'smooth' });
-        }}
-        className="inline-flex items-center bg-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1f1f1f]"
-      >
-        {buttonLabel}
-      </button>
+      
     </div>
   </div>
 );
 
 const sidebarItems = [
   { label: 'Diagnóstico inicial', href: '#diagnostico' },
-  { label: 'Prompt 1: Resultados de aprendizaje', href: '#prompt-1', isIndented: true },
-  { label: 'Cómo estás evaluando', href: '#prioriza' },
-  { label: 'Prompt 2: Actividades evaluativas', href: '#prompt-2', isIndented: true },
+  { label: 'Prompt 1: Analiza resultados de aprendizaje', href: '#prompt-1', isIndented: true },
+  { label: 'Analiza tus actividades evaluativas', href: '#prioriza' },
+  { label: 'Prompt 2: Analiza actividades evaluativas', href: '#prompt-2', isIndented: true },
   { label: 'Decide el nivel AIAS', href: '#decide' },
   { label: 'Prompt 3: Decisión AIAS', href: '#prompt-3', isIndented: true },
-  { label: 'Rediseña', href: '#redisena' },
-  { label: 'Prompt 4: Rediseño', href: '#prompt-4', isIndented: true },
+  { label: 'Rediseña una actividad evaluativa', href: '#redisena' },
+  { label: 'Prompt 4: Rediseña una actividad evaluativa', href: '#prompt-4', isIndented: true },
 ];
 
 const learningQuestions = [
-  '¿Qué deben saber los estudiantes al finalizar el curso?',
-  '¿Qué deben ser capaces de hacer sin IAG?',
-  '¿Alguno de estos resultados puede potenciarse con la IAG?',
-  '¿Cuáles resultados de aprendizaje se ven impactados por la IAG?',
+  '¿Qué deben ser capaces de hacer mis estudiantes sin IAG?',
+  '¿Cuáles resultados de aprendizaje pueden ser simulados por la IAG?',
+  '¿Cuáles podrían ser transformados y ajustados debido a los cambios que trae la IAG?',
+
 ];
 
 
@@ -124,11 +105,6 @@ const participationOptions = [
   'Aún no lo tengo claro',
 ];
 
-const sharedProductOptions = [
-  { label: 'Producto 1', value: 'producto1' },
-  { label: 'Producto 2', value: 'producto2' },
-  { label: 'Producto 3', value: 'producto3' },
-];
 
 function buildDynamicPrompt({
   selectedPerformance,
@@ -223,7 +199,7 @@ export default function Momento3() {
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
   const [selectedPhases, setSelectedPhases] = useState<string[]>([]);
   const [prompt3Text, setPrompt3Text] = useState<string>(momento3Prompts.prompt3);
-  const [sharedProductForm, setSharedProductForm] = useState({
+  const [] = useState({
     productSheet: 'producto1',
     profesor: '',
     curso: '',
@@ -243,11 +219,12 @@ export default function Momento3() {
     nivelAIAS: '',
     justificacionBreve3: '',
   });
-  const [isSubmittingSharedProductForm, setIsSubmittingSharedProductForm] = useState(false);
-  const [sharedProductFormStatus, setSharedProductFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [] = useState(false);
+  const [] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [finalForm, setFinalForm] = useState({
     profesor: '',
     curso: '',
+    email: '',
     mecanismoEvaluacion: '',
     resultadoAprendizaje: '',
     nivelAIAS: '',
@@ -256,6 +233,7 @@ export default function Momento3() {
     consignaEstudiante: '',
     recursos: '',
     notasObservaciones: '',
+    comentariosPreguntas: '',
   });
   const [isSubmittingFinalForm, setIsSubmittingFinalForm] = useState(false);
   const [finalFormStatus, setFinalFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
@@ -285,93 +263,7 @@ export default function Momento3() {
     }));
   };
 
-  const handleSharedProductChange = (field: keyof typeof sharedProductForm, value: string) => {
-    setSharedProductForm((current) => ({
-      ...current,
-      [field]: value,
-    }));
-  };
 
-  const submitSharedProductForm = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const endpoint = (import.meta.env.VITE_MOMENTO3_FORM_POST_URL as string | undefined) || (import.meta.env.VITE_MOMENTO3_FINAL_POST_URL as string | undefined);
-
-    if (!endpoint) {
-      setSharedProductFormStatus({
-        type: 'error',
-        message: 'Endpoint no configurado.',
-      });
-      return;
-    }
-
-    setIsSubmittingSharedProductForm(true);
-    setSharedProductFormStatus(null);
-
-    try {
-      const payload = {
-        source: 'momento-3-producto-compartido',
-        sheetName: sharedProductForm.productSheet,
-        profesor: sharedProductForm.profesor,
-        curso: sharedProductForm.curso,
-        // Producto 1
-        resultadoAprendizaje: sharedProductForm.resultadoAprendizaje,
-        clasificacion: sharedProductForm.clasificacion,
-        justificacion: sharedProductForm.justificacion,
-        ajuste: sharedProductForm.ajuste,
-        // Producto 2
-        mecanismo: sharedProductForm.mecanismo,
-        resultadoActividad: sharedProductForm.resultadoActividad,
-        problemaPrincipal: sharedProductForm.problemaPrincipal,
-        recomendacion: sharedProductForm.recomendacion,
-        // Producto 3
-        actividadEvaluativa: sharedProductForm.actividadEvaluativa,
-        resultadoProducto3: sharedProductForm.resultadoProducto3,
-        nivelAIAS: sharedProductForm.nivelAIAS,
-        justificacionBreve3: sharedProductForm.justificacionBreve3,
-      };
-
-      await fetch(endpoint, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      setSharedProductFormStatus({
-        type: 'success',
-        message: `Enviado a ${sharedProductForm.productSheet} con éxito.`,
-      });
-
-      // Clear all shared product fields after successful submit
-      setSharedProductForm((current) => ({
-        ...current,
-        profesor: '',
-        curso: '',
-        resultadoAprendizaje: '',
-        clasificacion: '',
-        justificacion: '',
-        ajuste: '',
-        mecanismo: '',
-        resultadoActividad: '',
-        problemaPrincipal: '',
-        recomendacion: '',
-        actividadEvaluativa: '',
-        resultadoProducto3: '',
-        nivelAIAS: '',
-        justificacionBreve3: '',
-      }));
-    } catch (error) {
-      setSharedProductFormStatus({
-        type: 'error',
-        message: 'Error al enviar.',
-      });
-    } finally {
-      setIsSubmittingSharedProductForm(false);
-    }
-  };
 
   const submitFinalForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -422,6 +314,8 @@ export default function Momento3() {
         consignaEstudiante: '',
         recursos: '',
         notasObservaciones: '',
+        email: '',
+        comentariosPreguntas: '',
       }));
     } catch (error) {
       setFinalFormStatus({
@@ -446,67 +340,73 @@ export default function Momento3() {
         <main className="flex-1 w-full space-y-12">
           <AnimatedSection>
             <section className="mb-16" id="diagnostico">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Diagnóstico inicial" subtitle="" />
-              <p className="mb-6 text-base">
-                Este momento te guía desde el diagnóstico de lo que tienes hoy hasta el rediseño concreto de tus
-                evaluaciones, paso a paso y con apoyo del GPT del AIAS.
+              <SectionHeading bgcolor="#4cb979" title="Resumen" subtitle="" />
+              <p className="mb-6 text-base text-[#272727]">
+                Este momento te guía desde el diagnóstico de tu curso hasta el rediseño concreto de tus evaluaciones, paso a paso y con apoyo del GPT de los autores del AIAS.
               </p>
-              <p className="mb-8 text-base">
-                Aquí revisas dos elementos de tu syllabus: los resultados de aprendizaje y las actividades
-                evaluativas. La meta es identificar qué ajustar primero y llegar a una decisión de diseño clara.
-              </p>
-              <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
-                <div className="border border-[#d7d8dc] bg-[#fcfcfd] p-5">
-                  <h3 className="text-xl font-bold text-[#4cb979]">Qué estás evaluando</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#272727]">
-                    Antes de modificar una actividad evaluativa, revisa los resultados de aprendizaje del curso.
-                    Pregúntate:
-                  </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-[#272727]">
-                    {learningQuestions.map((question) => (
-                      <li key={question} className="ml-5 list-disc">
-                        {question}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border border-[#d7d8dc] bg-white p-5">
-                  <div className="mb-5 border-l-2 border-[#4cb979] pl-4 text-sm leading-6 text-[#272727]">
-                    Si quieres usar el GPT para reflexionar, pega los siguientes prompts en el GPT del AIAS diseñado por
-                    los mismos autores.
-                  </div>
-                  <GPTCard
-                    title="GPT del AIAS"
-                    subtitle="Universidad Icesi"
-                    buttonText="Probar"
-                    iconSrc={<FileIcon className="text-white" />}
-                    href="https://chatgpt.com/g/g-m39Sn0uZq-the-ai-assessment-scale-aias"
-                  />
-                </div>
-              </div>
+              <SectionHeading bgcolor="#4cb979" title="Nota importante" subtitle="" />
+              <p className="mb-4 text-base font-semibold">Sobre el uso del GPT del AIAS</p>
+              <ul className="mb-4 list-inside list-disc text-sm text-[#272727]">
+                <li>Necesitas iniciar sesión en ChatGPT para usar el GPT del AIAS y adjuntar documentos.</li>
+                <li>Las recomendaciones del GPT son un punto de partida: revísalas con criterio, cuestiona lo que no te convenza y recuerda que el juicio pedagógico final es tuyo.</li>
+              </ul>
+              <p className="mb-4 text-base font-semibold">Sobre los productos de este momento</p>
+              <ul className="mb-4 list-inside list-disc text-sm text-[#272727]">
+                <li>Para registrar de forma ordenada los análisis de cada paso, se proponen 4 productos en formato de tabla Excel.</li>
+                <li>Crea una copia del archivo y edítalo directamente.</li>
+              </ul>
+              
             </section>
           </AnimatedSection>
 
           <AnimatedSection>
             <section className="mb-16" id="prompt-1">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Análisis resultados de aprendizaje" subtitle="" />
+              <SectionHeading  bgcolor="#4cb979" title="1. Analiza tus resultados de aprendizaje" subtitle="" />
+              <p className="mb-4 text-base font-semibold">
+                    Revisa los resultados de aprendizaje de tu curso con estas preguntas:
+                  </p>
+                  <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
+                    {learningQuestions.map((question) => (
+                      <li key={question} className="">
+                        {question}
+                      </li>
+                    ))}
+                  </ul>
               <p className="mb-6 text-base leading-7 text-[#272727]">
-                Diagnóstico inicial de tu syllabus actual: identifica qué resultados de aprendizaje requieren demostrarse sin apoyo de IAG y qué aspectos podrían analizarse con ayuda del GPT del AIAS.
+                Puedes apoyar tu análisis con apoyo del GPT del AIAS:
               </p>
-              <p className="mb-8 text-base leading-7 text-[#272727]">
-                El paso a paso aparece arriba en la guía de apoyo para este prompt.
-              </p>
+              
               <div className="flex flex-col gap-6">
-                <PromptStepGuide
-                  steps={[
-                    'Abre el GPT del AIAS.',
-                    'Adjunta el PDF de tu syllabus y pega el Prompt 1 en el mismo mensaje.',
-                    'Consolida tu reflexión en el Producto 1.',
-                  ]}
-                  targetId="productos-compartidos-form"
-                  buttonLabel="Ir al producto 1"
-                />
+                <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+                  <PromptStepGuide
+                    steps={[
+                      'Abre el GPT del AIAS.',
+                      'Adjunta el PDF de tu syllabus y pega el Prompt 1 en el mismo mensaje.',
+                      'Consolida tu reflexión en el Producto 1.',
+                    ]}
+                    targetId="productos-compartidos-form"
+                    buttonLabel="Ir al producto 1"
+                  />
+
+                  <div className="flex flex-col gap-4">
+                    <GPTCard
+                      title="GPT del AIAS"
+                      subtitle="Universidad Icesi"
+                      buttonText="Abrir GPT"
+                      iconSrc={<FileIcon className="text-white" />}
+                      href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
+                    />
+                    <a
+                      href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                    >
+                      Ir al producto
+                    </a>
+                  </div>
+                </div>
+
                 <Prompt text="Prompt 1: Análisis resultados de aprendizaje" prompt={momento3Prompts.prompt1} />
               </div>
             </section>
@@ -516,7 +416,7 @@ export default function Momento3() {
 
           <AnimatedSection>
             <section className="mb-16" id="prioriza">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Cómo estás evaluando" subtitle="" />
+              <SectionHeading  bgcolor="#4cb979" title="2. Analiza tus actividades evaluativas" subtitle="" />
               <p className="mb-4 text-base leading-7 text-[#272727]">
                 Con los resultados de aprendizaje analizados, el siguiente paso es revisar tus actividades evaluativas. Pregúntate:
               </p>
@@ -530,27 +430,38 @@ export default function Momento3() {
                     <Prompt text="Prompt 2: Analisis actividades evaluativas" prompt={momento3Prompts.prompt2} />
                   </div>
                 
-                  <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Prioriza" subtitle="" />
-                  <p className="mt-3 font-bold  leading-6 text-[#272727]">
-                    No tienes que intervenir todo a la vez.
-                  </p>
-                  <p className="mt-3 leading-6 text-[#272727]">
-                    El Producto 2 te ayuda a consolidar las recomendaciones del análisis anterior y a identificar qué actividades requieren rediseño (y más tiempo de dedicación) y cuáles un ajuste menor.
-                  </p>
+                  
                   
                 
 
                 <div className="border border-[#d7d8dc] bg-white p-5">
                 
                   <div className="mb-6">
-                    <PromptStepGuide
-                      steps={[
-                        
-                        'Consolida tu análisis en el Producto 2.',
-                      ]}
-                      targetId="productos-compartidos-form"
-                      buttonLabel="Ir al producto 2"
-                    />
+                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+                      <PromptStepGuide
+                        steps={['Pega el Prompt 2 en el mismo chat. ', "Consolida tu reflexión en el Producto 2. "]}
+                        targetId="productos-compartidos-form"
+                        buttonLabel="Ir al producto 2"
+                      />
+
+                      <div className="flex flex-col gap-4">
+                        <GPTCard
+                          title="GPT del AIAS"
+                          subtitle="Universidad Icesi"
+                          buttonText="Abrir GPT"
+                          iconSrc={<FileIcon className="text-white" />}
+                          href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
+                        />
+                        <a
+                          href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                        >
+                          Ir al producto
+                        </a>
+                      </div>
+                    </div>
                   </div>
                   
                 </div>
@@ -560,22 +471,49 @@ export default function Momento3() {
 
           <AnimatedSection>
             <section className="mb-16" id="decide">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Decide el nivel AIAS" subtitle="" />
+              <SectionHeading  bgcolor="#4cb979" title="3. Decide el nivel AIAS" subtitle="" />
               <p className="mb-6 text-base leading-7 text-[#272727]">
-              El siguiente paso es asignar un nivel AIAS a cada actividad evaluativa. Las listas que siguen te ayudan a clarificar tu intención antes de consultar al GPT.
-              </p>
+                El siguiente paso es asignar un nivel AIAS a una actividad evaluativa de tu curso. Pregúntate:               </p>
+                <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
+                <li>¿Qué quieres que el estudiante demuestre con o sin la IAG?</li>
+                <li>¿Qué rol quieres que la IAG tenga en la evaluación?</li>
+                <li>¿En qué momentos de la actividad evaluativa podría el estudiante usar la IAG?</li>
+              </ul>
                <div className="mt-6">
-                <PromptStepGuide
-                  steps={[
-                    'Escoge una actividad evaluativa del Producto 2.',
-                    'Selecciona una opción en cada lista según tu intención.',
-                    'Consolida tu análisis en el Producto 3.',
-                  ]}
-                  targetId="productos-compartidos-form"
-                  buttonLabel="Ir al producto 3"
-                />
+                <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+                  <PromptStepGuide
+                    steps={[
+                      'Escoge una actividad evaluativa del Producto 2.',
+                      'Con esa actividad en mente, lee las listas y selecciona una opción en cada una. Las listas pueden ayudarte a clarificar tu intención pedagógica respecto a la IAG en tu actividad evaluativa. ',
+                      'Presiona “Actualizar Prompt 3” (al actualizar el prompt 3 lo que selecciones en las listas se incluye en este).',
+                      'Pega el prompt en el GPT del AIAS. Si tienes archivos relacionados a la actividad evaluativa (la consigna, rúbrica, presentación, etc) adjunta estos en el mismo mensaje.',
+                      'Consolida tu análisis en el Producto 3. '
+                    ]}
+                    targetId="productos-compartidos-form"
+                    buttonLabel="Ir al producto 3"
+                  />
+
+                  <div className="flex flex-col gap-4">
+                    <GPTCard
+                      title="GPT del AIAS"
+                      subtitle="Universidad Icesi"
+                      buttonText="Abrir GPT"
+                      iconSrc={<FileIcon className="text-white" />}
+                      href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
+                    />
+                    <a
+                      href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                    >
+                      Ir al producto
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="grid gap-6 lg:grid-cols-3">
+              
+              <div className="grid my-6 gap-6 lg:grid-cols-3">
                 <Momento3OptionGroup
                   title="Lista A - Desempeño esperado con o sin IAG"
                   description="¿Qué quieres que el estudiante demuestre con o sin la IAG?"
@@ -603,7 +541,7 @@ export default function Momento3() {
                 />
               </div>
 
-              <div className="rounded-sm border border-[#d7d8dc] bg-[#fcfcfd] p-5">
+              <div className="mb-6 rounded-sm border border-[#d7d8dc] bg-[#fcfcfd] p-5">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold text-[#19191b]">Generar prompt con selecciones</h3>
@@ -629,9 +567,9 @@ export default function Momento3() {
             </section>
           </AnimatedSection>
 
-          <AnimatedSection>
+          {/* {<AnimatedSection>
             <section className="mb-16" id="productos-compartidos">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Formulario compartido para productos 1, 2 y 3" subtitle="" />
+              <SectionHeading  bgcolor="#4cb979" title="Formulario compartido para productos 1, 2 y 3" subtitle="" />
               <p className="mb-6 text-base">
                 Completa aquí los productos compartidos asociados al análisis y priorización.
               </p>
@@ -684,7 +622,7 @@ export default function Momento3() {
                     </select>
                   </label>
 
-                  {/* Render fields depending on selected product */}
+                  
                   {sharedProductForm.productSheet === 'producto1' && (
                     <>
                       <label className="grid gap-2">
@@ -829,6 +767,19 @@ export default function Momento3() {
                   )}
                 </div>
 
+                <div className="mt-6">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Comentarios y preguntas</span>
+                    <textarea
+                      value={finalForm.comentariosPreguntas}
+                      onChange={(event) => handleFinalFormChange('comentariosPreguntas', event.target.value)}
+                      className="min-h-20 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Escribe aquí dudas, comentarios o preguntas sobre tu rediseño (opcional)"
+                      aria-label="Comentarios y preguntas"
+                    />
+                  </label>
+                </div>
+
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <button
                     type="submit"
@@ -849,44 +800,71 @@ export default function Momento3() {
                 ) : null}
               </form>
             </section>
-          </AnimatedSection>
+          </AnimatedSection>} */}
 
           <AnimatedSection>
             <section className="mb-16" id="redisena">
-              <SectionHeading uppertitle='Transformación' bgcolor="#4cb979" title="Rediseña" subtitle="" />
+              <SectionHeading  bgcolor="#4cb979" title="4. Rediseña una actividad evaluativa" subtitle="" />
               <p className="mb-6 text-base leading-7 text-[#272727]">
-                Con el nivel definido, rediseña la actividad para que las instrucciones, las evidencias y los criterios de evaluación reflejen con claridad el rol de la IAG.
+                En la fase anterior decidiste el mejor nivel del AIAS para una actividad evaluativa, ahora el último paso es rediseñar o ajustar esa actividad. Pregúntate: 
+
               </p>
+              <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
+                <li><b>
+                  ¿Qué añade o cambia el nivel AIAS elegido en lo que quiero evaluar? 
+                  </b>
+                  Por ejemplo, una evaluación en Nivel 3 debería preguntarse por la capacidad de juicio crítico que tiene el estudiante respecto a lo que la IAG genera.</li>
+                <li><b>¿Qué estrategias y formatos evaluativos son coherentes con lo que quiero evidenciar? </b>
+Un examen presencial protege la autonomía en el Nivel 1, una defensa oral donde el estudiante justifica sus decisiones sobre los outputs de IAG funciona mejor en el Nivel 3 o 4, etc. 
+</li>
+              </ul>
               <div className="mb-6">
-                <PromptStepGuide
-                  steps={[
-                    'Pega el Prompt 4 en el GPT del AIAS.',
-                    '⁠Completa el espacio del Prompt 4 antes de mandarlo “[inserta nombre del mecanismo de evaluación]”',
-                    'Realiza el Producto Final',
-                  ]}
-                  targetId="formulario-final"
-                  buttonLabel="Ir al formulario final"
-                />
+                
+                  <PromptStepGuide
+                    steps={[
+                      'Pega el Prompt 4 en el mismo chat. ',
+                      'Realiza el Producto Final',
+                      'Repite la fase 3 (Decide el nivel AIAS) y 4 (Rediseña una actividad evaluativa) para otra actividad de evaluación en tu curso. ',
+                    ]}
+                    targetId="formulario-final"
+                    buttonLabel="Ir al formulario final"
+                  />
+
+                 
+                
               </div>
-              <div id="prompt-4">
+              <div id="prompt-4 mb-6">
                 <Prompt text="Prompt 4: Rediseño de actividades" prompt={momento3Prompts.prompt4} />
               </div>
 
-              <form id="formulario-final" onSubmit={submitFinalForm} className="scroll-mt-24 border border-[#d7d8dc] bg-white p-5">
+              <form id="formulario-final" onSubmit={submitFinalForm} className="scroll-mt-24 mt-6 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
                   <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Producto final</p>
-                  <h3 className="text-xl font-bold text-[#19191b]">Formulario de registro evaluativo</h3>
+                  <h3 className="text-xl font-bold text-[#19191b]"><b>¿Quieres compartir tu proceso con nosotros?
+</b></h3>
+<p>Si completaste el diseño evaluativo, te invitamos a registrarlo en el siguiente formulario. Es opcional. Tu información nos ayuda a entender cómo está siendo usado este recurso, identificar necesidades de acompañamiento y, si lo deseas, ofrecerte retroalimentación desde el equipo sobre tu rediseño</p>
                 </div>
 
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-1 gap-4">
                   <label className="grid gap-2">
                     <span className="text-sm font-semibold text-[#19191b]">Nombre del profesor</span>
+                    
                     <input
                       value={finalForm.profesor}
                       onChange={(event) => handleFinalFormChange('profesor', event.target.value)}
                       className="w-full border border-[#d7d8dc] bg-white p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                       placeholder="Nombre del profesor"
                       required
+                    />
+                                        <span className="text-sm font-semibold text-[#19191b]">Correo electrónico</span>
+
+                    <input
+                      value={finalForm.email}
+                      onChange={(event) => handleFinalFormChange('email', event.target.value)}
+                      className="mt-2 w-full border border-[#d7d8dc] bg-white p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Correo electrónico (opcional)"
+                      type="email"
+                      aria-label="Correo electrónico"
                     />
                   </label>
 
@@ -1001,6 +979,19 @@ export default function Momento3() {
                     </tbody>
                   </table>
                 </div>
+                <div className="mt-4">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-semibold text-[#19191b]">Comentarios y preguntas</span>
+                    <textarea
+                      value={finalForm.comentariosPreguntas}
+                      onChange={(event) => handleFinalFormChange('comentariosPreguntas', event.target.value)}
+                      className="min-h-20 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      placeholder="Escribe aquí dudas, comentarios o preguntas sobre tu rediseño (opcional)"
+                      aria-label="Comentarios y preguntas"
+                    />
+                  </label>
+                </div>
+                
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <button
