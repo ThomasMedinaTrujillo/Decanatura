@@ -196,19 +196,18 @@ export default function FichaTecnica() {
         <section className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <div className="bg-white p-6 shadow-sm ring-1 ring-[#e8e8ec] lg:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Licencia</p>
-            <h2 className="mt-2 text-2xl font-bold text-[#19191b]">Creative Commons Atribución 4.0 Internacional</h2>
+            <h2 className="mt-2 text-2xl font-bold text-[#19191b]">CC BY-NC-SA 4.0</h2>
             <p className="mt-4 text-sm leading-6 text-[#272727]">
-              Este recurso puede ser reproducido, distribuido y adaptado libremente, siempre que se cite la autoría
-              original.
+              Este recurso puede ser usado, compartido y adaptado libremente siempre que se cite la autoría original, no se use con fines comerciales y las versiones derivadas mantengan la misma licencia
             </p>
 
             <div className="mt-6 flex flex-col gap-4 border border-[#d7d8dc] bg-[#fcfcfd] p-5 sm:flex-row sm:items-center">
               <div>
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-                  <img alt="Licencia Creative Commons" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" />
+                <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+                  <img alt="Licencia Creative Commons" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" />
                 </a>
                 <br />
-                This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International</a>
               </div>
 
             </div>
