@@ -71,7 +71,7 @@ const fadeInUpVariants = {
 
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="Un recurso con varios puntos de partida"
             subtitle=""
@@ -88,7 +88,7 @@ const fadeInUpVariants = {
         {/* Section 2: Panorama y tendencias actuales */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="Panorama y tendencias actuales"
             subtitle=""
@@ -103,7 +103,7 @@ const fadeInUpVariants = {
 
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="Lo que revela la encuesta regional más grande sobre IA en educación superior"
             subtitle=""
@@ -162,7 +162,7 @@ const fadeInUpVariants = {
         {/* Section 4: Wicked Problems */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="Todo problema (no) tiene solución"
             subtitle=""
@@ -181,7 +181,7 @@ const fadeInUpVariants = {
         {/* Section 5: Allow AI or not */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
             bgcolor='#865CF0' 
             title="¿Permitimos el uso de IA o no?"
             subtitle=""
@@ -209,7 +209,7 @@ const fadeInUpVariants = {
         {/* Section 6: How to design valid assessments */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="¿Cómo diseñar actividades evaluativas que sean válidas?"
             subtitle=""
@@ -235,7 +235,7 @@ const fadeInUpVariants = {
         {/* Section 7: Competency Frameworks */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
+          
         bgcolor='#865CF0' 
             title="Marcos de competencias y de integración de la IA en educación"
             subtitle="Cinco marcos que lideran la literatura actual"
@@ -249,7 +249,6 @@ const fadeInUpVariants = {
         {/* Section 8: AIAS Definition */}
         <section className="mb-16">
           <SectionHeading
-          uppertitle="Exploración"
         bgcolor='#865CF0' 
         title="Qué es el AIAS, y qué no es"
         subtitle=""

@@ -44,7 +44,7 @@ export default function AIASLevel({
 }: LevelProps) {
   return (
     <div className="mb-20" id={id}>
-      <SectionHeading uppertitle='Profundización' bgcolor="#5454E9" title={title} />
+      <SectionHeading  bgcolor="#5454E9" title={title} />
 
       <div className="mb-8 overflow-hidden border border-[#dfe2e8] bg-white shadow-[0_16px_36px_-30px_rgba(17,24,39,0.45)]">
         <div className="bg-[#ff6a21] px-5 py-3 text-[12px] font-bold uppercase tracking-[0.14em] text-white">
