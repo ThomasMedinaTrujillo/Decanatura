@@ -391,7 +391,7 @@ export default function Momento3() {
                   <div className="flex flex-col gap-4">
                     <GPTCard
                       title="GPT del AIAS"
-                      subtitle="Universidad Icesi"
+                      subtitle=""
                       buttonText="Abrir GPT"
                       iconSrc={<FileIcon className="text-white" />}
                       href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
@@ -447,7 +447,7 @@ export default function Momento3() {
                       <div className="flex flex-col gap-4">
                         <GPTCard
                           title="GPT del AIAS"
-                          subtitle="Universidad Icesi"
+                          subtitle=""
                           buttonText="Abrir GPT"
                           iconSrc={<FileIcon className="text-white" />}
                           href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
@@ -496,7 +496,7 @@ export default function Momento3() {
                   <div className="flex flex-col gap-4">
                     <GPTCard
                       title="GPT del AIAS"
-                      subtitle="Universidad Icesi"
+                      subtitle=""
                       buttonText="Abrir GPT"
                       iconSrc={<FileIcon className="text-white" />}
                       href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
@@ -818,6 +818,8 @@ export default function Momento3() {
 Un examen presencial protege la autonomía en el Nivel 1, una defensa oral donde el estudiante justifica sus decisiones sobre los outputs de IAG funciona mejor en el Nivel 3 o 4, etc. 
 </li>
               </ul>
+              <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+
               <div className="mb-6">
                 
                   <PromptStepGuide
@@ -833,13 +835,31 @@ Un examen presencial protege la autonomía en el Nivel 1, una defensa oral donde
                  
                 
               </div>
+              <div className="flex flex-col gap-4">
+                    <GPTCard
+                      title="GPT del AIAS"
+                      subtitle=""
+                      buttonText="Abrir GPT"
+                      iconSrc={<FileIcon className="text-white" />}
+                      href="https://chatgpt.com/g/g-m39Sn0uZq-ai-assessment-scale-aias"
+                    />
+                    <a
+                      href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                      >
+                      Ir al producto
+                    </a>
+                  </div>
+                      </div>
               <div id="prompt-4 mb-6">
                 <Prompt text="Prompt 4: Rediseño de actividades" prompt={momento3Prompts.prompt4} />
               </div>
 
               <form id="formulario-final" onSubmit={submitFinalForm} className="scroll-mt-24 mt-6 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Producto final</p>
+                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Formulario Opcional</p>
                   <h3 className="text-xl font-bold text-[#19191b]"><b>¿Quieres compartir tu proceso con nosotros?
 </b></h3>
 <p>Si completaste el diseño evaluativo, te invitamos a registrarlo en el siguiente formulario. Es opcional. Tu información nos ayuda a entender cómo está siendo usado este recurso, identificar necesidades de acompañamiento y, si lo deseas, ofrecerte retroalimentación desde el equipo sobre tu rediseño</p>
