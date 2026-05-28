@@ -192,7 +192,7 @@ export default function Momento2() {
              <AIASLevel 
                 id='nivel-3'
                 title="Nivel 3: Colaboración con IAG"
-                description="La IAG colabora con el estudiante en el desarrollo de la actividad evaluativa aportando ideas, argumentos o retroalimentación. El estudiante evalúa estas contribuciones y decide qué aceptar. Mantiene la responsabilidad intelectual del producto final."
+                description="La IAG colabora con el estudiante en el desarrollo de la actividad evaluativa. Esta puede proponer ideas, generar argumentos, dar retroalimentación y sugerencias. Sin embargo, el estudiante debe evaluar críticamente estas contribuciones y decidir qué aceptar, mejorar o descartar. Aunque se utilice la IAG como apoyo, el estudiante mantiene la responsabilidad intelectual del resultado final."
                 pedagogicalSense="Enmarcar una actividad evaluativa en este nivel tiene como intención desplazar el foco al desarrollo del juicio crítico respecto al contenido generado por la IAG (el output)."
                 whenMakeSense={[
                   "Quieres que tu actividad evaluativa se enfoque en la capacidad del estudiante de analizar, evaluar y mejorar los outputs de la IAG.",
