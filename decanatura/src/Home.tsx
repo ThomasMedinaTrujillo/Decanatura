@@ -16,11 +16,11 @@ export default function Home() {
     <div className=" w-full" data-node-id="7:612" data-name="Home">
       
       
-      <div className="pt-25.5">
+      <div className="py-2">
         <Hero />
       </div>
 
-      <div className="py-20">
+      <div >
         <ResourceInfo />
       </div>
 
