@@ -281,13 +281,13 @@ export default function Momento3() {
 Durante el proceso, también tendrás la opción de apoyarte en el GPT desarrollado por los autores del AIAS.                </p>
               <SectionHeading bgcolor="#4cb979" title="Nota importante" subtitle="" />
               <p className="mb-4 text-base font-semibold">Sobre el uso del GPT del AIAS</p>
-              <ul className="mb-4 list-inside list-disc text-sm text-[#272727]">
+              <ul className="mb-4 list-inside list-disc text-base text-[#272727]">
                 <li>Necesitas iniciar sesión en ChatGPT para usar el GPT del AIAS y adjuntar documentos.</li>
                 <li>Las recomendaciones del GPT son un punto de partida: revísalas con criterio, cuestiona lo que no te convenza y recuerda que el juicio pedagógico final es tuyo.</li>
               </ul>
               <p className="mb-4 text-base font-semibold">Sobre los formatos de este momento
 </p>
-              <ul className="mb-4 list-inside list-disc text-sm text-[#272727]">
+              <ul className="mb-4 list-inside list-disc text-base text-[#272727]">
                 <li>En cada paso te encontrarás con una serie de formatos, te invitamos a completarlos. Su propósito es registrar de manera organizada los análisis y reflexiones que desarrolles durante este proceso. 
 </li>
                 <li>Para editar los formatos, crea una copia del archivo y edítalo directamente.</li>
@@ -338,7 +338,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                       href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                      className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-base font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
                     >
                       Formato 1 Análisis de resultados de aprendizaje
                     </a>
@@ -394,7 +394,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                           href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                          className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-base font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
                         >
                           Formato 2 Análisis de actividades evaluativas
 
@@ -409,7 +409,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
           </AnimatedSection>
 
           <AnimatedSection>
-            <section className="mb-16" id="decide">
+            <section className="mb-6" id="decide">
               <SectionHeading bgcolor="#4cb979" title="3. Decide el nivel AIAS" subtitle="" />
               <p className="mb-6 text-base leading-7 text-[#272727]">
                 El siguiente paso es asignar un nivel AIAS a una actividad evaluativa de tu curso. Pregúntate:               </p>
@@ -444,7 +444,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                       href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                      className="inline-flex items-center justify-center border border-[#d7d8dc] bg-white px-4 py-2 text-base font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
                     >
                       Formato 3 Decide el nivel AIAS
                     </a>
@@ -484,14 +484,14 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold text-[#19191b]">Generar prompt con selecciones</h3>
-                    <p className="text-sm leading-6 text-[#5d6169]">
+                    <p className="text-base leading-6 text-[#5d6169]">
                       Ajusta las selecciones y genera el Prompt 3 desde aquí.
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={updatePromptWithSelections}
-                    className="bg-[#5454e9] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#3d3dcc]"
+                    className="bg-[#5454e9] px-5 py-3 text-base font-bold text-white transition hover:bg-[#3d3dcc]"
                   >
                     Actualizar Prompt 3
                   </button>
@@ -517,41 +517,41 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
               </p>
               <form id="productos-compartidos-form" onSubmit={submitSharedProductForm} className="scroll-mt-24 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Productos 1, 2 y 3</p>
+                  <p className="text-base font-bold uppercase tracking-[0.12em] text-[#4cb979]">Productos 1, 2 y 3</p>
                   <h3 className="text-xl font-bold text-[#19191b]">Formulario compartido por hoja</h3>
-                  <p className="text-sm leading-6 text-[#5d6169]">
+                  <p className="text-base leading-6 text-[#5d6169]">
                     Selecciona el producto y envía una nueva fila a la pestaña correspondiente.
                   </p>
                 </div>
 
                 <div className="mt-6 grid gap-5">
                   <label className="grid gap-2">
-                    <span className="text-sm font-semibold text-[#19191b]">Nombre del profesor</span>
+                    <span className="text-base font-semibold text-[#19191b]">Nombre del profesor</span>
                     <textarea
                       value={sharedProductForm.profesor}
                       onChange={(event) => handleSharedProductChange('profesor', event.target.value)}
-                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                       placeholder="Escribe el nombre del profesor"
                       required
                     />
                   </label>
 
                   <label className="grid gap-2">
-                    <span className="text-sm font-semibold text-[#19191b]">Curso</span>
+                    <span className="text-base font-semibold text-[#19191b]">Curso</span>
                     <textarea
                       value={sharedProductForm.curso}
                       onChange={(event) => handleSharedProductChange('curso', event.target.value)}
-                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                       placeholder="Escribe el curso al que aplica la transformación"
                       required
                     />
                   </label>
                   <label className="grid gap-2">
-                    <span className="text-sm font-semibold text-[#19191b]">Producto</span>
+                    <span className="text-base font-semibold text-[#19191b]">Producto</span>
                     <select
                       value={sharedProductForm.productSheet}
                       onChange={(event) => handleSharedProductChange('productSheet', event.target.value)}
-                      className="border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      className="border border-[#d7d8dc] bg-white p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                     >
                       {sharedProductOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -565,44 +565,44 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                   {sharedProductForm.productSheet === 'producto1' && (
                     <>
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje</span>
+                        <span className="text-base font-semibold text-[#19191b]">Resultado de aprendizaje</span>
                         <textarea
                           value={sharedProductForm.resultadoAprendizaje}
                           onChange={(event) => handleSharedProductChange('resultadoAprendizaje', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Escribe el resultado de aprendizaje"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Clasificación según impacto de la IA</span>
+                        <span className="text-base font-semibold text-[#19191b]">Clasificación según impacto de la IA</span>
                         <textarea
                           value={sharedProductForm.clasificacion}
                           onChange={(event) => handleSharedProductChange('clasificacion', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] bg-white p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Escribe la clasificación según impacto de la IA"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Justificación breve</span>
+                        <span className="text-base font-semibold text-[#19191b]">Justificación breve</span>
                         <textarea
                           value={sharedProductForm.justificacion}
                           onChange={(event) => handleSharedProductChange('justificacion', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Explica en pocas líneas por qué clasificaste así el resultado"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Ajuste al resultado de aprendizaje (si aplica)</span>
+                        <span className="text-base font-semibold text-[#19191b]">Ajuste al resultado de aprendizaje (si aplica)</span>
                         <textarea
                           value={sharedProductForm.ajuste}
                           onChange={(event) => handleSharedProductChange('ajuste', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Si hace falta, propone un ajuste breve"
                         />
                       </label>
@@ -612,44 +612,44 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                   {sharedProductForm.productSheet === 'producto2' && (
                     <>
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Mecanismo o actividad evaluativa</span>
+                        <span className="text-base font-semibold text-[#19191b]">Mecanismo o actividad evaluativa</span>
                         <textarea
                           value={sharedProductForm.mecanismo}
                           onChange={(event) => handleSharedProductChange('mecanismo', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Describe el mecanismo o actividad evaluativa"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje (original o ajustado)</span>
+                        <span className="text-base font-semibold text-[#19191b]">Resultado de aprendizaje (original o ajustado)</span>
                         <textarea
                           value={sharedProductForm.resultadoActividad}
                           onChange={(event) => handleSharedProductChange('resultadoActividad', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Pega el resultado de aprendizaje original o el ajustado"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Principal problema identificado</span>
+                        <span className="text-base font-semibold text-[#19191b]">Principal problema identificado</span>
                         <textarea
                           value={sharedProductForm.problemaPrincipal}
                           onChange={(event) => handleSharedProductChange('problemaPrincipal', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Describe el principal problema identificado"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Recomendación</span>
+                        <span className="text-base font-semibold text-[#19191b]">Recomendación</span>
                         <textarea
                           value={sharedProductForm.recomendacion}
                           onChange={(event) => handleSharedProductChange('recomendacion', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Propuesta de recomendación breve"
                           required
                         />
@@ -660,44 +660,44 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                   {sharedProductForm.productSheet === 'producto3' && (
                     <>
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Actividad evaluativa</span>
+                        <span className="text-base font-semibold text-[#19191b]">Actividad evaluativa</span>
                         <textarea
                           value={sharedProductForm.actividadEvaluativa}
                           onChange={(event) => handleSharedProductChange('actividadEvaluativa', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Describe la actividad evaluativa"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Resultado de aprendizaje</span>
+                        <span className="text-base font-semibold text-[#19191b]">Resultado de aprendizaje</span>
                         <textarea
                           value={sharedProductForm.resultadoProducto3}
                           onChange={(event) => handleSharedProductChange('resultadoProducto3', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Resultado de aprendizaje asociado"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Nivel AIAS decidido</span>
+                        <span className="text-base font-semibold text-[#19191b]">Nivel AIAS decidido</span>
                         <textarea
                           value={sharedProductForm.nivelAIAS}
                           onChange={(event) => handleSharedProductChange('nivelAIAS', event.target.value)}
-                          className="min-h-12 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-12 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Indica el nivel AIAS decidido (1-5)"
                           required
                         />
                       </label>
 
                       <label className="grid gap-2">
-                        <span className="text-sm font-semibold text-[#19191b]">Justificación Breve</span>
+                        <span className="text-base font-semibold text-[#19191b]">Justificación Breve</span>
                         <textarea
                           value={sharedProductForm.justificacionBreve3}
                           onChange={(event) => handleSharedProductChange('justificacionBreve3', event.target.value)}
-                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                          className="min-h-24 w-full resize-y border border-[#d7d8dc] p-3 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                           placeholder="Justificación breve del nivel AIAS elegido"
                           required
                         />
@@ -708,11 +708,11 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
                 <div className="mt-6">
                   <label className="grid gap-2">
-                    <span className="text-sm font-semibold text-[#19191b]">Comentarios y preguntas</span>
+                    <span className="text-base font-semibold text-[#19191b]">Comentarios y preguntas</span>
                     <textarea
                       value={finalForm.comentariosPreguntas}
                       onChange={(event) => handleFinalFormChange('comentariosPreguntas', event.target.value)}
-                      className="min-h-20 w-full resize-y border border-[#d7d8dc] p-2 text-sm leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
+                      className="min-h-20 w-full resize-y border border-[#d7d8dc] p-2 text-base leading-6 text-[#272727] focus:border-[#5454e9] focus:outline-none"
                       placeholder="Escribe aquí dudas, comentarios o preguntas sobre tu rediseño (opcional)"
                       aria-label="Comentarios y preguntas"
                     />
@@ -723,7 +723,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                   <button
                     type="submit"
                     disabled={isSubmittingSharedProductForm}
-                    className="bg-black px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1f1f1f] disabled:cursor-not-allowed disabled:bg-[#8f9094]"
+                    className="bg-black px-5 py-3 text-base font-bold text-white transition hover:bg-[#1f1f1f] disabled:cursor-not-allowed disabled:bg-[#8f9094]"
                   >
                     {isSubmittingSharedProductForm ? 'Enviando...' : 'Enviar a hoja del producto'}
                   </button>
@@ -731,7 +731,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
                 {sharedProductFormStatus ? (
                   <p
-                    className={`mt-4 text-sm leading-6 ${sharedProductFormStatus.type === 'success' ? 'text-[#248a46]' : 'text-[#b63b26]'
+                    className={`mt-4 text-base leading-6 ${sharedProductFormStatus.type === 'success' ? 'text-[#248a46]' : 'text-[#b63b26]'
                       }`}
                   >
                     {sharedProductFormStatus.message}
@@ -742,7 +742,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
           </AnimatedSection>} */}
 
           <AnimatedSection>
-            <section className="mb-16" id="redisena">
+            <section className="" id="redisena">
               <SectionHeading bgcolor="#4cb979" title="4. Rediseña una actividad evaluativa" subtitle="" />
               <p className="mb-6 text-base leading-7 text-[#272727]">
                 En la fase anterior decidiste el mejor nivel del AIAS para una actividad evaluativa, ahora el último paso es rediseñar o ajustar esa actividad. Pregúntate:
@@ -786,19 +786,19 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                     href="https://icesiedu-my.sharepoint.com/:x:/g/personal/1061821674_u_icesi_edu_co/IQARsVP2MhP6TLP9_DOLJSU6AZWHMAZ4eHRwT4KTrl32U1s?e=Vxa9eg"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-sm font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
+                    className="inline-flex items-center justify-center rounded-sm border border-[#d7d8dc] bg-white px-4 py-2 text-base font-semibold text-[#19191b] hover:bg-[#f7f7f8]"
                   >
                     Formato 4 Rediseña tus actividades evaluativa
                   </a>
                 </div>
               </div>
-              <div id="prompt-4 mb-6">
+              <div id="prompt-4" className="mb-6">
                 <Prompt text="Prompt 4: Rediseño de actividades" prompt={momento3Prompts.prompt4} />
               </div>
 
               {/* <form id="formulario-final" onSubmit={submitFinalForm} className="scroll-mt-24 mt-6 border border-[#d7d8dc] bg-white p-5">
                 <div className="space-y-2">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#4cb979]">Formulario Opcional</p>
+                  <p className="text-base font-bold uppercase tracking-[0.12em] text-[#4cb979]">Formulario Opcional</p>
                   <h3 className="text-xl font-bold text-[#19191b]"><b>¿Quieres compartir tu proceso con nosotros?
                   </b></h3>
                   <p>Si completaste el diseño evaluativo, te invitamos a registrarlo en el siguiente formulario. Es opcional. Tu información nos ayuda a entender cómo está siendo usado este recurso, identificar necesidades de acompañamiento y, si lo deseas, ofrecerte retroalimentación desde el equipo sobre tu rediseño</p>
