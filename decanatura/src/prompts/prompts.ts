@@ -159,56 +159,48 @@ Formato:
 `,
     prompt3: `Estoy revisando una actividad evaluativa de mi curso y necesito determinar el nivel AIAS más adecuado.
 PASO 1: 
-Pregunta al usuario lo siguiente (OBLIGATORIO):  
-Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega como ensayo o defensa oral, si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si hay instrumento de evaluación, etc ]
-Pega el resultado de aprendizaje asociado 
-Describe el tipo de pensamiento o decisión que debe demostrar el estudiante: [Por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones]
+Pregunta al usuario lo siguiente (OBLIGATORIO):
+1. Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega (ej. ensayo, defensa oral), si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si existe rúbrica o instrumento de evaluación, y cualquier restricción o condición de evaluación.
+2. Pega el resultado de aprendizaje asociado.
+3. Describe el tipo de pensamiento o decisión que debe demostrar el estudiante (por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones).
 
-NO AVANCES HASTA QUE TENGAS ESA INFORMACIÓN DEL USUARIO. 
+NO AVANCES HASTA QUE TENGAS ESA INFORMACIÓN DEL USUARIO.
 
-PASO 2: 
+PASO 2:
+Usa la información del PASO 1 para decidir el nivel AIAS más coherente. Pide al docente que indique también, si lo desea, las siguientes opciones (puede copiar/pegar):
+- Desempeño esperado con IAG: [opción seleccionada de la lista A]
+- Rol de la IAG: [opción seleccionada de la lista B]
+- Fase de participación de la IAG: [opción seleccionada de la lista C]
 
-Utiliza la información del PASO 1 y la información a continuación, para decidir el nivel AIAS más coherente. 
-
-En mi actividad evaluativa quiero que se considere lo siguiente: 
-
-Desempeño esperado con IAG: [pega la opción que seleccionaste de la lista A]
-Rol de la IAG: [pega la opción que seleccionaste de la lista B]
-Fase de participación de la IAG: [pega la opción que seleccionaste de la lista C]
-PASO 3: 
-Solo cuando tengas suficiente información, genera una tabla titulada “Decisión AIAS”, que incluya las siguientes columnas (no modifiques los títulos):
+PASO 3:
+Cuando tengas suficiente información, genera una tabla titulada “Decisión AIAS” con estas columnas (NO cambiar títulos):
 Actividad evaluativa
-Resultado de aprendizaje 
-Tipo de pensamiento o decisión asociado 
+Resultado de aprendizaje
+Tipo de pensamiento o decisión asociado
 Desempeño y rol de la IA (seleccionado por el docente)
-GPT indica si el desempeño esperado, el rol y la fase de la IA escogidos por el docente son coherentes con la actividad. Pegalos si no hay que hacer cambios. De lo contrario señala inconsistencias entre la actividad (columna 1) y estos elementos, y propón la mejora. Explicación breve y clara.
+
+Para la fila correspondiente, indica si el desempeño esperado, el rol y la fase de la IA elegidos por el docente son coherentes con la actividad. Si son coherentes, pégalos tal cual; si no, señala las inconsistencias y propone mejoras concretas (breve y claro).
+
 Nivel AIAS
- Recomienda el nivel AIAS más coherente (1–5). OBLIGATORIO: explica por qué ese nivel, cuál es el sentido pedagógico, cuál es la oportunidad de potenciar el aprendizaje que ofrece el nivel, etc.  
-Otros niveles 
-Explica brevemente por qué NO son más adecuados los niveles adyacentes.
+- Recomienda el nivel AIAS más coherente (1–5). OBLIGATORIO: explica por qué ese nivel, el sentido pedagógico y la oportunidad de aprendizaje que ofrece.
+
+Otros niveles
+- Explica brevemente por qué los niveles adyacentes NO son más adecuados.
+
 Tipo de rediseño
-GPT indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para que la actividad se alinee con el nivel AIAS de la columna 5. Relaciona la respuesta explicando cómo la visibilidad del proceso, oportunidad positiva de uso de la IA o riesgo de la validez para el aprendizaje, y la validez de la evaluación, influyen en la decisión. También debes especificar dónde debería ocurrir el ajuste, por ejemplo en: 
-La alineación mecanismo de evaluación y resultado de aprendizaje
-Tipo de pensamiento o procesos cognitivos de la tarea
-Consigna de la actividad
-Rúbrica o criterios de evaluación
-Las condiciones de evaluación 
-Declaración transparencia del uso de IA
-Evidencias solicitadas
-Estrategia de evaluación 
-PASO 4: 
-Genera un resumen en bullets de la tabla titulado “Resumen Decisión AIAS” con los puntos claves de la tabla, con explicación breve de esos puntos, e incluye 2 o 3 implicaciones para el diseño evaluativo. 
+- Indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para alinear la actividad con el nivel AIAS recomendado. Relaciona la respuesta con la visibilidad del proceso, el riesgo de sustitución por IA y la validez de la evaluación. Especifica dónde debe ocurrir el ajuste (selecciona entre: alineación mecanismo-RA, tipo de pensamiento de la tarea, consigna, rúbrica, condiciones de evaluación, declaración sobre uso de IA, evidencias solicitadas, estrategia de evaluación).
+
+PASO 4:
+Genera un resumen en bullets titulado “Resumen Decisión AIAS” con los puntos clave de la tabla (explicación breve) e incluye 2–3 implicaciones operativas para el diseño evaluativo.
+
 Formato:
 - Tabla clara y legible
 - Lenguaje aplicable al diseño docente
-- Lenguaje claro y profesional, pero accesible para docentes de cualquier área que no sean especialistas en pedagogía. 
-- Evita frases abstractas
-- Cada idea debe poder entenderse en una lectura rápida
-- Prioriza frases concretas sobre explicaciones conceptuales
+- Lenguaje claro y profesional, accesible para docentes de cualquier área
+- Evita frases abstractas; prioriza acciones observables y concretas
 
-PASO 5: 
-Interacción con el usuario (OBLIGATORIO)
-Al finalizar la respuesta pregunta al usuario: 
+PASO 5: Interacción con el usuario (OBLIGATORIO)
+Al finalizar, pregunta al usuario:
 “¿El nivel recomendado coincide con lo que quieres?
 ¿Tienes alguna duda sobre la tabla o el resumen generado?”
 `,
