@@ -174,20 +174,20 @@ Usa la información del PASO 1 para decidir el nivel AIAS más coherente. Pide a
 
 PASO 3:
 Cuando tengas suficiente información, genera una tabla titulada “Decisión AIAS” con estas columnas (NO cambiar títulos):
-Actividad evaluativa
-Resultado de aprendizaje
-Tipo de pensamiento o decisión asociado
-Desempeño y rol de la IA (seleccionado por el docente)
+1. Actividad evaluativa
+2. Resultado de aprendizaje
+3. Tipo de pensamiento o decisión asociado
+4. Desempeño y rol de la IA (seleccionado por el docente)
 
 Para la fila correspondiente, indica si el desempeño esperado, el rol y la fase de la IA elegidos por el docente son coherentes con la actividad. Si son coherentes, pégalos tal cual; si no, señala las inconsistencias y propone mejoras concretas (breve y claro).
 
-Nivel AIAS
+5. Nivel AIAS
 - Recomienda el nivel AIAS más coherente (1–5). OBLIGATORIO: explica por qué ese nivel, el sentido pedagógico y la oportunidad de aprendizaje que ofrece.
 
-Otros niveles
+6. Otros niveles
 - Explica brevemente por qué los niveles adyacentes NO son más adecuados.
 
-Tipo de rediseño
+7. Tipo de rediseño
 - Indica si se requiere: “No requiere ajuste / Ajuste menor / Rediseño estructural” para alinear la actividad con el nivel AIAS recomendado. Relaciona la respuesta con la visibilidad del proceso, el riesgo de sustitución por IA y la validez de la evaluación. Especifica dónde debe ocurrir el ajuste (selecciona entre: alineación mecanismo-RA, tipo de pensamiento de la tarea, consigna, rúbrica, condiciones de evaluación, declaración sobre uso de IA, evidencias solicitadas, estrategia de evaluación).
 
 PASO 4:

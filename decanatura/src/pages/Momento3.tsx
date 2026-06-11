@@ -261,9 +261,9 @@ export default function Momento3() {
 
   const updatePromptWithSelections = () => {
     // Build only the lists block and inject it into the original prompt template
-    const performanceText = selectedPerformance.length > 0 ? selectedPerformance.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista A.';
-    const roleText = selectedRoles.length > 0 ? selectedRoles.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista B.';
-    const phaseText = selectedPhases.length > 0 ? selectedPhases.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista C.';
+    const performanceText = selectedPerformance.length > 0 ? selectedPerformance.map((item, i) => `${i + 1}. ${item}`).join('\n') : '1. Aun no he marcado opciones en la Lista A.';
+    const roleText = selectedRoles.length > 0 ? selectedRoles.map((item, i) => `${i + 1}. ${item}`).join('\n') : '1. Aun no he marcado opciones en la Lista B.';
+    const phaseText = selectedPhases.length > 0 ? selectedPhases.map((item, i) => `${i + 1}. ${item}`).join('\n') : '1. Aun no he marcado opciones en la Lista C.';
 
     const listsBlock = `\nEn mi actividad evaluativa quiero que se considere lo siguiente:\n\nDesempeño esperado con IAG:\n${performanceText}\n\nRol de la IAG:\n${roleText}\n\nFase de participación de la IAG:\n${phaseText}\n\n`;
 
@@ -275,11 +275,14 @@ export default function Momento3() {
       .replace(/\[opción seleccionada de la lista B\]/g, roleText)
       .replace(/\[opción seleccionada de la lista C\]/g, phaseText);
 
-    // Fallback: if original template uses a different block, attempt to replace that whole block
+    // Fallback: if original template had no explicit placeholders, insert listsBlock before 'PASO 3:'
     if (newPrompt === base) {
-      newPrompt = base.replace(/En mi actividad evaluativa quiero que se considere lo siguiente:[\s\S]*?PASO 3:/, () => {
-        return listsBlock + 'PASO 3:';
-      });
+      if (base.includes('PASO 3:')) {
+        newPrompt = base.replace('PASO 3:', listsBlock + 'PASO 3:');
+      } else {
+        // as last resort, append the lists block at the end
+        newPrompt = base + '\n' + listsBlock;
+      }
     }
 
     setPrompt3Text(newPrompt);
