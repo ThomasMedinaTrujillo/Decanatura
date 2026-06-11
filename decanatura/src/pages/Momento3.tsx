@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { motion, type Variants } from 'framer-motion';
 
 import Navbar from '../Components/Navbar';
@@ -198,7 +198,14 @@ export default function Momento3() {
   const [selectedPerformance, setSelectedPerformance] = useState<string[]>([]);
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
   const [selectedPhases, setSelectedPhases] = useState<string[]>([]);
-  const [prompt3Text, setPrompt3Text] = useState<string>(momento3Prompts.prompt3);
+  const [prompt3Text, setPrompt3Text] = useState<string>(() => {
+    try {
+      const saved = localStorage.getItem('prompt3Text');
+      return saved || momento3Prompts.prompt3;
+    } catch (e) {
+      return momento3Prompts.prompt3;
+    }
+  });
   const [] = useState({
     productSheet: 'producto1',
     profesor: '',
@@ -253,8 +260,47 @@ export default function Momento3() {
   };
 
   const updatePromptWithSelections = () => {
-    setPrompt3Text(dynamicPromptPreview);
+    // Build only the lists block and inject it into the original prompt template
+    const performanceText = selectedPerformance.length > 0 ? selectedPerformance.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista A.';
+    const roleText = selectedRoles.length > 0 ? selectedRoles.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista B.';
+    const phaseText = selectedPhases.length > 0 ? selectedPhases.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista C.';
+
+    const listsBlock = `\nEn mi actividad evaluativa quiero que se considere lo siguiente:\n\nDesempeño esperado con IAG:\n${performanceText}\n\nRol de la IAG:\n${roleText}\n\nFase de participación de la IAG:\n${phaseText}\n\n`;
+
+    // Inject listsBlock into the original template. First try targeted placeholder replacement,
+    // then fall back to replacing a larger section if present.
+    const base = momento3Prompts.prompt3;
+    let newPrompt = base
+      .replace(/\[opción seleccionada de la lista A\]/g, performanceText)
+      .replace(/\[opción seleccionada de la lista B\]/g, roleText)
+      .replace(/\[opción seleccionada de la lista C\]/g, phaseText);
+
+    // Fallback: if original template uses a different block, attempt to replace that whole block
+    if (newPrompt === base) {
+      newPrompt = base.replace(/En mi actividad evaluativa quiero que se considere lo siguiente:[\s\S]*?PASO 3:/, () => {
+        return listsBlock + 'PASO 3:';
+      });
+    }
+
+    setPrompt3Text(newPrompt);
+    try {
+      localStorage.setItem('prompt3Text', newPrompt);
+    } catch (e) {
+      // ignore storage errors
+    }
   };
+
+  // If the source prompt in prompts.ts changes during development, keep local copy
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('prompt3Text');
+      if (!saved) {
+        localStorage.setItem('prompt3Text', momento3Prompts.prompt3);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
 
 
