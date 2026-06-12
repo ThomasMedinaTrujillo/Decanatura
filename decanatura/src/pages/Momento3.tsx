@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, type Variants } from 'framer-motion';
 
 import Navbar from '../Components/Navbar';
@@ -106,92 +106,6 @@ const participationOptions = [
 ];
 
 
-function buildDynamicPrompt({
-  selectedPerformance,
-  selectedRoles,
-  selectedPhases,
-}: {
-  selectedPerformance: string[];
-  selectedRoles: string[];
-  selectedPhases: string[];
-}) {
-  const performanceText = selectedPerformance.length > 0 ? selectedPerformance.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista A.';
-  const roleText = selectedRoles.length > 0 ? selectedRoles.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista B.';
-  const phaseText = selectedPhases.length > 0 ? selectedPhases.map((item) => `- ${item}`).join('\n') : '- Aun no he marcado opciones en la Lista C.';
-
-  return `Estoy revisando una actividad evaluativa de mi curso y necesito tu ayuda para determinar el nivel AIAS más adecuado.
-
-Información de la actividad evaluativa
-
-Descripción de la actividad evaluativa: [Describe tu actividad evaluativa: qué deben hacer los estudiantes, formato de entrega como ensayo o defensa oral, si es grupal o individual, si hay fases en el proceso o solo se entrega producto final, si hay instrumento de evaluación, etc.]
-
-Resultado de aprendizaje asociado: [Pega del syllabus]
-
-Tipo de pensamiento o decisión que debe demostrar el estudiante: [Por ejemplo: analizar, argumentar, aplicar conceptos, resolver problemas, tomar decisiones]
-
-Lista A - Desempeño esperado con o sin IAG
-Esto fue lo que marque:
-${performanceText}
-
-Lista B - Rol de la IAG
-Esto fue lo que marque:
-${roleText}
-
-Lista C - Fase de participación
-Esto fue lo que marque:
-${phaseText}
-
-Instrucción importante:
-Ten en cuenta TODAS las opciones marcadas por el docente. Si hay tensiones, solapamientos o inconsistencias entre lo marcado en las listas A, B y C, señálalas con claridad antes de recomendar un nivel.
-
-Con base en el marco AIAS, analiza mi caso como si estuvieras ejecutando un árbol de decisiones.
-
-Instrucciones para GPT
-
-Antes de recomendar un nivel AIAS:
-Haz preguntas claras al docente sobre cualquier detalle faltante, solo si es esencial para generar el texto resumen.
-
-Fase 1
-Solo cuando tengas suficiente información, genera una tabla titulada "Decisión AIAS", que incluya las siguientes columnas (no modifiques los títulos):
-Actividad evaluativa
-Resultado de aprendizaje
-Tipo de pensamiento o decision asociado
-Desempeño, rol y fase de la IA seleccionados por el docente
-
-GPT indica si el desempeño esperado, el rol y la fase de la IA escogidos por el docente son coherentes con la actividad. Pégalos si no hay que hacer cambios. De lo contrario señala inconsistencias entre la actividad y estos elementos, y propone la mejora. Explicación breve y clara.
-
-Nivel AIAS
-Recomienda el nivel AIAS más coherente (1-5). OBLIGATORIO: explica por qué ese nivel, cuál es el sentido pedagógico, cuál es la oportunidad de potenciar el aprendizaje que ofrece el nivel, etc.
-
-Otros niveles
-Explica brevemente por qué NO son más adecuados los niveles adyacentes.
-
-  Tipo de rediseño
-GPT indica si se requiere: "No requiere ajuste / Ajuste menor / Rediseño estructural" para que la actividad se alinee con el nivel AIAS recomendado. Relaciona la respuesta explicando cómo la visibilidad del proceso, la oportunidad positiva de uso de la IA para el aprendizaje y la validez de la evaluación influyen en la decisión. También debe especificar dónde debería ocurrir el ajuste, por ejemplo:
-
-Alineación mecanismo de evaluación y resultado de aprendizaje
-Tipo de pensamiento o procesos cognitivos de la tarea
-Consigna de la actividad
-Rúbrica o criterios de evaluación
-Evidencias solicitadas
-Uso de la IA en la tarea
-
-Fase 2
-Genera un resumen en bullets de la tabla titulado "Resumen Decisión AIAS" con los puntos clave de la tabla, con explicación breve de esos puntos e incluye 2 o 3 implicaciones para el diseño evaluativo.
-
-Formato:
-- Tabla clara y legible
-- Lenguaje aplicable al diseño docente
-- Lenguaje claro y profesional, pero accesible para docentes de cualquier área que no sean especialistas en pedagogía
-- Evita frases abstractas
-- Cada idea debe poder entenderse en una lectura rápida
-- Prioriza frases concretas sobre explicaciones conceptuales
-
-Interaccion con el usuario (OBLIGATORIO)
-Al finalizar la respuesta pregunta al usuario:
-"El nivel recomendado coincide con lo que quieres?
-Tienes alguna duda sobre la tabla o el resumen generado?"`;
-}
 
 export default function Momento3() {
   const navigate = useNavigate()
