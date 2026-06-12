@@ -245,15 +245,15 @@ export default function Momento3() {
   const [] = useState(false);
   const [] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-  const dynamicPromptPreview = useMemo(
-    () =>
-      buildDynamicPrompt({
-        selectedPerformance,
-        selectedRoles,
-        selectedPhases,
-      }),
-    [selectedPerformance, selectedRoles, selectedPhases],
-  );
+  // const dynamicPromptPreview = useMemo(
+  //   () =>
+  //     buildDynamicPrompt({
+  //       selectedPerformance,
+  //       selectedRoles,
+  //       selectedPhases,
+  //     }),
+  //   [selectedPerformance, selectedRoles, selectedPhases],
+  // );
 
   const toggleSelection = (value: string, setter: React.Dispatch<React.SetStateAction<string[]>>) => {
     setter((current) => (current.includes(value) ? current.filter((item) => item !== value) : [...current, value]));
