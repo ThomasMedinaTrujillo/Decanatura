@@ -167,7 +167,7 @@ Pregunta al usuario lo siguiente (OBLIGATORIO):
 NO AVANCES HASTA QUE TENGAS ESA INFORMACIÓN DEL USUARIO.
 
 PASO 2:
-Usa la información del PASO 1 para decidir el nivel AIAS más coherente. Pide al docente que indique también, si lo desea, las siguientes opciones (puede copiar/pegar):
+Usa la información del PASO 1 para decidir el nivel AIAS más coherente. En mi actividad evaluativa quiero que se considere lo siguiente: 
 - Desempeño esperado con IAG: [opción seleccionada de la lista A]
 - Rol de la IAG: [opción seleccionada de la lista B]
 - Fase de participación de la IAG: [opción seleccionada de la lista C]

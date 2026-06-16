@@ -220,6 +220,11 @@ export default function Momento3() {
   }, []);
 
 
+  const [video1, setVideo1] = useState(false);
+  const [video2, setVideo2] = useState(false);
+  const [video3, setVideo3] = useState(false);
+  const [video4, setVideo4] = useState(false);
+
 
 
 
@@ -261,7 +266,15 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
           <AnimatedSection>
             <section className="mb-16" id="prompt-1">
-              <SectionHeading bgcolor="#4cb979" title="1. Analiza tus resultados de aprendizaje" subtitle="" />
+              <SectionHeading bgcolor="#4cb979" title="1. Analiza tus resultados de aprendizaje" subtitle="" buttonclick={() => {
+                setVideo1(true)
+                video1 ? setVideo1(false) : setVideo1(true)
+              }} />
+              {
+                video1 && (
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/zJxtgm2_IZ8?si=RGMzxkwgg3rqK_Fq" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                )
+              }
               <p className="mb-4 text-base font-semibold">
                 Revisa los resultados de aprendizaje de tu curso con estas preguntas:
               </p>
@@ -310,6 +323,7 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
                 <Prompt text="Prompt 1: Análisis resultados de aprendizaje" prompt={momento3Prompts.prompt1} />
               </div>
+              
             </section>
           </AnimatedSection>
 
@@ -317,12 +331,21 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
           <AnimatedSection>
             <section className="mb-16" id="prioriza">
-              <SectionHeading bgcolor="#4cb979" title="2. Analiza tus actividades evaluativas" subtitle="" />
+              <SectionHeading bgcolor="#4cb979" title="2. Analiza tus actividades evaluativas" subtitle="" buttonclick={()=>{
+                setVideo2(true)
+                video2 ? setVideo2(false) : setVideo2(true)
+              }} />
+              {
+                video2 && (
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/X-nsM2Nr49w" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                )
+              }
               <p className="mb-4 text-base leading-7 text-[#272727]">
                 Con los resultados de aprendizaje analizados, el siguiente paso es revisar tus actividades evaluativas. Pregúntate:
               </p>
               <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
                 <li>¿La evidencia que estoy evaluando podría haber sido generada por IA sin que el estudiante realmente domine la competencia?</li>
+                <li>¿Puede la IAG potenciar el aprendizaje del estudiante?</li>
                 <li>¿Estoy evaluando el resultado final o el proceso de construcción del aprendizaje?</li>
               </ul>
               <p className="mb-8 text-base leading-7 text-[#272727]">Para apoyar tu análisis puedes seguir la conversación en el mismo chat del GPT del AIAS.</p>
@@ -373,7 +396,15 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
           <AnimatedSection>
             <section className="mb-6" id="decide">
-              <SectionHeading bgcolor="#4cb979" title="3. Decide el nivel AIAS" subtitle="" />
+              <SectionHeading bgcolor="#4cb979" title="3. Decide el nivel AIAS" subtitle="" buttonclick={()=>{
+                setVideo3(true)
+                video3 ? setVideo3(false) : setVideo3(true)
+              }} />
+              {
+                video3 && (
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/GetxCHSVevA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                )
+              }
               <p className="mb-6 text-base leading-7 text-[#272727]">
                 El siguiente paso es asignar un nivel AIAS a una actividad evaluativa de tu curso. Pregúntate:               </p>
               <ul className="mb-4 space-y-2 text-base leading-7 text-[#272727] list-inside">
@@ -419,8 +450,8 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
                 <Momento3OptionGroup
                   title="Lista A - Desempeño esperado con o sin IAG"
                   description="¿Qué quieres que el estudiante demuestre con o sin la IAG?"
-                  helperText="Selecciona la opción más alta que aplique a tu caso."
-                  notice="Importante: las opciones están organizadas en orden progresivo y cada opción incluye las anteriores."
+                  helperText=""
+                  notice="Selecciona entre 1 - 3 opciones."
                   options={expectedPerformanceOptions}
                   selectedOptions={selectedPerformance}
                   onToggleOption={(option) => toggleSelection(option, setSelectedPerformance)}
@@ -706,7 +737,16 @@ Durante el proceso, también tendrás la opción de apoyarte en el GPT desarroll
 
           <AnimatedSection>
             <section className="" id="redisena">
-              <SectionHeading bgcolor="#4cb979" title="4. Rediseña una actividad evaluativa" subtitle="" />
+              <SectionHeading bgcolor="#4cb979" title="4. Rediseña una actividad evaluativa" subtitle="" buttonclick={()=>{
+                setVideo4(true)
+                video4 ? setVideo4(false) : setVideo4(true)
+              }} />
+              
+              {
+                video4 && (
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/_y8I2KFL37U" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                )
+              }
               <p className="mb-6 text-base leading-7 text-[#272727]">
                 En la fase anterior decidiste el mejor nivel del AIAS para una actividad evaluativa, ahora el último paso es rediseñar o ajustar esa actividad. Pregúntate:
 
