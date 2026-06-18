@@ -23,11 +23,11 @@ export default function Hero() {
 
       {/* Title */}
       <div className="pl-[80px] mb-6" data-node-id="7:616">
-        <p className="font-bold text-[96px] text-white leading-[1.1]">
-          Evaluar en tiempos
+        <p className="font-bold text-[60px] text-white leading-[1.1]">
+          Marco metodológico para evaluar
         </p>
-        <p className="font-bold text-[96px] text-[#e4eb60] leading-[1.1]">
-          de IAG
+        <p className="font-bold text-[60px] text-[#e4eb60] leading-[1.1]">
+          en contextos de IAG
         </p>
       </div>
 
